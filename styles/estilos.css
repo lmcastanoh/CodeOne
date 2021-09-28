@@ -103,4 +103,49 @@ body{
 .tituloSeccionPagina{
     font-size: 22px;
 }
+.tituloProductos{
+    background-color:#f2936379;
+    margin: 0px;
+    padding: 5px;
+    text-align:center;
+    border: 0px;
+    border-radius: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #54571f;
+    font-size: 40px;
+}
+.contenedorImagen{
+    height: 120px;
+    border-radius: 20px;
+    margin: 10px;
+}
 
+.carruselProductos{
+    display: flex;
+    justify-content: center;
+    border-color: #54571f;
+}
+.botonProductos:hover{
+    cursor:pointer;
+    transform: scale(1.1);
+    border-color: #54571f;
+    box-shadow: 1px 1px 1px 1px #54571f;
+}
+
+.reciboVenta{
+    height: 60px;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+.tituloVentas{
+    background-color:#f2936379;
+    margin: 0px;
+    padding: 5px;
+    text-align:center;
+    border: 0px;
+    border-radius: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #54571f;
+    font-size: 40px;
+}
