@@ -1,2 +1,0 @@
-# CodeOne
-Repositorio aplicación web
