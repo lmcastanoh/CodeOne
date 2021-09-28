@@ -1,0 +1,106 @@
+ul{
+    list-style: none;
+    padding: 15px;
+    margin: 10px;
+}
+body{
+    margin: 0px;
+}
+
+.barraRedes{
+    background-color: #F2F3F4;
+    margin:0px;
+    padding: 10px;
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    height: 8px;
+}
+.icoRedes{
+    display:flex;
+    padding:1px;
+}
+.navbar{
+    margin: 0px 0px;
+    display: flex;
+    justify-content: space-between;
+    padding: 25px; 
+    background-color: #e1e157;
+    border-bottom: 10px solid #f29263;
+    color:#54571f;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.navbar > li {
+    display: flex;
+    align-items: center;
+}
+.logo{
+    height: 85px;
+}
+
+.boton:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+   
+}
+.buscar{
+    background-color:white;
+    border: 1px solid #e1e157;
+    padding: 0px 0px 0px 0px;
+    border-radius: 15px;
+    width: 350px;
+    height: 45px;
+    display:flex;
+    justify-content: space-between;
+}
+.buscar > input{
+    outline: none;
+    padding:0px 0px 0px 66px;
+    border: 300px;
+    border-radius: 15px;
+    color:#54571f;
+    background-color:white; 
+    font-size: 20px; 
+}
+
+.buscar > input::placeholder{
+    color:#54571f;
+}
+.buscar:focus-within {
+    border-color: #54571f;
+}
+
+.buscar:hover{
+    cursor:pointer;
+    transform: scale(1.1);
+    box-shadow: 2px 2px 2px 2px #54571f;
+}
+
+.iconoBusqueda{
+    height: 20px;
+    padding: 15px 10px 10px 10px;
+    border-radius: 15px;
+    background-color: #e1e157;
+}
+
+.iconoUsuario{
+    height: 75px;
+}
+.nombreUsuario{
+    font-size: 20px;
+}
+.nombreUsuario:hover{
+    cursor: pointer;
+    transform:scale(1.01);
+    font-weight:600;
+}
+.botonUsuario{
+    display: flex;
+    align-items: center;
+}
+
+.tituloSeccionPagina{
+    font-size: 22px;
+}
+
