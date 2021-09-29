@@ -7,6 +7,7 @@ body{
     margin: 0px;
 }
 
+
 .barraRedes{
     background-color: #F2F3F4;
     margin:0px;
@@ -19,6 +20,9 @@ body{
 .icoRedes{
     display:flex;
     padding:1px;
+}
+.icoRedes > li{
+    padding: 5px;
 }
 .navbar{
     margin: 0px 0px;
@@ -103,7 +107,7 @@ body{
 .tituloSeccionPagina{
     font-size: 22px;
 }
-.tituloProductos{
+.titulo{
     background-color:#f2936379;
     margin: 0px;
     padding: 5px;
@@ -125,27 +129,43 @@ body{
     justify-content: center;
     border-color: #54571f;
 }
-.botonProductos:hover{
+.botonModulos:hover{
     cursor:pointer;
     transform: scale(1.1);
     border-color: #54571f;
     box-shadow: 1px 1px 1px 1px #54571f;
+    border-radius: 20px;
 }
 
 .reciboVenta{
     height: 60px;
     border-radius: 20px;
-    margin: 10px;
+    margin: 0px;
+    
 }
 
-.tituloVentas{
-    background-color:#f2936379;
-    margin: 0px;
-    padding: 5px;
-    text-align:center;
-    border: 0px;
-    border-radius: 15px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #54571f;
-    font-size: 40px;
+.centrar{
+    display: flex;
+    justify-content: center;
+}
+
+.centrar > span{
+    padding: 6px;
+}
+
+footer{
+    border-top: 3px solid #f29263;
+    background-color: #F2F3F4;
+    border-bottom: 3px #F2F3F4;
+    position:absolute;
+    bottom: 0px;
+    width: 100%;
+    padding: 15px;
+}
+.logoCodeOne{
+    height: 30px;
+    text-align: center;
+    display:block;
+    margin:auto;
+
 }
