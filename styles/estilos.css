@@ -149,3 +149,13 @@ body{
     color: #54571f;
     font-size: 40px;
 }
+
+/* Aquí va a ir los estilos del carrusel de productos */
+
+.carruselProductos > img:hover{
+    cursor:pointer;
+    transform: scale(1.1);
+    border-color: #54571f;
+    box-shadow: 1px 1px 1px 1px #54571f;
+}
+
