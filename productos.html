@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/44da871d4f.js" crossorigin="anonymous"></script>
     <link rel="shorcut icon" href="./media/favicon2.ico"/>  
-    <link rel="stylesheet" href="./styles/estilos.css"/>
+    <link rel="stylesheet" href="./styles/estilos.css">
     <title>Prana Personalizados</title>
 </head>
 <body>
@@ -35,10 +35,10 @@
                     <img class="iconoBusqueda" src="./media/iconoBusqueda.ico" alt="search" />
                 </div>
                 </li>
-            <li class ="boton tituloSeccionPagina">Administración de Productos</li>
+            <li class ="boton tituloSeccionPagina">Home</li>
             <li>
                 <div class = "botonUsuario">
-                    <span class="nombreUsuario">Nombre de usuario/Rol</span>
+                    <span class="nombreUsuario">Ingresar/Registrar</span>
                     <img class ="iconoUsuario" src= "media/iconoUsuario.png" alt="iconoUsuario"/>
                 </div>
                 
@@ -46,29 +46,43 @@
         </ul>
         <main>
             <section>
-                <ul >
-                    <li><h1 class = "tituloProductos">Productos</h1></li>
-                    <li>
-                        <div class = "carruselProductos">
-                            <img class = "contenedorImagen" src= "./media/cuadernoPsico.jpg" alt="Foto Cuaderno" /> 
-                            <img class = "contenedorImagen" src= "./media/llavero.jpg" alt="Foto Llavero" />
-                            <img class = "contenedorImagen" src= "./media/mugAbogada.jpg" alt="Foto Mug" />
-                        </div>
+                <h1 class = "titulo">Cuadernos</h1>
+                <ul>
+                    <li  class ="listaProductos">
+                        <table>
+                            <tr>
+                                <td>ID</td>
+                                <td>Nombre</td>
+                                <td>Descripción</td>
+                                <td>Valor</td>
+                                <td>Estado</td>
+                            </tr>
+
+                        </table>
                     </li>
                 </ul>
             </section>
             <section>
-                <ul  calss = "botonventas">
-                    <li>
-                        <h1 class = "tituloVentas">Ventas</h1>
-                        <img class ="reciboVenta" src="media/Reciboventa.png" alt="IconoVenta" />
-                    </li>
-                    
+                <h1 class ="titulo">Accesorios</h1>
+                <ul class ="listaProductos">
+                    <li>LLaveros</li>
+                    <li>Separadores de Libros</li>
+                    <li>Bases para Celulares</li>
+                    <li>PortaRetratos</li>
+                    <li>Mugs</li>
+
                 </ul>
             </section>
-            <section>Usuarios</section>
+            <section>
+                <h1 class = "titulo">Organizadores</h1>
+                <ul class ="listaProductos">
+                    <li>Agendas</li>
+                    <li>Planeadores</li>
+                    <li>Calendarios</li>
+                </ul>
+            </section>
         </main>
-        <footer></footer>
+     
     </header>   
 </body>
 </html>

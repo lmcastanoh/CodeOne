@@ -169,3 +169,17 @@ footer{
     margin:auto;
 
 }
+
+/*Creacion de Tablas*/
+
+.listaProductos {
+    justify-content:space-around;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    border: 1px solid red;
+    padding: 0px;
+    grid-row: auto;
+    grid-column: auto;
+  }
