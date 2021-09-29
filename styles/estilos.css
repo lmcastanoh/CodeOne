@@ -157,7 +157,6 @@ footer{
     border-top: 3px solid #f29263;
     background-color: #F2F3F4;
     border-bottom: 3px #F2F3F4;
-    position:absolute;
     bottom: 0px;
     width: 100%;
     padding: 15px;
@@ -170,16 +169,85 @@ footer{
 
 }
 
+.titulodeProductos{
+    margin: 0px;
+    padding: 5px;
+    text-align:center;
+    border: 0px;
+    border-radius: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #54571f;
+    font-size: 40px;
+}
+
 /*Creacion de Tablas*/
 
-.listaProductos {
-    justify-content:space-around;
-    margin-top: 10px;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-bottom: 10px;
-    border: 1px solid red;
-    padding: 0px;
-    grid-row: auto;
+.encabezadoTabal{
+display: grid;
+grid-column: auto;
+grid-template-columns: 160px 160px 160px 160px 160px 160px 160px ;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+color: #54571f;
+text-align: center;
+
+}
+.tablaCuadernos{
+display: grid;
+border-color: #54571f;
+grid-column: auto;
+grid-template-columns: 160px 160px 160px 160px 160px 160px 160px;
+grid-template-rows: 50px 50px 50px;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+color: #54571f;
+font-size: 15px;
+text-align: center;
+width: 100%;
+justify-content: center;
+}
+.icoTabla{
+    height: 20px;
+    padding: 4px 0px 0px 0px;
+    border-radius: 20px;
+}
+.letraEncabezado{
+    font-weight: bold;
+}
+.cuadroTabla{
+    background-color:#f2936379;
+    margin: 0px;
+    padding: 2px;
+    text-align:center;
+    border: 0px;
+    border-radius: 15px;
+    width: 150px;
+    height: 30px;
+    
+}
+
+.tablaAccesorios{
+    display: grid;
+    border-color: #54571f;
     grid-column: auto;
-  }
+    grid-template-columns: 160px 160px 160px 160px 160px 160px 160px;
+    grid-template-rows: 50px 50px 50px 50px 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #54571f;
+    font-size: 15px;
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+    }
+
+.tablaOrganizadores{
+    display: grid;
+    border-color: #54571f;
+    grid-column: auto;
+    grid-template-columns: 160px 160px 160px 160px 160px 160px 160px;
+    grid-template-rows: 50px 50px 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #54571f;
+    font-size: 15px;
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+}
