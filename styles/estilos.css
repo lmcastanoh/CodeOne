@@ -263,3 +263,60 @@ justify-content: center;
     padding: 2px;
     margin-left: 30px;
 }
+.tablaproductos{
+    display: grid;
+    border-color: #54571f;
+    grid-column: auto;
+    grid-template-columns:160px 160px ;
+    grid-template-rows: 50px 50px 50px 50px 50px 50px 50px ;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #54571f;
+    font-size: 15px;
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+}
+.botonEliminar{
+    background-color: #f29263;
+    font-size: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #54571f;
+    width: 150px;
+    font-weight: bold;
+    text-align: center;
+    padding: 1px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.botonEditar{
+    background-color: #f29263;
+    font-size: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #54571f;
+    width: 150px;
+    font-weight: bold;
+    padding: 1px;
+    text-align: center;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+    .imagenProducto{
+        height: 0px;
+        padding: 0px;
+        margin: 0px;
+        display: flex;
+        align-items:flex-start;
+        justify-content: right;
+        
+    }
+    .imCuaderno{
+        height: 250px;
+    }
+
+    .posiciontabla{
+        position:relative ;
+        display: flex;
+        align-items:unset;
+        justify-content:space-between;
+    }
+    
