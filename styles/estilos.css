@@ -160,7 +160,9 @@ footer{
     bottom: 0px;
     width: 100%;
     padding: 15px;
+    justify-content: space-around;
 }
+
 .logoCodeOne{
     height: 30px;
     text-align: center;
@@ -213,7 +215,7 @@ justify-content: center;
     font-weight: bold;
 }
 .cuadroTabla{
-    background-color:#f2936379;
+    background-color:#F2F3F4;
     margin: 0px;
     padding: 2px;
     text-align:center;
@@ -228,8 +230,8 @@ justify-content: center;
     display: grid;
     border-color: #54571f;
     grid-column: auto;
-    grid-template-columns:160px 160px 160px 160px 160px 160px 160px 160px;
-    grid-template-rows: 50px 50px 50px 50px 50px;
+    grid-template-columns:160px 160px 160px 160px 160px 160px 160px 160px ;
+    grid-template-rows: 50px 50px 50px 50px 50px 50px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #54571f;
     font-size: 15px;
