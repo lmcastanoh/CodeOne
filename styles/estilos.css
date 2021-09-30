@@ -263,6 +263,9 @@ justify-content: center;
     padding: 2px;
     margin-left: 30px;
 }
+
+/*Estilos pagina de informacion de producto*/
+
 .tablaproductos{
     display: grid;
     border-color: #54571f;
