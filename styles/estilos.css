@@ -171,6 +171,7 @@ footer{
 
 }
 
+/*Página lista de Productos*/
 .titulodeProductos{
     margin: 0px;
     padding: 5px;
@@ -181,8 +182,6 @@ footer{
     color: #54571f;
     font-size: 40px;
 }
-
-/*Creacion de Tablas*/
 
 .encabezadoTabal{
 display: grid;
