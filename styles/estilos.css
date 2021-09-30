@@ -187,7 +187,7 @@ footer{
 .encabezadoTabal{
 display: grid;
 grid-column: auto;
-grid-template-columns: 160px 160px 160px 160px 160px 160px 160px 160px ;
+grid-template-columns: 160px 160px 160px 160px 160px 160px 160px 160px;
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 color: #54571f;
 text-align: center;
@@ -206,7 +206,6 @@ text-align: center;
 width: 100%;
 justify-content: center;
 }
-
 .icoTabla{
     height: 20px;
     padding: 4px 0px 0px 0px;
@@ -355,77 +354,79 @@ justify-content: center;
     width: 100%;
     justify-content: center;
 }
-.tablaAgregarUsuarios{
+
+
+/*Estilos pagina de informacion de producto*/
+.tablaproductos{
     display: grid;
     border-color: #54571f;
     grid-column: auto;
-    grid-template-columns:330px 330px ;
+    grid-template-columns:160px 160px ;
     grid-template-rows: 50px 50px 50px 50px 50px 50px 50px ;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #54571f;
-    font-size: 18px;
+    font-size: 15px;
     text-align: center;
     width: 100%;
-    justify-content:center;
-    margin: 0px;
+    justify-content: center;
 }
-.cuadroParaUsuarios{
-    background-color: #F2F3F4;
-    margin: 0px;
-    padding: 2px;
-    text-align:center;
-    border: 0px;
-    border-radius: 20px;
-    width: 300px;
-    height: 30px;
-    
-}
-
-.inputUsuario{
-    border: 2px solid #F2F3F4;
-    padding: 0px 0px 0px 1px;
-    border-radius: 15px;
-    width: 400px;
-    height: 30px;
-    display:flex;
-    justify-content: space-between;
-}
-.inputUsuario > input{
-    outline: none;
-    width: 100%;
-    padding:0px 0px 0px 3px;
-    border: 30px;
-    border-radius: 15px;
-    color:#54571f;
-    font-size: 15px; 
-}
-.inputUsuario > input::placeholder{
-    color:#54571f;
-}
-.inputUsuario:focus-within {
-    border-color:#909497 ;
-}
-.inputUsuario:hover{
-    cursor:pointer;
-    transform: scale(1.1);
-}
-.inputUsuario > select{
-    background-color: white;
-    outline: none;
-    padding:0px 0px 0px 0px;
-    border: 30px;
-    border-radius: 15px;
-    color:#54571f;
-    font-size: 15px; 
-    width: 100%;
-}
-.botonAgregarUsuario{
+.botonEliminar{
     background-color: #f29263;
-    font-size: 20px;
+    font-size: 15px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #54571f;
-    width: 200px;
+    width: 150px;
     font-weight: bold;
-    padding: 2px;
-    margin:auto;
+    text-align: center;
+    padding: 1px;
+    margin-left: 0px;
+    margin-right: 0px;
 }
+.botonEditar{
+    background-color: #f29263;
+    font-size: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #54571f;
+    width: 150px;
+    font-weight: bold;
+    padding: 1px;
+    text-align: center;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+    .imagenProducto{
+        height: 0px;
+        padding: 0px 0px 0px 500px;
+        margin: 0px;
+        display: flex;
+        align-items:flex-start;
+        justify-content: right;
+        
+    }
+    .imCuaderno{
+        height: 240px;
+    }
+
+    .posiciontabla{
+        position:relative ;
+        display: flex;
+        align-items:unset;
+        justify-content:space-between;
+    }
+    .tablaproductoeimagen{
+        display: grid;
+        border-color: #54571f;
+        grid-column: auto;
+        grid: template columns px 999999px ;
+        grid-template-rows: 0px  ;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #54571f;
+        font-size: 15px;
+        text-align: center;
+        width: 100%;
+        justify-content: center;
+    }
+    .bajar{
+        display: flex;
+        align-items: flex-end;
+    }
