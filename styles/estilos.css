@@ -7,7 +7,6 @@ body{
     margin: 0px;
 }
 
-
 .barraRedes{
     background-color: #F2F3F4;
     margin:0px;
@@ -17,13 +16,16 @@ body{
     align-items: center;
     height: 8px;
 }
+
 .icoRedes{
     display:flex;
     padding:1px;
 }
+
 .icoRedes > li{
     padding: 5px;
 }
+
 .navbar{
     margin: 0px 0px;
     display: flex;
