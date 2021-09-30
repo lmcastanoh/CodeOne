@@ -264,6 +264,9 @@ justify-content: center;
     padding: 2px;
     margin-left: 30px;
 }
+
+/*Página Agregar Usuarios*/
+
 .tablaAgregarUsuarios{
     display: grid;
     border-color: #54571f;
