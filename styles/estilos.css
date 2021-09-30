@@ -276,13 +276,13 @@ justify-content: center;
     text-align: center;
     width: 100%;
     justify-content:center;
+    margin: 0px;
 }
 .cuadroParaUsuarios{
-    background-color:#F2F3F4;
+    background-color: #F2F3F4;
     margin: 0px;
     padding: 2px;
     text-align:center;
-    align-content: flex-start;
     border: 0px;
     border-radius: 20px;
     width: 300px;
@@ -301,13 +301,13 @@ justify-content: center;
 }
 .inputUsuario > input{
     outline: none;
-    padding:0px 0px 0px 1px;
+    width: 100%;
+    padding:0px 0px 0px 3px;
     border: 30px;
     border-radius: 15px;
     color:#54571f;
     font-size: 15px; 
 }
-
 .inputUsuario > input::placeholder{
     color:#54571f;
 }
@@ -318,12 +318,23 @@ justify-content: center;
     cursor:pointer;
     transform: scale(1.1);
 }
-
 .inputUsuario > select{
+    background-color: white;
     outline: none;
     padding:0px 0px 0px 0px;
     border: 30px;
     border-radius: 15px;
     color:#54571f;
     font-size: 15px; 
+    width: 100%;
+}
+.botonAgregarUsuario{
+    background-color: #f29263;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #54571f;
+    width: 200px;
+    font-weight: bold;
+    padding: 2px;
+    margin:auto;
 }

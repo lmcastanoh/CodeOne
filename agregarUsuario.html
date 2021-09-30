@@ -31,11 +31,11 @@
 
             <li>
                 <div class="buscar">
-                    <input placeholder ="Buscar Productos"/>
+                    <input placeholder ="Buscar Usuarios"/>
                     <img class="iconoBusqueda" src="./media/iconoBusqueda.ico" alt="search" />
                 </div>
                 </li>
-            <li class ="boton tituloSeccionPagina">Administración de Productos</li>
+            <li class ="boton tituloSeccionPagina">Administración de Usuario</li>
             <li>
                 <div class = "botonUsuario">
                     <span class="nombreUsuario">Ingresar/Registrar</span>
@@ -51,19 +51,19 @@
                 <form  class="tablaAgregarUsuarios" action="ejemplo.php" method="get" >
 
                     <p class = "letraEncabezado cuadroParaUsuarios" >Nombre: </p>
-                    <p class="inputUsuario"><input type="text" name="nombre" size="40"></p>
+                    <p class="inputUsuario cuadroParaUsuarios"><input type="text" name="nombre" size="40"></p>
 
                     <p class = "letraEncabezado cuadroParaUsuarios " >Fecha de Nacimiento:</p>
-                    <p  class="inputUsuario" > <input type="date" name="fechanacimiento"></p>
+                    <p class="inputUsuario cuadroParaUsuarios" > <input type="date" name="fechanacimiento"></p>
 
                     <p class = "letraEncabezado cuadroParaUsuarios " >Número de Celular:</p>
-                    <p class="inputUsuario" ><input type="tel" name="celular"></p>
+                    <p class="inputUsuario cuadroParaUsuarios" ><input type="tel" name="celular"></p>
 
                     <p class = "letraEncabezado cuadroParaUsuarios " >Fecha de Ingreso:</p>
-                    <p class="inputUsuario" > <input type="date" name="fechaingreso" ></p>
+                    <p class="inputUsuario cuadroParaUsuarios" > <input type="date" name="fechaingreso" ></p>
 
                     <p class = "letraEncabezado cuadroParaUsuarios " >Estado: </p>
-                    <p class="inputUsuario" ><select name="estado">
+                    <p class="inputUsuario cuadroParaUsuarios" ><select name="estado">
                         <option selected value="0"> Elige una opción </option>
                         <option value="1">Pendiente</option> 
                         <option value="2">Autorizado</option> 
@@ -72,7 +72,7 @@
                     </p>
 
                     <p class = "letraEncabezado cuadroParaUsuarios">Rol:</p>  
-                    <p class="inputUsuario">
+                    <p class="inputUsuario cuadroParaUsuarios">
                         <select name="Rol">
                             <option selected value="0"> Elige una opción </option>
                             <option value="1">Administrador</option> 
@@ -83,10 +83,9 @@
 
                 </form>
 
-
+                <div class = "botonAgregarUsuario botonModulos titulo centrar"> <span>Agregar Usuario</span></div>
 
             </ul>
-
 
 
 
