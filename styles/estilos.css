@@ -171,7 +171,7 @@ footer{
 
 }
 
-/*lista de Productos*/
+/*Página lista de Productos*/
 .titulodeProductos{
     margin: 0px;
     padding: 5px;
@@ -263,7 +263,7 @@ justify-content: center;
     margin-left: 30px;
 }
 
-/*Agregar Usuarios*/
+/*Página Agregar Usuarios*/
 .tablaAgregarUsuarios{
     display: grid;
     border-color: #54571f;
