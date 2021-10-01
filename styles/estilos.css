@@ -163,9 +163,10 @@ footer{
     padding: 15px 15px 15px 0px;
     justify-content: space-around;
     position:unset;
-    bottom: 0%;
 }
-
+.tamañoPaginaIndex{
+    height: 390px;
+}
 .logoCodeOne{
     height: 30px;
     text-align: center;
