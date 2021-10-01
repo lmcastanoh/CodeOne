@@ -167,7 +167,9 @@ footer{
     bottom: 0%;
     width: 100%;
 }
-
+.tamañoPaginaIndex{
+    height: 390px;
+}
 .logoCodeOne{
     height: 30px;
     text-align: center;
