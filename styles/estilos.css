@@ -8,6 +8,7 @@ body{
     
 }
 
+/*Página index*/
 .barraRedes{
     background-color: #F2F3F4;
     margin:0px;
@@ -160,10 +161,11 @@ footer{
     border-top: 3px solid #f29263;
     background-color: #F2F3F4;
     border-bottom: 3px #F2F3F4;
-    padding: 15px 15px 15px 0px;
+    padding: 15px 15px 0px 0px;
     justify-content: space-around;
     position:unset;
     bottom: 0%;
+    width: 100%;
 }
 
 .logoCodeOne{
@@ -635,3 +637,4 @@ justify-content: center;
 .cursorMano{
     cursor:pointer;
 }
+
