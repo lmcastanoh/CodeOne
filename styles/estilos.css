@@ -5,6 +5,7 @@ ul{
 }
 body{
     margin: 0px;
+    
 }
 
 .barraRedes{
@@ -161,8 +162,10 @@ footer{
     border-bottom: 3px #F2F3F4;
     bottom: 0px;
     width: 100%;
-    padding: 15px;
+    padding: 15px 15px 15px 0px;
     justify-content: space-around;
+
+ 
 }
 
 .logoCodeOne{
@@ -487,7 +490,7 @@ justify-content: center;
     .posiciontabla{
         position:relative ;
         display: flex;
-        align-items:unset;
+        align-items:relative;
         justify-content:space-between;
     }
     .tablaproductoeimagen{
@@ -502,6 +505,7 @@ justify-content: center;
         text-align: center;
         width: 100%;
         justify-content: center;
+        
     }
     /*Página Login*/
  .tituloLogin{
@@ -529,6 +533,8 @@ justify-content: center;
     justify-content:left;
     margin-left: 400px;
     margin-right: 400px;
+    margin-bottom: 120px;
+
  }
  .cuadroLogin{
     background-color:#F2F3F4;
@@ -556,6 +562,7 @@ justify-content: center;
     width: 495.5px;
     height: 400px;
     margin-bottom: 50px;
+   
 
  }
  .tituloFormulario{
@@ -617,6 +624,11 @@ justify-content: center;
     font-weight: bold;
     padding:2px;
     text-align: center;
+ }
 
-    margin:auto;
+
+ .bajar{
+    position:unset;
+    bottom: 0%;
+    width:100%;
 }
