@@ -658,20 +658,51 @@ justify-content: center;
     height: 340px;
 }
 
-.cuadroproductos{
-    background-color:#F2F3F4;
-    margin: 0px;
-    padding: 2px;
+
+.cuadroProductos{
+    padding: 2px 0px 0px 0px;
     text-align:center;
     border: 0px;
     border-radius: 15px;
-    width: 150px;
+    width: 250px;
     height: 30px;
-
+    justify-content:space-between;
 }
 
-.cuadroproductos>input{
+.inputProducto{
     background-color: #F2F3F4;
-    border-color: rgb(226, 43, 186);
+    border: 2px solid #F2F3F4;
+    padding: 0px 0px 0px 1px;
+    border-radius: 15px;
+    display:flex;
+    justify-content: space-between;
+    text-align: right;
 }
-
+.inputProducto > input{
+    background-color: #F2F3F4;
+    outline: none;
+    width: 100%;
+    padding:0px 0px 0px 3px;
+    border: 30px;
+    border-radius: 15px;
+    color:#54571f;
+    font-size: 15px; 
+}
+.inputProducto:focus-within {
+    border-color:#909497 ;
+    background-color: #F2F3F4;
+}
+.inputProducto:hover{
+    cursor:pointer;
+    transform: scale(1.1);
+}
+.inputProducto > select{
+    background-color: #F2F3F4;
+    padding: 2px 0px 0px 0px;
+    text-align:center;
+    border: 0px;
+    border-radius: 15px;
+    width: 250px;
+    height: 30px;
+    justify-content:space-between;
+}
