@@ -706,3 +706,106 @@ justify-content: center;
     height: 30px;
     justify-content:space-between;
 }
+/*listado de Ventas*/
+.listadodeVentas{
+    display: grid;
+    border-color: #54571f;
+    grid-column: auto;
+    grid-template-columns: 120px 120px 120px 120px 120px 120px 120px;
+    grid-template-rows: 50px 50px 50px 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #54571f;
+    font-size: 15px;
+    text-align: center;
+    width: 100%;
+    margin: 0px
+    justify-content: Center;
+    
+    
+}
+.listadodeVentas{
+    background-color:#F2F3F4;
+    margin: 0px;
+    padding: 2px;
+    text-align:center;
+    border: 0px;
+    border-radius: 15px;
+    width: 150px;
+    height: 270px;
+}
+/* subPaginaVentas*/
+.tablaVentasProducto{
+    display: grid;
+    border-color: #54571f;
+    grid-column:auto;
+    grid-template-columns:500px 500px;
+    grid-template-rows: 50px 50px 50px 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #54571f;
+    font-size: 15px;
+    text-align:start;
+    justify-content:space-evenly;
+    padding: 5px 0px 0px;
+}
+.tablaVenta2{
+    display: grid;
+    border-color: #54571f;
+    grid-column:span;
+    grid-template-columns:160px 160px;
+    grid-template-rows: 50px 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #54571f;
+    font-size: 15px;
+    text-align:center;
+    width: 100%;
+    padding: 0px 0px 0px;
+    margin: 0px;
+}
+.botonAgregarVenta{
+    background-color: #f29263;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #54571f;
+    width: 200px;
+    font-weight: bold;
+    padding: 2px;
+    margin-bottom: 20px;
+    margin-left: 45%;
+}
+.inputAgregarventa{
+    border: 2px solid #F2F3F4;
+    padding: 0px 0px 0px 1px;
+    border-radius: 15px;
+    display:flex;
+    justify-content: space-between;
+    text-align: right;
+}
+.inputAgregarventa> input{
+    outline: none;
+    width: 100%;
+    padding:0px 0px 0px 3px;
+    border: 30px;
+    border-radius: 15px;
+    color:#54571f;
+    font-size: 15px; 
+}
+.inputAgregarventa > input::placeholder{
+    color:#54571f;
+}
+.inputAgregarventa:focus-within {
+    border-color:#909497 ;
+}
+.inputAgregarventa:hover{
+    cursor:pointer;
+    transform: scale(1.1);
+}
+.inputAgregarVentas > select{
+    background-color: white;
+    outline: none;
+    padding:0px 0px 0px 0px;
+    border: 30px;
+    border-radius: 15px;
+    color:#54571f;
+    font-size: 15px; 
+    width: 100%;
+}
