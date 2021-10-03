@@ -59,8 +59,8 @@ function App() {
                     <li><h1 className = "titulo">Productos</h1></li>
                     <li>
                         <div className = "carruselProductos">
-                            <img className = "contenedorImagen" src= {fotoAlbum} alt="Foto Mug" />
-                            <img className = "contenedorImagen" src= {lapiceros} alt="Foto Mug" />
+                            <carruselFotos imagen={fotoAlbum} nombreProducto={almbun de fotos}/>
+                            <carruselFotos imagen={lapiceros} nombreProducto={lapiceros}/>
                             <img className = "contenedorImagen" src= {cuadernoPsico} alt="Foto Cuaderno" /> 
                             <img className = "contenedorImagen" src= {llavero} alt="Foto Llavero" />
                             <img className = "contenedorImagen" src= {mugAbogada} alt="Foto Mug" />
@@ -107,5 +107,12 @@ function App() {
     </div>
   );
 }
+function carruselFotos(imagen,nombreProducto) {
+    return (
+        <div className = "carruselProductos">
+        <img className = "contenedorImagen" src= {imagen} alt={nombreProducto} />
+    </div>
+    );
+  }
 
 export default App;
