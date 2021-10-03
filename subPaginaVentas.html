@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/44da871d4f.js" crossorigin="anonymous"></script>
         <link rel="shorcut icon" href="./media/favicon2.ico"/>  
-        <link rel="stylesheet" href="./styles/estilos.css">
+        <link rel="stylesheet" href="./styles/estilos1.css">
         <title>Prana Personalizados</title>
     </head>
 
@@ -46,45 +46,34 @@
         
         <main>
             <section>
-                <h1 class = "tituloVentas">ID Venta</h1>
+                <h1 class = "tituloVentas">030 Venta</h1>
                 
                 <ul>
                     <div class="tablaVentasProducto">
-                        <li class= "tablaVenta2"><div class = "cuadroTabla cuadroBlanco letraEncabezado">ID del Producto</div>
-                        <div class = "cuadroValorTotal cuadroTabla infoAgregarVenta" > <input type="tel" name="celular"></div>
+                        <li class= "tablaVenta2">
+                            <div class = "cuadroTabla cuadroBlanco letraEncabezado">ID del Producto</div>
+                            <div class = "cuadroValorTotal cuadroTabla infoAgregarVenta inputAgregarventa" > <input type="number" name="IDproducto"></div>
+                            
+                            <div class = "cuadroTabla cuadroBlanco letraEncabezado">ID del Cliente</div>
+                            <div class = "cuadroValorTotal cuadroTabla infoAgregarVenta inputAgregarventa" ><input type="number" name="ID del Cliente"></div>
 
-                        <div class = "cuadroTabla cuadroBlanco letraEncabezado">ID del Cliente</div>
-                        <div class = "cuadroValorTotal cuadroTabla infoAgregarVenta" ><input type="text" name="ID del Cliente"></div>
-                        
-                        <div class = "cuadroTabla cuadroBlanco letraEncabezado ">Vendedor</div>
-                        <div class = "cuadroValorTotal cuadroTabla infoAgregarVenta"><select name="estado">
+                            <div class = "cuadroTabla cuadroBlanco letraEncabezado ">Vendedor</div>
+                            <div class = "cuadroValorTotal cuadroTabla infoAgregarVenta inputAgregarventa"><select name="estado">
                             <option selected value="0"> Elige una opción </option>
                             <option value="1">Estefania Cano</option> 
                             <option value="2">Vanessa Quiroz</option> 
-                         </select>
-                        </div></li>
-
-                        <div class = "cuadroTabla cuadroBlanco letraEncabezado ">Producto</div>
-                        <div class = "cuadroValorTotal cuadroTabla infoAgregarVenta"><select name="estado">
-                            <option selected value="0"> Elige una opción </option>
-                            <option value="1">Cuaderno</option> 
-                            <option value="2">llavero</option> 
-                            <option value="2">Base celular </option> 
-                            <option value="2">Agenda</option> 
-                            <option value="2">Planeador</option> 
-                            <option value="2">Mug</option> 
-                            <option value="2">Calendario</option> 
-                            <option value="2">Lapicero</option> 
-                         </select>
-                        </div></li>
+                            </select></div>
+                        </li>
 
                         
-                        <li class= tablaVenta1><div class = "cuadroTabla cuadroBlanco letraEncabezado">Fecha de Venta</div>
-                            <div class = " cuadroValorTotal cuadroTabla infoAgregarVenta"><input type="date" name="fechaingreso" ></div>
+                        <li class= tablaVenta2>
+
+                            <div class = "cuadroTabla cuadroBlanco letraEncabezado">Fecha de Venta</div>
+                            <div class = "cuadroValorTotal cuadroTabla infoAgregarVenta inputAgregarventa"><input type="date" name="fechaingreso" ></div>
                             <div class = "cuadroTabla cuadroBlanco  letraEncabezado">Nombre del Cliente</div>
-                            <div class = "cuadroValorTotal cuadroTabla infoAgregarVenta" ><input type="text" name="Nombre Cliente" ></p></div>
+                            <div class = "cuadroValorTotal cuadroTabla infoAgregarVenta inputAgregarventa" ><input type="text" name="Nombre Cliente" ></p></div>
                             <div class = "cuadroTabla cuadroBlanco letraEncabezado">Estado de la Venta</div>
-                            <div class = "cuadroValorTotal cuadroTabla infoAgregarVenta"><select name="estado">
+                            <div class = "cuadroValorTotal cuadroTabla infoAgregarVenta inputAgregarventa"><select name="estado">
                                 <option selected value="0"> Elige una opción </option>
                                 <option value="1">En proceso</option> 
                                 <option value="2">Cancelada</option> 
@@ -95,12 +84,12 @@
                   </div>
                 </ul>
             </section>
-            <div class = "botonAgregarVenta botonModulos titulo centrar"> <span>Agregar otro Producto</span></div>
+            <div class = "botonAgregarProducto botonModulos titulo centrar"> <span>Agregar Producto</span></div>
 
             <section>
                 <div class= "tablaNumeroProductos">
                     <div class = "cuadroTabla cuadroBlanco letraEncabezado">Producto 1</div>
-                    <div class = "cuadroTabla infoAgregarVenta"><select name="estado">
+                    <div class = "cuadroTabla infoAgregarVenta inputAgregarventa"><select name="estado">
                         <option selected value="0"> Elige una opción </option>
                         <option value="1">Cuaderno</option> 
                         <option value="2">llavero</option> 
@@ -112,14 +101,14 @@
                         <option value="2">Lapicero</option> 
                      </select></div>
                     <div class = "cuadroTabla cuadroBlanco letraEncabezado">Valor Unitario</div>
-                    <div class = "cuadroTabla"></div>
+                    <div class = "cuadroTabla">--</div>
                     <div class = "cuadroTabla cuadroBlanco letraEncabezado">Cantidad</div>
-                    <div class = "cuadroTabla infoAgregarVenta" ><input type="number" name="Cantidad"></div>
+                    <div class = "cuadroTabla infoAgregarVenta inputAgregarventa inputAgregarventa" ><input type="number" name="Cantidad"></div>
                     <div class = "cuadroTabla cuadroBlanco letraEncabezado">Valor Total</div>
-                    <div class = "cuadroTabla "></div>
+                    <div class = "cuadroTabla ">--</div>
                     
                     <div class = "cuadroTabla cuadroBlanco letraEncabezado">Producto 2</div>
-                    <div class = "cuadroTabla infoAgregarVenta"><select name="estado">
+                    <div class = "cuadroTabla infoAgregarVenta inputAgregarventa inputAgregarventa"><select name="estado">
                         <option selected value="0"> Elige una opción </option>
                         <option value="1">Cuaderno</option> 
                         <option value="2">llavero</option> 
@@ -131,17 +120,17 @@
                         <option value="2">Lapicero</option> 
                      </select></div>
                     <div class = "cuadroTabla cuadroBlanco letraEncabezado">Valor Unitario</div>
-                    <div class = "cuadroTabla"></div>
+                    <div class = "cuadroTabla">--</div>
                     <div class = "cuadroTabla cuadroBlanco letraEncabezado">Cantidad</div>
-                    <div class = "cuadroTabla infoAgregarVenta" ><input type="number" name="Cantidad"></div>
+                    <div class = "cuadroTabla infoAgregarVenta inputAgregarventa" ><input type="number" name="Cantidad"></div>
                     <div class = "cuadroTabla cuadroBlanco letraEncabezado">Valor Total</div>
-                    <div class = "cuadroTabla "></div>
+                    <div class = "cuadroTabla ">--</div>
                    
             </section>
             
             <section class = "tablaValorTotal">
                 <div class = "tablaValorTotal cuadroValorTotal letraEncabezado">Valor total de la compra</div>
-                <div class = "cuadroTabla letraEncabezado"></div>
+                <div class = "cuadroTabla letraEncabezado">--</div>
             </section>
             <section>
                 <div class = "botonAgregarVenta botonModulos titulo centrar"> <span>Guardar Productos</span></div>
