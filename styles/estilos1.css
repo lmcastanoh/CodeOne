@@ -8,7 +8,6 @@ body{
     
 }
 
-/*Página index*/
 .barraRedes{
     background-color: #F2F3F4;
     margin:0px;
@@ -161,11 +160,9 @@ footer{
     border-top: 3px solid #f29263;
     background-color: #F2F3F4;
     border-bottom: 3px #F2F3F4;
-    padding: 15px 15px 0px 0px;
+    padding: 15px 15px 15px 0px;
     justify-content: space-around;
     position:unset;
-    bottom: 0%;
-    width: 100%;
 }
 .tamañoPaginaIndex{
     height: 390px;
@@ -639,6 +636,62 @@ justify-content: center;
 .cursorMano{
     cursor:pointer;
 }
+/*Estilos pagina información de la persona y lista de usuarios*/
+
+.tablaPersona{
+    display: grid;
+    border-color: #54571f;
+    grid-column: auto;
+    grid-template-columns:270px 270px 270px  270px  270px;
+    grid-template-rows: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #54571f;
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 0px;
+}
+.cuadroTablaInfoPersona{
+    background-color:#F2F3F4;
+    opacity: 0.5;
+    padding: 2px 0px 0px 0px;
+    text-align:center;
+    border: 0px;
+    border-radius: 15px;
+    width: 250px;
+    height: 30px;
+    justify-content:space-between;
+}
+.tablaUsuarios{
+    display: grid;
+    border-color: #54571f;
+    grid-column: auto;
+    grid-template-columns: 160px 160px 160px 160px 160px 160px;
+    grid-template-rows: 50px 50px 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #54571f;
+    font-size: 15px;
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+    }
+.botonAgregarUsuario{
+	background-color: #f29263;
+	font-size: 20px;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	color: #54571f;
+	width: 170px;
+	font-weight: bold;
+	text-align: center;
+	padding: 1px;
+	border-radius: 20px;
+	margin-top: 0px;
+	margin-left: 600px;
+}
+.iconosConfBorrar{
+	background-color: #ffffff;
+	text-align: right;
+}
+
 
 /* Tabla para Agregar Productos */
 
@@ -657,8 +710,6 @@ justify-content: center;
     margin: 0px;
     height: 340px;
 }
-
-
 .cuadroProductos{
     padding: 2px 0px 0px 0px;
     text-align:center;
@@ -698,6 +749,22 @@ justify-content: center;
 }
 .inputProducto > select{
     background-color: #F2F3F4;
+}
+.tablaPersona{
+    display: grid;
+    border-color: #54571f;
+    grid-column: auto;
+    grid-template-columns:270px 270px 270px  270px  270px;
+    grid-template-rows: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #54571f;
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 0px;
+}
+.cuadroTablaInfoPersona{
+    background-color:#F2F3F4;
+    opacity: 0.5;
     padding: 2px 0px 0px 0px;
     text-align:center;
     border: 0px;
@@ -712,6 +779,12 @@ justify-content: center;
     border-color: #54571f;
     grid-column: auto;
     grid-template-columns: 160px 160px 160px 160px 160px 160px 160px;
+}
+.tablaUsuarios{
+    display: grid;
+    border-color: #54571f;
+    grid-column: auto;
+    grid-template-columns: 160px 160px 160px 160px 160px 160px;
     grid-template-rows: 50px 50px 50px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #54571f;
@@ -850,3 +923,22 @@ justify-content: center;
 .iconoChulito{
     height: 60px;
 }
+.botonAgregarUsuario{
+    background-color: #f29263;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #54571f;
+    width: 170px;
+    font-weight: bold;
+    text-align: center;
+    padding: 1px;
+    border-radius: 20px;
+    margin-top: 0px;
+    margin-left: 600px;
+}
+        
+.iconosConfBorrar{
+    background-color: #ffffff;
+    text-align: right;
+}
+        
