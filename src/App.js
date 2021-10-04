@@ -1,12 +1,4 @@
 import './styles/estilos.css';
-/*Se importa logo */
-import logoPrana from "./media/logoNavbar.png";
-import logoCodeOne from "./media/logoCodeOne.png";
-/*Se importa iconos necesarios para la página*/
-import iconoUsuarioVerde from "./media/iconoUsuario.png";
-import iconoBuscar from "./media/iconoBusqueda.ico";
-import iconoUsuarioBlanco from "./media/iconoUsuario2.png";
-import iconoReciboVenta from "./media/Reciboventa.png";
 /* Se importa las imagenes del Carrusel*/
 import fotoAlbum from './media/carruselProductos/album.png';
 import lapiceros from './media/carruselProductos/lapiceros.png';
@@ -15,7 +7,7 @@ import llavero from './media/carruselProductos/llavero.png';
 import mugAbogada from './media/carruselProductos/mugAbogada.png';
 import cuadernoMorado from './media/carruselProductos/cuadernoMorado.png';
 import planeador from './media/carruselProductos/planeador.jpg';
-import baseCelular from './media/carruselProductos/baseCelular.png' ;
+import baseCelular from './media/carruselProductos/baseCelular.png';
 
 function App() {
   return (
