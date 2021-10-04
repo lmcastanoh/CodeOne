@@ -4,12 +4,9 @@ import logoCodeOne from "media/logoCodeOne.png";
 /*Se importa iconos necesarios para la página*/
 import iconoUsuarioVerde from "media/iconoUsuario.png";
 import iconoBuscar from "media/iconoBusqueda.ico";
-import iconoUsuarioBlanco from "media/iconoUsuario2.png";
-import iconoReciboVenta from "media/Reciboventa.png";
-/*Imagen del producto */
-import cuadernoPsico from 'media/carruselProductos/cuadernoPsico.png';
 
-function agregarProductos() {
+
+function AgregarProductos() {
     return(
         <div className="agregarProductos">
             <body>
@@ -25,21 +22,21 @@ function agregarProductos() {
                     <ul className="navbar">
                         <li>
                             <div> 
-                                <img className="boton logo" src="./media/logoNavbar.png" alt= "imagen" /> 
+                                <img className="boton logo" src={logoPrana} alt= "imagen" /> 
                             </div>
                         </li>
 
                         <li>
                             <div className="buscar">
                                 <input placeholder ="Buscar Productos"/>
-                                <img className="iconoBusqueda" src="./media/iconoBusqueda.ico" alt="search" />
+                                <img className="iconoBusqueda" src={iconoBuscar} alt="search" />
                             </div>
                         </li>
                         <li className ="boton tituloSeccionPagina">Administración de Productos</li>
                         <li>
                             <div className = "botonUsuario">
                                 <span className="nombreUsuario">Ingresar/Registrar</span>
-                                <img className ="iconoUsuario" src= "media/iconoUsuario.png" alt="iconoUsuario"/>
+                                <img className ="iconoUsuario" src= {iconoUsuarioVerde}alt="iconoUsuario"/>
                             </div>
                         </li>
                     </ul>
@@ -75,11 +72,11 @@ function agregarProductos() {
                 </main>
 
                 <footer>
-                    <img className ="logoCodeOne" src="./media/logoCodeOne.png" alt ="logoCodeOne"/>
+                    <img className ="logoCodeOne" src={logoCodeOne} alt ="logoCodeOne"/>
                 </footer>
             </body>
         </div>
     );
 }
-export default agregarProductos;
+export default AgregarProductos;
     

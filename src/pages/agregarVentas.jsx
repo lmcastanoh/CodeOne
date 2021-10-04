@@ -1,13 +1,12 @@
 /*Se importa logo */
-import logoPrana from "./media/logoNavbar.png";
-import logoCodeOne from "./media/logoCodeOne.png";
+import logoPrana from "media/logoNavbar.png";
+import logoCodeOne from "media/logoCodeOne.png";
 /*Se importa iconos necesarios para la página*/
-import iconoUsuarioVerde from "./media/iconoUsuario.png";
-import iconoBuscar from "./media/iconoBusqueda.ico";
-import iconoUsuarioBlanco from "./media/iconoUsuario2.png";
-import iconoReciboVenta from "./media/Reciboventa.png";
+import iconoUsuarioVerde from "media/iconoUsuario.png";
+import iconoBuscar from "media/iconoBusqueda.ico";
 
-function agregarVentas() {
+
+function AgregarVentas() {
     return(
         <div classname="agregarVentas"> 
                 <header> 
@@ -22,13 +21,13 @@ function agregarVentas() {
                 
                     <ul className="navbar">
                         <li>
-                            <div><img className="boton logo" src="./media/logoNavbar.png" alt= "imagen" /></div>
+                            <div><img className="boton logo" src={logoPrana} alt= "imagen" /></div>
                         </li>
 
                         <li>
                             <div className="buscar">
                                 <input placeholder ="Buscar Ventas"/>
-                                <img className="iconoBusqueda" src="./media/iconoBusqueda.ico" alt="search" />
+                                <img className="iconoBusqueda" src={iconoBuscar} alt="search" />
                             </div>
                         </li>
 
@@ -37,7 +36,7 @@ function agregarVentas() {
                         <li>
                             <div className = "botonUsuario">
                                 <span className="nombreUsuario">Ingresar/Registrar</span>
-                                <img className ="iconoUsuario" src= "media/iconoUsuario.png" alt="iconoUsuario"/>
+                                <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
                             </div>
                         </li>
                     </ul>
@@ -138,10 +137,10 @@ function agregarVentas() {
             </main>
 
             <footer>
-                <img className ="logoCodeOne" src="./media/logoCodeOne.png" alt ="logoCodeOne"/>
+                <img className ="logoCodeOne" src={logoCodeOne} alt ="logoCodeOne"/>
             </footer>
 
         </div>
     );
 }
-export default agregarVentas;
+export default AgregarVentas;
