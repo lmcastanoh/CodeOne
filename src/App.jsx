@@ -1,7 +1,7 @@
 import Index from 'pages';
 import ListadoProductos from 'pages/listadoProductos.jsx';
 import InfoProductos from 'pages/infoProductos.jsx';
-import AgregarProductos from 'pages/agregarproductos.jsx';
+import AgregarProducto from 'pages/agregarProducto.jsx';
 import ListadoUsuarios from 'pages/listadoUsuarios.jsx';
 import InfoPersona from 'pages/infoPersona.jsx';
 import AgregarUsuario from 'pages/agregarUsuario.jsx';
@@ -11,7 +11,6 @@ import ListadoVentas from 'pages/listadoVentas.jsx';
 import ComprobaciónAgregar from 'pages/comprobaciónAgregar.jsx';
 import ComprobanteEditar from 'pages/comprobanteEditar.jsx';
 import Login from 'pages/login.jsx';
-
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import 'styles/estilos.css';
 function App() {
@@ -26,7 +25,7 @@ function App() {
                 <InfoProductos />
               </Route>
               <Route path='/agregarProducto'>
-                <AgregarProductos />
+                <AgregarProducto />
               </Route>
               <Route path='/listadoVentas'>
                 <ListadoVentas />
