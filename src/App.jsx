@@ -1,37 +1,67 @@
-import Index from 'pages/index.jsx';
+import Index from 'pages';
+import ListadoProductos from 'pages/listadoProductos.jsx';
+import InfoProductos from 'pages/infoproductos.jsx';
 import AgregarProductos from 'pages/agregarProductos.jsx';
+import ListadoUsuarios from 'pages/listadoUsuarios.jsx';
+import InfoPersona from 'pages/infoPersona.jsx';
 import AgregarUsuario from 'pages/agregarUsuario.jsx';
-import AgregarVentas from 'pages/agregarVentas.jsx';
+import InfoVentas from 'pages/infoVentas.jsx';
+import AgregarVenta from 'pages/agregarVentas.jsx';
+import ListadoVentas from 'pages/listadoVentas.jsx';
+import ComprobaciónAgregar from 'pages/comprobaciónAgregar.jsx';
+import ComprobanteEditar from 'pages/comprobanteEditar.jsx';
+import Login from 'pages/login.jsx';
+
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import 'styles/estilos.css';
-import {BrowserRouter as Router, Switch, Route,Link} from "react-router-dom";
+
 
 function App() {
     return (
       <div className='App'>
         <Router>
-          <Switch>
-            <Route><AgregarProductos path = "/agregarProductos"/></Route>
-            <Route> </Route>
-            <Route> </Route>
-            <Route> </Route>
-            <Route> </Route>
-            <Route> </Route>
-            <Route> </Route>
-            <Route> </Route>
-            <Route> </Route>
-            <Route> </Route>
-            <Route> </Route>
-            <Route> </Route>
-            <Route> </Route>
-            <Route> </Route>
-            <Route> </Route>
-            <Route><Index path="/"/> </Route>
-            
-          </Switch>
+            <Switch>
+              <Route path='/listadoProductos'>
+                <ListadoProductos />
+              </Route>
+              <Route path='/infoProductos'>
+                <InfoProductos />
+              </Route>
+              <Route path='/agregarProducto'>
+                <AgregarProducto />
+              </Route>
+              <Route path='/listadoVentas'>
+                <ListadoVentas />
+              </Route> 
+              <Route path='/infoVentas'>
+                <InfoVentas />
+              </Route> 
+              <Route path='/agregarVenta'>
+                <AgregarVenta />
+              </Route>
+              <Route path='/listadoUsuarios'>
+                <ListadoUsuarios />
+              </Route>
+              <Route path='/infoPersona'>
+                <InfoPersona />
+              </Route>
+              <Route path='/agregarUsuario'>
+                <AgregarUsuario />
+              </Route>
+              <Route path='/comprobanteAgregar'>
+                <ComprobaciónAgregar />
+              </Route>
+              <Route path='/comprobanteEditar'>
+                <ComprobanteEditar />
+              </Route>
+              <Route path='/login'>
+                <Login />
+              </Route>
+              <Route path='/'>
+                <Index />
+              </Route>
+            </Switch>
         </Router>
-  
-  
-        
       </div>
     );
   }

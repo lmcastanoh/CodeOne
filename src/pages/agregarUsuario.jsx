@@ -25,7 +25,7 @@ function AgregarUsuario() {
                                 <img className="boton logo" src={logoPrana} alt= "imagen" /> 
                             </div>
                         </li>
-    
+
                         <li>
                             <div className="buscar">
                                 <input placeholder ="Buscar Usuarios"/>
@@ -40,7 +40,7 @@ function AgregarUsuario() {
                             </div>
                         </li>
                     </ul>
-                </header>  
+                </header> 
                 <main>
                     <h1 className = "tituloProductos">Agregar Usuario</h1>
                     <ul>
@@ -83,7 +83,7 @@ function AgregarUsuario() {
                     </ul>
                 </main>
                 <footer>
-                    <img className ="logoCodeOne" src={logoCodeOne} alt ="logoCodeOne"/>
+                <img className ="logoCodeOne" src={logoCodeOne} alt ="logoCodeOne"/>  
                 </footer>
             </body>
         </div>

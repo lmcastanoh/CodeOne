@@ -4,11 +4,9 @@ import logoCodeOne from "media/logoCodeOne.png";
 /*Se importa iconos necesarios para la página*/
 import iconoUsuarioVerde from "media/iconoUsuario.png";
 import iconoBuscar from "media/iconoBusqueda.ico";
-
-
-function AgregarProductos() {
+function AgregarProducto() {
     return(
-        <div className="agregarProductos">
+        <div className="agregarproductos">
             <body>
                 <header> 
                     <ul className="barraRedes">
@@ -36,11 +34,11 @@ function AgregarProductos() {
                         <li>
                             <div className = "botonUsuario">
                                 <span className="nombreUsuario">Ingresar/Registrar</span>
-                                <img className ="iconoUsuario" src= {iconoUsuarioVerde}alt="iconoUsuario"/>
+                                <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
                             </div>
                         </li>
                     </ul>
-                </header>
+                </header> 
                 <main>
                     <h1 className = "tituloProductos">Agregar Productos</h1>
                     <ul>
@@ -78,5 +76,4 @@ function AgregarProductos() {
         </div>
     );
 }
-export default AgregarProductos;
-    
+export default  AgregarProducto;
