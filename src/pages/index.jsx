@@ -13,8 +13,9 @@ import cuadernoPsico from 'media/carruselProductos/cuadernoPsico.png';
 import llavero from 'media/carruselProductos/llavero.png';
 import mugAbogada from 'media/carruselProductos/mugAbogada.png';
 import cuadernoMorado from 'media/carruselProductos/cuadernoMorado.png';
-import planeador from '/media/carruselProductos/planeador.jpg';
+import planeador from 'media/carruselProductos/planeador.jpg';
 import baseCelular from 'media/carruselProductos/baseCelular.png' ;
+
 function Index() {
     return(
         <body>
@@ -36,11 +37,11 @@ function Index() {
 
                     <li>
                         <div className="buscar">
-                            <input placeholder ="Buscar Usuarios"/>
+                            <input placeholder ="Buscar"/>
                             <img className="iconoBusqueda" src={iconoBuscar} alt="search" />
                         </div>
                     </li>
-                    <li className ="boton tituloSeccionPagina">Administración de Usuario</li>
+                    <li className ="boton tituloSeccionPagina">Home</li>
                     <li>
                         <div className = "botonUsuario">
                             <span className="nombreUsuario">Ingresar/Registrar</span>

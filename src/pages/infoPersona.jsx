@@ -4,59 +4,57 @@ import logoCodeOne from "media/logoCodeOne.png";
 /*Se importa iconos necesarios para la página*/
 import iconoUsuarioVerde from "media/iconoUsuario.png";
 import iconoBuscar from "media/iconoBusqueda.ico";
-import iconoUsuarioBlanco from "media/iconoUsuario2.png";
-import iconoReciboVenta from "media/Reciboventa.png";
-
-function infoPersona() {
+function InfoPersona() {
     return(
         <div className="infoPersona">
             <body>
-                <header>
+                <header> 
                     <ul className="barraRedes">
                         <li><i className="fas fa-palette"></i></li>
                         <div className= "icoRedes">
                             <li><i className=" fab fa-facebook"></i></li>
                             <li><i className=" fab fa-instagram"></i></li>
                             <li><i className="fab fa-whatsapp"></i></li>
-                        </div>  
+                        </div>
                     </ul>
                     <ul className="navbar">
                         <li>
                             <div> 
-                                <img className="boton logo" src="./media/logoNavbar.png" alt= "imagen" /> 
+                                <img className="boton logo" src={logoPrana} alt= "imagen" /> 
                             </div>
                         </li>
-            
+
                         <li>
                             <div className="buscar">
                                 <input placeholder ="Buscar Usuarios"/>
-                                <img className="iconoBusqueda" src="./media/iconoBusqueda.ico" alt="search" />
+                                <img className="iconoBusqueda" src={iconoBuscar} alt="search" />
                             </div>
-                            </li>
-                        <li className ="boton tituloSeccionPagina">Gestión de usuarios</li>
+                        </li>
+                        <li className ="boton tituloSeccionPagina">Administración de Usuario</li>
                         <li>
                             <div className = "botonUsuario">
                                 <span className="nombreUsuario">Ingresar/Registrar</span>
-                                <img className ="iconoUsuario" src= "media/iconoUsuario.png" alt="iconoUsuario"/>
-                            </div>  
+                                <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
+                            </div>
                         </li>
                     </ul>
                 </header>
 
-                <main>
+                <main className = "tamañoPaginaIndex">
                     <section>
-                        <h1 className="centrar tituloProductos">Juanita Gómez   ID: 123456789</h1>
+                        <h1 className="centrar tituloUsuario">Juanita Gómez   ID: 123456789</h1>
                         <div className= "tablaPersona centrar">
+
                             <div className = "tablaproductos letraEncabezado">Numero de celular</div>
                             <div className = "tablaproductos letraEncabezado">Fecha de nacimiento</div>
                             <div className = "tablaproductos letraEncabezado">Fecha de ingreso</div>
                             <div className = "tablaproductos letraEncabezado">Estado</div>
                             <div className = "tablaproductos letraEncabezado">Rol</div>
 
-                            <div className = "tablaproductos cuadroTablaInfoPersona " ></div>
-                            <div className = "tablaproductos cuadroTablaInfoPersona " ></div>
-                            <div className = "tablaproductos cuadroTablaInfoPersona " ></div>
-                            <div className = "tablaproductos cuadroTablaInfoPersona " ></div>
+                            <div className = "tablaproductos cuadroTablaInfoPersona " >--</div>
+                            <div className = "tablaproductos cuadroTablaInfoPersona " >--</div>
+                            <div className = "tablaproductos cuadroTablaInfoPersona " >--</div>
+                            <div className = "tablaproductos cuadroTablaInfoPersona " >--</div>
                             <div className = "tablaproductos cuadroTablaInfoPersona " ></div>
                         </div>            
                     </section>
@@ -82,13 +80,13 @@ function infoPersona() {
                     </div>
                 </main>
                 <footer>
-                    <img className ="logoCodeOne" src="./media/logoCodeOne.png" alt ="logoCodeOne"/>
+                    <img className ="logoCodeOne" src={logoCodeOne} alt ="logoCodeOne"/>
                 </footer>
             </body>
         </div>
     );
 }
-export default infoPersona;
+export default InfoPersona;
 
 
 

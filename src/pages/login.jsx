@@ -3,12 +3,9 @@
 import logoPrana from "media/logoNavbar.png";
 import logoCodeOne from "media/logoCodeOne.png";
 /*Se importa iconos necesarios para la página*/
-import iconoUsuarioVerde from "media/iconoUsuario.png";
-import iconoBuscar from "media/iconoBusqueda.ico";
-import iconoUsuarioBlanco from "media/iconoUsuario2.png";
-import iconoReciboVenta from "media/Reciboventa.png";
+import logogmail from 'media/gmail.png';
 
-function login() {
+function Login() {
     return(
         <div className="login">
             <body>
@@ -26,7 +23,7 @@ function login() {
                 <main>
                     <section>
                         <ul className="tablaLogin">
-                            <li><h1 className = "tituloLogin"><img className="boton logo" src="./media/logoNavbar.png" alt= "imagen" /></h1></li>
+                            <li><h1 className = "tituloLogin"><img className="boton logo" src={logoPrana} alt= "imagen" /></h1></li>
                             
                             <li className = "tablaFormularioLogin">
                                 <form action="ejemplo.php" method="get">
@@ -38,7 +35,7 @@ function login() {
                                     <p className="tituloOlvideContra cursorMano centrar">Olvide la contraseña</p>
                                     <p> <button type="button" className = "botonEnviarLogin botonModulos titulo centrar"> <span>Enviar</span></button></p>
                                     <p> <button type="button" className = "botonEnviarLogin botonModulos titulo centrar"> <span>Registrase</span></button></p>
-                                    <p><img className="imagenGmail cursorMano" src="./media/gmail.png" alt="Gmail" /></p>
+                                    <p><img className="imagenGmail cursorMano" src={logogmail} alt="Gmail" /></p>
                                 </form>
                             </li>
 
@@ -48,12 +45,12 @@ function login() {
                 </main>
 
                 <footer>
-                    <img className ="logoCodeOne" src="./media/logoCodeOne.png" alt ="logoCodeOne"/>
+                <img className ="logoCodeOne" src={logoCodeOne} alt ="logoCodeOne"/>  
                 </footer>
             </body>
         </div>
     );
 }
-export default login;
+export default Login;
 
     

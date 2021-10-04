@@ -4,43 +4,39 @@ import logoCodeOne from "media/logoCodeOne.png";
 /*Se importa iconos necesarios para la página*/
 import iconoUsuarioVerde from "media/iconoUsuario.png";
 import iconoBuscar from "media/iconoBusqueda.ico";
-import iconoUsuarioBlanco from "media/iconoUsuario2.png";
-import iconoReciboVenta from "media/Reciboventa.png";
-/*Imagen del producto */
 import cuadernoPsico from 'media/carruselProductos/cuadernoPsico.png';
-
-function infoproductos() {
+function InfoProductos() {
     return(
-        <div className="infoproductos">
+        <div className="infoProductos">
             <body>
-                <header>
+            <header> 
                     <ul className="barraRedes">
                         <li><i className="fas fa-palette"></i></li>
                         <div className= "icoRedes">
                             <li><i className=" fab fa-facebook"></i></li>
                             <li><i className=" fab fa-instagram"></i></li>
                             <li><i className="fab fa-whatsapp"></i></li>
-                        </div>  
+                        </div>
                     </ul>
                     <ul className="navbar">
                         <li>
                             <div> 
-                                <img className="boton logo" src="./media/logoNavbar.png" alt= "imagen" /> 
+                                <img className="boton logo" src={logoPrana} alt= "imagen" /> 
                             </div>
                         </li>
-            
+
                         <li>
                             <div className="buscar">
                                 <input placeholder ="Buscar Productos"/>
-                                <img className="iconoBusqueda" src="./media/iconoBusqueda.ico" alt="search" />
+                                <img className="iconoBusqueda" src={iconoBuscar} alt="search" />
                             </div>
-                            </li>
+                        </li>
                         <li className ="boton tituloSeccionPagina">Administración de Productos</li>
                         <li>
                             <div className = "botonUsuario">
                                 <span className="nombreUsuario">Ingresar/Registrar</span>
-                                <img className ="iconoUsuario" src= "media/iconoUsuario.png" alt="iconoUsuario"/>
-                            </div>  
+                                <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
+                            </div>
                         </li>
                     </ul>
                 </header>
@@ -66,7 +62,7 @@ function infoproductos() {
                                     <div className = "tablaproductos cuadroTablaInfoProducto" >Cuaderno en madera Personalizado</div>
                                 </div>
                                 <div>
-                                    <img className="imCuaderno" src="./media/carruselProductos/cuadernoPsico.jpg" alt= "imagen" />
+                                    <img className="imCuaderno" src={cuadernoPsico} alt= "imagen" />
                                 </div>                 
                             </div> 
                     </section>
@@ -92,13 +88,10 @@ function infoproductos() {
                     </div>
                 </main>
                 <footer>
-                    <img className ="logoCodeOne" src="./media/logoCodeOne.png" alt ="logoCodeOne"/>
+                    <img className ="logoCodeOne" src={logoCodeOne} alt ="logoCodeOne"/>
                 </footer>
             </body>
         </div>
     );
 }
-export default infoproductos;
-
-
-infoproductos
+export default InfoProductos;

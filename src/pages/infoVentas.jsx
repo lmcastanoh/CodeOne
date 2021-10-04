@@ -4,10 +4,9 @@ import logoCodeOne from "media/logoCodeOne.png";
 /*Se importa iconos necesarios para la página*/
 import iconoUsuarioVerde from "media/iconoUsuario.png";
 import iconoBuscar from "media/iconoBusqueda.ico";
-import iconoUsuarioBlanco from "media/iconoUsuario2.png";
-import iconoReciboVenta from "media/Reciboventa.png";
+import iconoGranaje from "media/ruedaConfiguración.png";
 
-function infoVentas() {
+function InfoVentas() {
     return(
         <div className="infoVentas">
            <body>
@@ -22,26 +21,29 @@ function infoVentas() {
                     </ul>
                     <ul className="navbar">
                         <li>
-                            <div><img className="boton logo" src="./media/logoNavbar.png" alt= "imagen" /></div>
+                            <div> 
+                                <img className="boton logo" src={logoPrana} alt= "imagen" /> 
+                            </div>
                         </li>
+
                         <li>
                             <div className="buscar">
                                 <input placeholder ="Buscar Ventas"/>
-                                <img className="iconoBusqueda" src="./media/iconoBusqueda.ico" alt="search" />
+                                <img className="iconoBusqueda" src={iconoBuscar} alt="search" />
                             </div>
                         </li>
                         <li className ="boton tituloSeccionPagina">Administración de Ventas</li>
                         <li>
                             <div className = "botonUsuario">
                                 <span className="nombreUsuario">Ingresar/Registrar</span>
-                                <img className ="iconoUsuario" src= "media/iconoUsuario.png" alt="iconoUsuario"/>
+                                <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
                             </div>
                         </li>
                     </ul>
                 </header>
                 <main>
                     <section>
-                        <h1 className = "tituloVentas">001 Ventas <img className="boton icoTablaVentas" src="./media/ruedaConfiguración.png" /></h1>
+                        <h1 className = "tituloVentas">001 Ventas <img className="boton icoTablaVentas" src={iconoGranaje} /></h1>
                         <ul>
                             <div className="tablaVentas">
                                 <li className= "tablaVenta1"><div className = "cuadroTabla cuadroBlanco letraEncabezado">ID del Producto</div>
@@ -90,11 +92,11 @@ function infoVentas() {
                     </section>
                 </main>
                 <footer>
-                    <img className ="logoCodeOne" src="./media/logoCodeOne.png" alt ="logoCodeOne"/>
+                    <img className ="logoCodeOne" src={logoCodeOne} alt ="logoCodeOne"/>
                 </footer>
             </body>
         </div>
     );
 }
-export default infoVentas;
+export default InfoVentas;
 
