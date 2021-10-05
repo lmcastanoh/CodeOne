@@ -31,11 +31,13 @@ function Index() {
                     </div>
                 </ul>
                 <ul className="navbar">
-                    <li>
-                        <div> 
-                            <img className="boton logo" src={logoPrana} alt= "imagen" /> 
-                        </div>
-                    </li>
+                    <Link to='/'>
+                        <li>
+                            <div> 
+                                <img className="boton logo" src={logoPrana} alt= "imagen" /> 
+                            </div>
+                        </li>
+                    </Link>
 
                     <li>
                         <div className="buscar">
@@ -43,59 +45,60 @@ function Index() {
                             <img className="iconoBusqueda" src={iconoBuscar} alt="search" />
                         </div>
                     </li>
-                    <li className ="boton tituloSeccionPagina">Home</li>
+                    <li className ="boton tituloSeccionPagina"><Link to='/' className="link">Home</Link></li>
                     <li>
-                        <div className = "botonUsuario">
-                                <span className="nombreUsuario">Ingresar/Registrar</span>
-                                <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
-                            
-                        </div>
+                            <div className = "botonUsuario">
+                                    <span className="nombreUsuario"><Link to='/login' className="link">Ingresar/Registrar</Link></span>
+                                    <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
+                            </div>
                     </li>
+                    
                 </ul>
             </header>  
             <main className = "tamañoPaginaIndex">
                 <section>
                     <ul className ="botonModulos">
-                        <li><h1 className = "titulo">Productos</h1></li>
-                        <li>
-                            <div className = "carruselProductos">
-                                <img className = "contenedorImagen" src= {fotoAlbum} alt="Foto Mug" />
-                                <img className = "contenedorImagen" src= {lapiceros} alt="Foto Mug" />
-                                <img className = "contenedorImagen" src= {cuadernoPsico} alt="Foto Cuaderno" /> 
-                                <img className = "contenedorImagen" src= {llavero} alt="Foto Llavero" />
-                                <img className = "contenedorImagen" src= {mugAbogada} alt="Foto Mug" />
-                                <img className = "contenedorImagen" src= {cuadernoMorado} alt="cuaderno " />
-                                <img className = "contenedorImagen" src= {planeador} alt="planeador" />
-                                <img className = "contenedorImagen" src= {baseCelular} alt="base celular" />
-                            </div>
-                        </li>
+                        <Link to="/listadoProductos" className="link" >
+                            <li><h1 className = "titulo">Productos</h1></li>
+                                <li>
+                                    <div className = "carruselProductos">
+                                        <img className = "contenedorImagen" src= {fotoAlbum} alt="Foto Mug" />
+                                        <img className = "contenedorImagen" src= {lapiceros} alt="Foto Mug" />
+                                        <img className = "contenedorImagen" src= {cuadernoPsico} alt="Foto Cuaderno" /> 
+                                        <img className = "contenedorImagen" src= {llavero} alt="Foto Llavero" />
+                                        <img className = "contenedorImagen" src= {mugAbogada} alt="Foto Mug" />
+                                        <img className = "contenedorImagen" src= {cuadernoMorado} alt="cuaderno " />
+                                        <img className = "contenedorImagen" src= {planeador} alt="planeador" />
+                                        <img className = "contenedorImagen" src= {baseCelular} alt="base celular" />
+                                    </div>
+                                </li>
+                        </Link>
                     </ul>
                 </section>
                 <div className ="centrar">
                     <section>
                         <ul  className = "botonModulos">
-                            <li>
-                                <h1 className = "titulo centrar">
-                                <img className ="reciboVenta" src={iconoReciboVenta} alt="IconoVenta" Ventas />
-                                <span>Ventas</span>
-                            </h1>
-                            </li>
+                            <Link to="/listadoVentas" className="link">
+                                <li>
+                                    <h1 className = "titulo centrar">
+                                        <img className ="reciboVenta" src={iconoReciboVenta} alt="IconoVenta" Ventas />
+                                        <span>Ventas</span>
+                                    </h1>
+                                </li>
+                            </Link>
                     
                         </ul>
                     </section>
                     <section>
                         <ul  className = "botonModulos">
-                            <Link to = "/listadoUsuarios">
+                            <Link to="/listadoUsuarios" className="link">
                                 <li>
-                                  
                                     <h1 className = "titulo centrar">
                                         <img className ="reciboVenta" src={iconoUsuarioBlanco} alt="IconoVenta" Ventas />
                                         <span>Usuarios</span>
                                     </h1>
-                                
                                 </li>
                             </Link>
-
                         </ul>
                     </section>
                 </div>

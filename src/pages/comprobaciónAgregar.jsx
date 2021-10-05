@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom';
 /*Se importa logo */
 import logoPrana from "media/logoNavbar.png";
 import logoCodeOne from "media/logoCodeOne.png";
@@ -20,11 +21,13 @@ function ComprobaciónAgregar() {
                         </div>
                     </ul>
                     <ul className="navbar">
-                        <li>
-                            <div> 
-                                <img className="boton logo" src={logoPrana} alt= "imagen" /> 
-                            </div>
-                        </li>
+                        <Link to='/'>
+                            <li>
+                                <div> 
+                                    <img className="boton logo" src={logoPrana} alt= "imagen" /> 
+                                </div>
+                            </li>
+                        </Link>
 
                         <li>
                             <div className="buscar">
@@ -32,10 +35,10 @@ function ComprobaciónAgregar() {
                                 <img className="iconoBusqueda" src={iconoBuscar} alt="search" />
                             </div>
                         </li>
-                        <li className ="boton tituloSeccionPagina">Home</li>
+                        <li className ="boton tituloSeccionPagina"></li>
                         <li>
                             <div className = "botonUsuario">
-                                <span className="nombreUsuario">Ingresar/Registrar</span>
+                                <span className="nombreUsuario">Cerrar Sesión</span>
                                 <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
                             </div>
                         </li>
@@ -47,6 +50,7 @@ function ComprobaciónAgregar() {
                         <ul className="comprovante">
                             <span>¡La información ha sido agregada correctamente!</span>
                         </ul>
+                        <div className = "botonAgregarUsuario botonModulos titulo centrar"> <Link to='/' className="link"><span>Regresar</span></Link></div>
                     </section>
                 </main>
                 <footer>

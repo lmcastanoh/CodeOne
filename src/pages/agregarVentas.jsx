@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom';
 /*Se importa logo */
 import logoPrana from "media/logoNavbar.png";
 import logoCodeOne from "media/logoCodeOne.png";
@@ -18,22 +19,23 @@ function AgregarVenta() {
                         </div>
                     </ul>
                     <ul className="navbar">
-                        <li>
-                            <div> 
-                                <img className="boton logo" src={logoPrana} alt= "imagen" /> 
-                            </div>
-                        </li>
-
+                        <Link to='/'>
+                            <li>
+                                <div> 
+                                    <img className="boton logo" src={logoPrana} alt= "imagen" /> 
+                                </div>
+                            </li>
+                        </Link>
                         <li>
                             <div className="buscar">
                                 <input placeholder ="Buscar Ventas"/>
                                 <img className="iconoBusqueda" src={iconoBuscar} alt="search" />
                             </div>
                         </li>
-                        <li className ="boton tituloSeccionPagina">Administración de Ventas</li>
+                        <li className ="boton tituloSeccionPagina"><Link to='/listadoVenta' className="link">Administración de Ventas</Link></li>
                         <li>
                             <div className = "botonUsuario">
-                                <span className="nombreUsuario">Ingresar/Registrar</span>
+                                <span className="nombreUsuario">Cerrar Sesión</span>
                                 <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
                             </div>
                         </li>
@@ -80,7 +82,7 @@ function AgregarVenta() {
                             </div>
                         </ul>
                     </section>
-                    <div className = "botonAgregarProducto botonModulos titulo centrar"> <span>Agregar Producto</span></div>
+                    <div className = "botonAgregarProducto botonModulos titulo centrar"><span>Agregar Producto</span></div>
 
                     <section>
                         <div className= "tablaNumeroProductos">
@@ -129,7 +131,7 @@ function AgregarVenta() {
                         <div className = "cuadroTabla letraEncabezado">--</div>
                     </section>
                     <section>
-                        <div className = "botonAgregarVenta botonModulos titulo centrar"> <span>Guardar Productos</span></div>
+                        <div className = "botonAgregarVenta botonModulos titulo centrar"><Link to='/comprobanteAgregar' className="link"><span>Guardar Productos</span></Link></div>
                     </section>
                 </main>
                 <footer>

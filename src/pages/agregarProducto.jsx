@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom';
 /*Se importa logo */
 import logoPrana from "media/logoNavbar.png";
 import logoCodeOne from "media/logoCodeOne.png";
@@ -18,11 +19,13 @@ function AgregarProducto() {
                         </div>
                     </ul>
                     <ul className="navbar">
-                        <li>
-                            <div> 
-                                <img className="boton logo" src={logoPrana} alt= "imagen" /> 
-                            </div>
-                        </li>
+                        <Link to='/'>
+                            <li>
+                                <div> 
+                                    <img className="boton logo" src={logoPrana} alt= "imagen" /> 
+                                </div>
+                            </li>
+                        </Link>
 
                         <li>
                             <div className="buscar">
@@ -30,10 +33,10 @@ function AgregarProducto() {
                                 <img className="iconoBusqueda" src={iconoBuscar} alt="search" />
                             </div>
                         </li>
-                        <li className ="boton tituloSeccionPagina">Administración de Productos</li>
+                            <li className ="boton tituloSeccionPagina"><Link to='/listadoProductos'>Administración de Productos</Link></li>
                         <li>
                             <div className = "botonUsuario">
-                                <span className="nombreUsuario">Ingresar/Registrar</span>
+                                <span className="nombreUsuario">Cerrar Sesión</span>
                                 <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
                             </div>
                         </li>
@@ -65,7 +68,7 @@ function AgregarProducto() {
 
 
                     </form>
-                    <div className = "botonAgregarUsuario botonModulos titulo centrar"> <span>Agregar Producto</span></div>
+                        <div className = "botonAgregarUsuario botonModulos titulo centrar"> <Link to='/comprobanteAgregar'><span>Agregar Producto</span></Link></div>
                     </ul>
                 </main>
 
