@@ -71,7 +71,7 @@ function ListadoUsuarios(){
                                 <div className = "cuadroTabla" >Maria Gómez</div>
                                 <div className = "cuadroTabla">Vendedor</div>
                                 <div className = "cuadroTabla">Pendiente</div>
-                                <div className = "cuadroTabla botonModulos letraEncabezado"><Link to = "/infoPersona" className ="link">Ver Información</Link></div>
+                                <div className = "cuadroTabla botonModulos letraEncabezado"><Link to = "/infoUsuario" className ="link">Ver Información</Link></div>
 
                                 <div className = "cuadroTabla iconosConfBorrar" >
                                     <img className ="icotablaUsuarios boton" src= {iconoGranaje} alt="Editar"/>

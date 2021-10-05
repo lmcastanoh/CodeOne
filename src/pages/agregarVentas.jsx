@@ -32,7 +32,7 @@ function AgregarVenta() {
                                 <img className="iconoBusqueda" src={iconoBuscar} alt="search" />
                             </div>
                         </li>
-                        <li className ="boton tituloSeccionPagina"><Link to='/listadoVenta' className="link">Administración de Ventas</Link></li>
+                        <li className ="boton tituloSeccionPagina"><Link to='/listadoVentas' className="link">Administración de Ventas</Link></li>
                         <li>
                             <div className = "botonUsuario">
                                 <span className="nombreUsuario">Cerrar Sesión</span>
@@ -82,7 +82,7 @@ function AgregarVenta() {
                             </div>
                         </ul>
                     </section>
-                    <div className = "botonAgregarProducto botonModulos titulo centrar"><span>Agregar Producto</span></div>
+                    <div className = "botonAgregarProducto botonModulos titulo centrar"><span>Agregar Productos</span></div>
 
                     <section>
                         <div className= "tablaNumeroProductos">
@@ -131,7 +131,7 @@ function AgregarVenta() {
                         <div className = "cuadroTabla letraEncabezado">--</div>
                     </section>
                     <section>
-                        <div className = "botonAgregarVenta botonModulos titulo centrar"><Link to='/comprobanteAgregar' className="link"><span>Guardar Productos</span></Link></div>
+                        <div className = "botonAgregarVenta botonModulos titulo centrar"><Link to='/comprobanteAgregar' className="link"><span>Agregar Venta</span></Link></div>
                     </section>
                 </main>
                 <footer>

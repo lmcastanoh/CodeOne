@@ -19,7 +19,7 @@ function AgregarProducto() {
                         </div>
                     </ul>
                     <ul className="navbar">
-                        <Link to='/'>
+                        <Link className="link"to='/'>
                             <li>
                                 <div> 
                                     <img className="boton logo" src={logoPrana} alt= "imagen" /> 
@@ -33,7 +33,7 @@ function AgregarProducto() {
                                 <img className="iconoBusqueda" src={iconoBuscar} alt="search" />
                             </div>
                         </li>
-                            <li className ="boton tituloSeccionPagina"><Link to='/listadoProductos'>Administración de Productos</Link></li>
+                            <li className ="boton tituloSeccionPagina"><Link to='/listadoProductos' className ="link">Administración de Productos</Link></li>
                         <li>
                             <div className = "botonUsuario">
                                 <span className="nombreUsuario">Cerrar Sesión</span>
@@ -68,7 +68,7 @@ function AgregarProducto() {
 
 
                     </form>
-                        <div className = "botonAgregarUsuario botonModulos titulo centrar"> <Link to='/comprobanteAgregar'><span>Agregar Producto</span></Link></div>
+                        <div className = "botonAgregarUsuario botonModulos titulo centrar"> <Link to='/comprobanteAgregar' className ="link"><span>Agregar Producto</span></Link></div>
                     </ul>
                 </main>
 

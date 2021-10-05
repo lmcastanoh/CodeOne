@@ -5,7 +5,8 @@ import logoCodeOne from "media/logoCodeOne.png";
 /*Se importa iconos necesarios para la página*/
 import iconoUsuarioVerde from "media/iconoUsuario.png";
 import iconoBuscar from "media/iconoBusqueda.ico";
-function InfoPersona() {
+
+function InfoUsuario () {
     return(
         <div className="infoPersona">
             <body>
@@ -33,7 +34,7 @@ function InfoPersona() {
                                 <img className="iconoBusqueda" src={iconoBuscar} alt="search" />
                             </div>
                         </li>
-                        <li className ="boton tituloSeccionPagina"><Link to='/lisatdoUsuarios' className="link">Administración de Usuario</Link></li>
+                        <li className ="boton tituloSeccionPagina"><Link to='/listadoUsuarios' className="link">Administración de Usuario</Link></li>
                         <li>
                             <div className = "botonUsuario">
                                 <span className="nombreUsuario">Cerrar Sesión</span>
@@ -89,7 +90,7 @@ function InfoPersona() {
         </div>
     );
 }
-export default InfoPersona;
+export default InfoUsuario;
 
 
 

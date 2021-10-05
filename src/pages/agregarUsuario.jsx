@@ -35,7 +35,7 @@ function AgregarUsuario() {
                                 <img className="iconoBusqueda" src={iconoBuscar} alt="search" />
                             </div>
                         </li>
-                        <li className ="boton tituloSeccionPagina"><Link to = '/lisatdoUsuarios' className="link">Administración de Usuario</Link></li>
+                        <li className ="boton tituloSeccionPagina"><Link to = '/listadoUsuarios' className="link">Administración de Usuario</Link></li>
                         <li>
                             <div className = "botonUsuario">
                                 <span className="nombreUsuario">Cerrar Sesión</span>

@@ -3,7 +3,6 @@ import ListadoProductos from 'pages/listadoProductos.jsx';
 import InfoProductos from 'pages/infoProductos.jsx';
 import AgregarProducto from 'pages/agregarProducto.jsx';
 import ListadoUsuarios from 'pages/listadoUsuarios.jsx';
-import InfoPersona from 'pages/infoPersona.jsx';
 import InfoUsuario from 'pages/infoUsuario';
 import AgregarUsuario from 'pages/agregarUsuario.jsx';
 import InfoVentas from 'pages/infoVentas.jsx';
@@ -41,9 +40,6 @@ function App() {
               </Route>
               <Route path='/listadoUsuarios'>
                 <ListadoUsuarios />
-              </Route>
-              <Route path='/infoPersona'>
-                <InfoPersona />
               </Route>
               <Route path='/infoUsuario'>
                 <InfoUsuario />
