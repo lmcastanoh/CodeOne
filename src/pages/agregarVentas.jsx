@@ -4,7 +4,6 @@ import logoCodeOne from "media/logoCodeOne.png";
 /*Se importa iconos necesarios para la página*/
 import iconoUsuarioVerde from "media/iconoUsuario.png";
 import iconoBuscar from "media/iconoBusqueda.ico";
-
 function AgregarVenta() {
     return(
         <div classname="agregarVentas"> 
