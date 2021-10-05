@@ -43,23 +43,20 @@ function Index() {
                             <img className="iconoBusqueda" src={iconoBuscar} alt="search" />
                         </div>
                     </li>
-                    <Link to='/'>
-                        <li className ="boton tituloSeccionPagina">Home</li>
-                    </Link>
-                    <Link to='/login'>
-                        <li>
+                    <li className ="boton tituloSeccionPagina"><Link to='/' className="link">Home</Link></li>
+                    <li>
                             <div className = "botonUsuario">
-                                <span className="nombreUsuario">Ingresar/Registrar</span>
-                                <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
+                                    <span className="nombreUsuario"><Link to='/login' className="link">Ingresar/Registrar</Link></span>
+                                    <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
                             </div>
-                        </li>
-                    </Link>
+                    </li>
+                    
                 </ul>
             </header>  
             <main className = "tamañoPaginaIndex">
                 <section>
                     <ul className ="botonModulos">
-                        <Link to="/listadoProductos" >
+                        <Link to="/listadoProductos" className="link" >
                             <li><h1 className = "titulo">Productos</h1></li>
                                 <li>
                                     <div className = "carruselProductos">
@@ -79,7 +76,7 @@ function Index() {
                 <div className ="centrar">
                     <section>
                         <ul  className = "botonModulos">
-                            <Link to="/listadoVentas">
+                            <Link to="/listadoVentas" className="link">
                                 <li>
                                     <h1 className = "titulo centrar">
                                         <img className ="reciboVenta" src={iconoReciboVenta} alt="IconoVenta" Ventas />
@@ -92,7 +89,7 @@ function Index() {
                     </section>
                     <section>
                         <ul  className = "botonModulos">
-                            <Link to="/listadoUsuarios">
+                            <Link to="/listadoUsuarios" className="link">
                                 <li>
                                     <h1 className = "titulo centrar">
                                         <img className ="reciboVenta" src={iconoUsuarioBlanco} alt="IconoVenta" Ventas />

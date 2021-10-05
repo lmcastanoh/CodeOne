@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom';
 /*Se importa logo */
 import logoPrana from "media/logoNavbar.png";
 import logoCodeOne from "media/logoCodeOne.png";
@@ -19,11 +20,13 @@ function AgregarUsuario() {
                         </div>
                     </ul>
                     <ul className="navbar">
-                        <li>
-                            <div> 
-                                <img className="boton logo" src={logoPrana} alt= "imagen" /> 
-                            </div>
-                        </li>
+                        <Link to='/'>
+                            <li>
+                                <div> 
+                                    <img className="boton logo" src={logoPrana} alt= "imagen" /> 
+                                </div>
+                            </li>
+                        </Link>
 
                         <li>
                             <div className="buscar">
@@ -31,10 +34,10 @@ function AgregarUsuario() {
                                 <img className="iconoBusqueda" src={iconoBuscar} alt="search" />
                             </div>
                         </li>
-                        <li className ="boton tituloSeccionPagina">Administración de Usuario</li>
+                        <li className ="boton tituloSeccionPagina"><Link to = '/lisatdoUsuarios' className="link">Administración de Usuario</Link></li>
                         <li>
                             <div className = "botonUsuario">
-                                <span className="nombreUsuario">Ingresar/Registrar</span>
+                                <span className="nombreUsuario">Cerrar Sesión</span>
                                 <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
                             </div>
                         </li>
@@ -78,7 +81,7 @@ function AgregarUsuario() {
 
 
                         </form>
-                        <div className = "botonAgregarUsuario botonModulos titulo centrar"> <span>Agregar Usuario</span></div>
+                        <div className = "botonAgregarUsuario botonModulos titulo centrar"><Link to='/comprobanteAgregar' className="link"> <span>Agregar Usuario</span></Link></div>
                     </ul>
                 </main>
                 <footer>

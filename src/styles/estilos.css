@@ -992,4 +992,8 @@ justify-content: center;
   background-color: #ffffff;
   text-align: right;
 }
-      
+/* Estilos link*/
+.link{
+  text-decoration: none;
+  color:#54571f;
+}
