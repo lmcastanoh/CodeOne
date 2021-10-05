@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom';
 /*Se importa logo */
 import logoPrana from "media/logoNavbar.png";
 import logoCodeOne from "media/logoCodeOne.png";
@@ -15,6 +16,7 @@ import mugAbogada from 'media/carruselProductos/mugAbogada.png';
 import cuadernoMorado from 'media/carruselProductos/cuadernoMorado.png';
 import planeador from 'media/carruselProductos/planeador.jpg';
 import baseCelular from 'media/carruselProductos/baseCelular.png' ;
+
 
 function Index() {
     return(
@@ -44,8 +46,9 @@ function Index() {
                     <li className ="boton tituloSeccionPagina">Home</li>
                     <li>
                         <div className = "botonUsuario">
-                            <span className="nombreUsuario">Ingresar/Registrar</span>
-                            <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
+                                <span className="nombreUsuario">Ingresar/Registrar</span>
+                                <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
+                            
                         </div>
                     </li>
                 </ul>
@@ -82,12 +85,17 @@ function Index() {
                     </section>
                     <section>
                         <ul  className = "botonModulos">
-                            <li>
-                                <h1 className = "titulo centrar">
-                                    <img className ="reciboVenta" src={iconoUsuarioBlanco} alt="IconoVenta" Ventas />
-                                    <span>Usuarios</span>
-                                </h1>
-                            </li>
+                            <Link to = "/listadoUsuarios">
+                                <li>
+                                  
+                                    <h1 className = "titulo centrar">
+                                        <img className ="reciboVenta" src={iconoUsuarioBlanco} alt="IconoVenta" Ventas />
+                                        <span>Usuarios</span>
+                                    </h1>
+                                
+                                </li>
+                            </Link>
+
                         </ul>
                     </section>
                 </div>

@@ -1,4 +1,4 @@
-
+import {Link} from 'react-router-dom';
 /*Se importa logo */
 import logoPrana from "media/logoNavbar.png";
 import logoCodeOne from "media/logoCodeOne.png";
@@ -24,8 +24,10 @@ function ListadoVentas() {
                     </ul>
                     <ul className="navbar">
                         <li>
-                            <div> 
-                                <img className="boton logo" src={logoPrana} alt= "imagen" /> 
+                            <div>
+                                <Link to = "/" className ="link">
+                                    <img className="boton logo" src={logoPrana} alt= "imagen" /> 
+                                </Link>
                             </div>
                         </li>
 
@@ -35,10 +37,13 @@ function ListadoVentas() {
                                 <img className="iconoBusqueda" src={iconoBuscar} alt="search" />
                             </div>
                         </li>
-                        <li className ="boton tituloSeccionPagina">Administración de Ventas</li>
+                        
+                            <li className ="boton tituloSeccionPagina"><Link to = "/listadoVentas" className ="link">Administración de Ventas</Link></li>
+                        
+                        
                         <li>
                             <div className = "botonUsuario">
-                                <span className="nombreUsuario">Ingresar/Registrar</span>
+                                <span className="nombreUsuario">Cerrar Sesión</span>
                                 <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
                             </div>
                         </li>
@@ -54,34 +59,47 @@ function ListadoVentas() {
                                     <div className = "listadodeVentas letraEncabezado">Producto</div>
                                     <div className = "listadodeVentas letraEncabezado">Estado</div>
                                     <div className = "listadodeVentas letraEncabezado">valor</div>
+                                    <div className = "listadodeVentas letraEncabezado">Ver Información</div>
                                     <div className = "listadodeVentas letraEncabezado">Editar</div>
                                     <div className = "listadodeVentas letraEncabezado">Eliminar</div>
+                                    
 
-                                    <div className = "listadodeVentas ">0001</div>
-                                    <div className= "listadodeVentas" > Personalizado </div>
-                                    <div className= "listadodeVentas"> cuaderno </div>
-                                    <div className = "listadodeVentas" >Disponible</div>
-                                    <div className = "listadodeVentas " >$45.000-$50.000</div>
-                                    <div className = "cuadroTabla botonModulos" ><img className ="icoTabla" src= {iconoGranaje} alt="Editar"/></div>
-                                    <div className = "cuadroTabla botonModulos" ><img className ="icoTabla" src= {iconoBasurero} alt="Eliminar"/></div>
-                                
-                                    <div className = "listadodeVentas ">0002</div>
-                                    <div className = "listadodeVentas">Personalizado</div>
-                                    <div className = "listadodeVentas">llavero </div>
-                                    <div className = "listadodeVentas">Disponible</div>
-                                    <div className = "listadodeVentas">$10.000-$20.000</div>
+                                    <div className = "listadodeVentas cuadroTabla ">0001</div>
+                                    <div className= "listadodeVentas cuadroTabla" > Personalizado </div>
+                                    <div className= "listadodeVentas cuadroTabla"> cuaderno </div>
+                                    <div className = "listadodeVentas cuadroTabla" >Disponible</div>
+                                    <div className = "listadodeVentas cuadroTabla" >$45.000-$50.000</div>
+                                    <div className = "cuadroTabla botonModulos letraEncabezado"><Link to = "/infoVentas" className ="link">Ver Información</Link></div>
                                     <div className = "cuadroTabla botonModulos" ><img className ="icoTabla" src= {iconoGranaje} alt="Editar"/></div>
                                     <div className = "cuadroTabla botonModulos" ><img className ="icoTabla" src= {iconoBasurero} alt="Eliminar"/></div>
                                     
-                                    <div className = "listadodeVentas">0003</div>
-                                    <div className = "listadodeVentas">Personalizado</div>
-                                    <div className = "listadodeVentas">mug</div>
-                                    <div className = "listadodeVentas">Disponible</div>
-                                    <div className = "listadodeVentas">$20.000-$40.000</div>
+
+                                
+                                    <div className = "listadodeVentas cuadroTabla">0002</div>
+                                    <div className = "listadodeVentas cuadroTabla">Personalizado</div>
+                                    <div className = "listadodeVentas cuadroTabla">llavero </div>
+                                    <div className = "listadodeVentas cuadroTabla">Disponible</div>
+                                    <div className = "listadodeVentas cuadroTabla">$10.000-$20.000</div>
+                                    <div className = "cuadroTabla botonModulos letraEncabezado">Ver Información</div>
+                                    <div className = "cuadroTabla botonModulos" ><img className ="icoTabla" src= {iconoGranaje} alt="Editar"/></div>
+                                    <div className = "cuadroTabla botonModulos" ><img className ="icoTabla" src= {iconoBasurero} alt="Eliminar"/></div>
+                                    
+
+                                    
+                                    <div className = "listadodeVentas cuadroTabla">0003</div>
+                                    <div className = "listadodeVentas cuadroTabla">Personalizado</div>
+                                    <div className = "listadodeVentas cuadroTabla ">mug</div>
+                                    <div className = "listadodeVentas cuadroTabla">Disponible</div>
+                                    <div className = "listadodeVentas cuadroTabla">$20.000-$40.000</div>
+                                    <div className = "cuadroTabla botonModulos letraEncabezado">Ver Información</div>
                                     <div className = "cuadroTabla botonModulos" ><img className ="icoTabla" src= {iconoGranaje} alt="Editar"/></div>
                                     <div className = "cuadroTabla botonModulos" ><img className ="icoTabla" src= {iconoBasurero} alt="Eliminar"/></div>
                                 </li>
-                                <div className = "botonAgregarVenta2 botonModulos titulo centrar"> <span>Agregar Venta</span></div>
+                                <div className = "botonAgregarVenta2 botonModulos titulo centrar"> 
+                                    
+                                        <span><Link to = "/agregarVenta" className ="link">Agregar Venta</Link></span>
+                                    
+                                </div>
                             </ul>
                         </section>
                     </main>

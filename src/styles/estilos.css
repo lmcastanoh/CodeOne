@@ -817,7 +817,7 @@ justify-content: center;
   display: grid;
   border-color: #54571f;
   grid-column: auto;
-  grid-template-columns: 160px 160px 160px 160px 160px 160px 160px;
+  grid-template-columns: 160px 160px 160px 160px 160px 160px 160px 160px;
   grid-template-rows: 50px 50px 50px 50px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #54571f;
@@ -993,3 +993,8 @@ justify-content: center;
   text-align: right;
 }
       
+
+.link{
+  text-decoration: none;
+  color:#54571f;
+}

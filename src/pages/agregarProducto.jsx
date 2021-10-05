@@ -6,7 +6,7 @@ import iconoUsuarioVerde from "media/iconoUsuario.png";
 import iconoBuscar from "media/iconoBusqueda.ico";
 function AgregarProducto() {
     return(
-        <div className="agregarproductos">
+        <div className="agregarproducto">
             <body>
                 <header> 
                     <ul className="barraRedes">

@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom';
 /*Se importa logo */
 import logoPrana from "media/logoNavbar.png";
 import logoCodeOne from "media/logoCodeOne.png";
@@ -24,7 +25,7 @@ function ListadoProductos() {
                     <ul className="navbar">
                         <li>
                             <div> 
-                                <img className="boton logo" src={logoPrana} alt= "imagen" /> 
+                                <Link to = "/" className ="link"><img className="boton logo" src={logoPrana} alt= "imagen" /></Link>
                             </div>
                         </li>
 
@@ -34,10 +35,10 @@ function ListadoProductos() {
                                 <img className="iconoBusqueda" src={iconoBuscar} alt="search" />
                             </div>
                         </li>
-                        <li className ="boton tituloSeccionPagina">Administración de Productos</li>
+                        <li className ="boton tituloSeccionPagina"><Link to = "/listadoProductos" className ="link">Administración de Productos</Link></li>
                         <li>
                             <div className = "botonUsuario">
-                                <span className="nombreUsuario">Ingresar/Registrar</span>
+                                <span className="nombreUsuario">Cerrar Sesión</span>
                                 <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
                             </div>
                         </li>
@@ -47,7 +48,7 @@ function ListadoProductos() {
                     <section>
                         <h1 className = "tituloProductos">Cuadernos</h1>
             
-                        <div className = "botonAgregar botonModulos titulo centrar"> <span>Agregar Productos</span></div>
+                        <div className = "botonAgregar botonModulos titulo centrar"><span><Link to = "/agregarProducto" className ="link">Agregar Productos</Link></span></div>
             
                         <ul>
                             <div className= "tablaCuadernos">
@@ -66,7 +67,7 @@ function ListadoProductos() {
                                 <div className = "cuadroTabla">Personalizado</div>
                                 <div className = "cuadroTabla" >$45.000-$60.000</div>
                                 <div className = "cuadroTabla" >Disponible</div>
-                                <div className = "cuadroTabla botonModulos" >Ver Información</div>
+                                <div className = "cuadroTabla botonModulos" ><Link to = "/infoProductos" className ="link">Ver Información</Link></div>
                                 <div className = "cuadroTabla botonModulos"><img className ="icoTabla" src= {iconoGranaje} alt="Editar"/></div>
                                 <div className = "cuadroTabla botonModulos"><img className ="icoTabla" src= {iconoBasurero} alt="Eliminar"/></div>
                                     
@@ -100,7 +101,9 @@ function ListadoProductos() {
                     <section>
             
                         <h1 className ="tituloProductos ">Accesorios</h1>
-                        <div className = "botonAgregar botonModulos titulo centrar"> <span>Agregar Productos</span></div>
+
+                        <div className = "botonAgregar botonModulos titulo centrar"><span><Link to = "/agregarProducto" className ="link">Agregar Productos</Link></span></div>
+                        
                         <ul>
                             <div className= "tablaAccesorios">
             
@@ -176,8 +179,9 @@ function ListadoProductos() {
                     <section>
                             
                         <h1 className ="tituloProductos">Organizadores</h1>
+
+                        <div className = "botonAgregar botonModulos titulo centrar"><span><Link to = "/agregarProducto" className ="link">Agregar Productos</Link></span></div>
             
-                        <div className = "botonAgregar botonModulos titulo centrar"> <span>Agregar Productos</span></div>
                         <ul>
             
                                 <div className= "tablaOrganizadores">

@@ -1,9 +1,10 @@
 import Index from 'pages';
 import ListadoProductos from 'pages/listadoProductos.jsx';
-import InfoProductos from 'pages/infoproductos.jsx';
+import InfoProductos from 'pages/infoProductos.jsx';
 import AgregarProducto from 'pages/agregarProducto.jsx';
 import ListadoUsuarios from 'pages/listadoUsuarios.jsx';
 import InfoPersona from 'pages/infoPersona.jsx';
+import InfoUsuario from 'pages/infoUsuario';
 import AgregarUsuario from 'pages/agregarUsuario.jsx';
 import InfoVentas from 'pages/infoVentas.jsx';
 import AgregarVenta from 'pages/agregarVentas.jsx';
@@ -11,7 +12,6 @@ import ListadoVentas from 'pages/listadoVentas.jsx';
 import ComprobaciónAgregar from 'pages/comprobaciónAgregar.jsx';
 import ComprobanteEditar from 'pages/comprobanteEditar.jsx';
 import Login from 'pages/login.jsx';
-
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import 'styles/estilos.css';
 
@@ -44,6 +44,9 @@ function App() {
               </Route>
               <Route path='/infoPersona'>
                 <InfoPersona />
+              </Route>
+              <Route path='/infoUsuario'>
+                <InfoUsuario />
               </Route>
               <Route path='/agregarUsuario'>
                 <AgregarUsuario />
