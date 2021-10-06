@@ -1,4 +1,5 @@
 import {Link} from 'react-router-dom';
+import Footer from 'components/Footer';
 /*Se importa logo */
 import logoPrana from "media/logoNavbar.png";
 import logoCodeOne from "media/logoCodeOne.png";
@@ -48,22 +49,22 @@ function AgregarUsuario() {
                     <h1 className = "tituloProductos">Agregar Usuario</h1>
                     <ul>
                         <form  className="tablaAgregarUsuarios" action="ejemplo.php" method="get" >
-                            <p className = "letraEncabezado cuadroParaUsuarios" >Nombre: </p>
+                            <p className = "letraEncabezado " >Nombre: </p>
                             <p className="inputUsuario cuadroParaUsuarios"><input type="text" name="nombre" size="40" /></p>
 
-                            <p className = "letraEncabezado cuadroParaUsuarios" >Correo Gmail: </p>
+                            <p className = "letraEncabezado " >Correo Gmail: </p>
                             <p className="inputUsuario cuadroParaUsuarios"><input type="email" name="email" size="40" /></p>
 
-                            <p className = "letraEncabezado cuadroParaUsuarios " >Número de Celular:</p>
+                            <p className = "letraEncabezado  " >Número de Celular:</p>
                             <p className="inputUsuario cuadroParaUsuarios" ><input type="tel" name="celular" /></p>
 
-                            <p className = "letraEncabezado cuadroParaUsuarios " >Fecha de Nacimiento:</p>
+                            <p className = "letraEncabezado  " >Fecha de Nacimiento:</p>
                             <p className="inputUsuario cuadroParaUsuarios " > <input type="date" name="fechanacimiento" /></p>
                     
-                            <p className = "letraEncabezado cuadroParaUsuarios " >Fecha de Ingreso:</p>
+                            <p className = "letraEncabezado  " >Fecha de Ingreso:</p>
                             <p className="inputUsuario cuadroParaUsuarios" > <input type="date" name="fechaingreso" /></p>
 
-                            <p className = "letraEncabezado cuadroParaUsuarios " >Estado: </p>
+                            <p className = "letraEncabezado  " >Estado: </p>
                             <p className="inputUsuario cuadroParaUsuarios" ><select name="estado">
                                 <option selected value="0"> Elige una opción </option>
                                 <option value="1">Pendiente</option> 
@@ -71,7 +72,7 @@ function AgregarUsuario() {
                                 <option value="2">No Autorizado</option></select>
                             </p>
 
-                            <p className = "letraEncabezado cuadroParaUsuarios">Rol:</p>  
+                            <p className = "letraEncabezado ">Rol:</p>  
                             <p className="inputUsuario cuadroParaUsuarios">
                                 <select name="Rol">
                                     <option selected value="0"> Elige una opción </option>
@@ -85,9 +86,7 @@ function AgregarUsuario() {
                         <div className = "botonAgregarUsuario botonModulos titulo centrar"><Link to='/comprobanteAgregar' className="link"> <span>Agregar Usuario</span></Link></div>
                     </ul>
                 </main>
-                <footer>
-                <img className ="logoCodeOne" src={logoCodeOne} alt ="logoCodeOne"/>  
-                </footer>
+                <Footer />
             </body>
         </div>
     );

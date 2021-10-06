@@ -1,4 +1,5 @@
 import {Link} from 'react-router-dom';
+import Footer from 'components/Footer';
 /*Se importa logo */
 import logoPrana from "media/logoNavbar.png";
 import logoCodeOne from "media/logoCodeOne.png";
@@ -53,9 +54,7 @@ function ComprobanteEditar() {
                         <div className = "botonAgregarUsuario botonModulos titulo centrar" > <Link to='/' className="link"><span>Regresar</span></Link></div>
                     </section>
                 </main>
-                <footer>
-                    <img className ="logoCodeOne" src={logoCodeOne} alt ="logoCodeOne"/>  
-                </footer>
+                <Footer />
 
             </body>
 

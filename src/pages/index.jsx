@@ -1,10 +1,10 @@
 import {Link} from 'react-router-dom';
+import Footer from 'components/Footer';
 /*Se importa logo */
 import logoPrana from "media/logoNavbar.png";
-import logoCodeOne from "media/logoCodeOne.png";
-/*Se importa iconos necesarios para la página*/
 import iconoUsuarioVerde from "media/iconoUsuario.png";
 import iconoBuscar from "media/iconoBusqueda.ico";
+/*Se importa iconos necesarios para la página*/
 import iconoUsuarioBlanco from "media/iconoUsuario2.png";
 import iconoReciboVenta from "media/Reciboventa.png";
 /* Se importa las imagenes del Carrusel*/
@@ -103,9 +103,7 @@ function Index() {
                     </section>
                 </div>
             </main>
-            <footer>
-                <img className ="logoCodeOne" src={logoCodeOne} alt ="logoCodeOne"/>  
-             </footer>
+            <Footer />
         </body>
     );
 }

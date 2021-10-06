@@ -1,4 +1,5 @@
 import {Link} from 'react-router-dom';
+import Footer from 'components/Footer';
 /*Se importa logo */
 import logoPrana from "media/logoNavbar.png";
 import logoCodeOne from "media/logoCodeOne.png";
@@ -134,9 +135,7 @@ function AgregarVenta() {
                         <div className = "botonAgregarVenta botonModulos titulo centrar"><Link to='/comprobanteAgregar' className="link"><span>Agregar Venta</span></Link></div>
                     </section>
                 </main>
-                <footer>
-                    <img className ="logoCodeOne" src={logoCodeOne} alt ="logoCodeOne"/>
-                </footer>
+                <Footer />
             </body>
 
         </div>
