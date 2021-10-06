@@ -294,6 +294,7 @@ justify-content: center;
   
 }
 .inputUsuario{
+  background-color: #F2F3F4;
   border: 2px solid #F2F3F4;
   padding: 0px 0px 0px 1px;
   border-radius: 15px;
@@ -302,6 +303,7 @@ justify-content: center;
   text-align: right;
 }
 .inputUsuario > input{
+  background-color: #F2F3F4;
   outline: none;
   width: 100%;
   padding:0px 0px 0px 3px;
@@ -321,7 +323,7 @@ justify-content: center;
   transform: scale(1.1);
 }
 .inputUsuario > select{
-  background-color: white;
+  background-color: #F2F3F4;
   outline: none;
   padding:0px 0px 0px 0px;
   border: 30px;
@@ -817,7 +819,7 @@ justify-content: center;
   display: grid;
   border-color: #54571f;
   grid-column: auto;
-  grid-template-columns: 160px 160px 160px 160px 160px 160px 160px;
+  grid-template-columns: 160px 160px 160px 160px 160px 160px 160px 160px;
   grid-template-rows: 50px 50px 50px 50px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #54571f;
@@ -993,3 +995,20 @@ justify-content: center;
   text-align: right;
 }
       
+
+/* Estilos link*/
+.link{
+  text-decoration: none;
+  color:#54571f;
+}
+.mainConteiner{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.mainConteiner > main{
+  height: 100%;
+}
+.mainConteiner > footer{
+  background-color: #F2F3F4;
+}

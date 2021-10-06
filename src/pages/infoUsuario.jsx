@@ -1,96 +1,95 @@
+import {Link} from 'react-router-dom';
+import Footer from 'components/Footer';
 /*Se importa logo */
-import logoPrana from "./media/logoNavbar.png";
-import logoCodeOne from "./media/logoCodeOne.png";
+import logoPrana from "media/logoNavbar.png";
+import logoCodeOne from "media/logoCodeOne.png";
 /*Se importa iconos necesarios para la página*/
-import iconoUsuarioVerde from "./media/iconoUsuario.png";
-import iconoBuscar from "./media/iconoBusqueda.ico";
-import iconoUsuarioBlanco from "./media/iconoUsuario2.png";
-import iconoReciboVenta from "./media/Reciboventa.png";
+import iconoUsuarioVerde from "media/iconoUsuario.png";
+import iconoBuscar from "media/iconoBusqueda.ico";
 
-
-function infoUsuario() {
+function InfoUsuario () {
     return(
-        <div className="infoUsuario">
-            <header> 
-                <ul className="barraRedes">
-                    <li><i className="fas fa-palette"></i></li>
-                    <div className= "icoRedes">
-                        <li><i className=" fab fa-facebook"></i></li>
-                        <li><i className=" fab fa-instagram"></i></li>
-                        <li><i className="fab fa-whatsapp"></i></li>
-                    </div>
-                </ul>
-
-                <ul className="navbar">
-                    <li>
-                    <div> 
-                        <img className="boton logo" src="./media/logoNavbar.png" alt= "imagen" /> 
-                    </div>
-                    </li>
-
-                    <li>
-                        <div className="buscar">
-                            <input placeholder ="Buscar Usuarios"/>
-                            <img className="iconoBusqueda" src="./media/iconoBusqueda.ico" alt="search" />
+        <div className="infoPersona">
+            <body>
+                <header> 
+                    <ul className="barraRedes">
+                        <li><i className="fas fa-palette"></i></li>
+                        <div className= "icoRedes">
+                            <li><i className=" fab fa-facebook"></i></li>
+                            <li><i className=" fab fa-instagram"></i></li>
+                            <li><i className="fab fa-whatsapp"></i></li>
                         </div>
-                    </li>
-                    <li className ="boton tituloSeccionPagina">Administración de Usuario</li>
-                    <li>
-                        <div className = "botonUsuario">
-                            <span className="nombreUsuario">Ingresar/Registrar</span>
-                            <img className ="iconoUsuario" src= "media/iconoUsuario.png" alt="iconoUsuario"/>
-                        </div>
-                    </li>
-                </ul>
-            </header>  
-            <main>
-                <h1 className = "titulodeProductos">Agregar Usuario</h1>
-                <ul>
-                    <form  className="tablaEditarUsuarios" action="ejemplo.php" method="get" >
-                        <p className = "letraEncabezado cuadroParaUsuarios" >Número de celuñlar </p>
-                        <p className = "letraEncabezado cuadroParaUsuarios" >Fecha de nacimiento </p>
-                        <p className = "letraEncabezado cuadroParaUsuarios" >Fecha de ingreso </p>
-                        <p className = "letraEncabezado cuadroParaUsuarios" >Estado </p>
-                        <p className = "letraEncabezado cuadroParaUsuarios" >Rol </p>
-                        <p className="inputUsuario cuadroParaUsuarios"><input type="text" name="nombre" size="40"/></p>
+                    </ul>
+                    <ul className="navbar">
+                        <Link to='/'>
+                            <li>
+                                <div> 
+                                    <img className="boton logo" src={logoPrana} alt= "imagen" /> 
+                                </div>
+                            </li>
+                        </Link>
 
-                        <p className = "letraEncabezado cuadroParaUsuarios " >Fecha de Nacimiento:</p>
-                        <p className="inputUsuario cuadroParaUsuarios" > <input type="date" name="fechanacimiento"/></p>
+                        <li>
+                            <div className="buscar">
+                                <input placeholder ="Buscar Usuarios"/>
+                                <img className="iconoBusqueda" src={iconoBuscar} alt="search" />
+                            </div>
+                        </li>
+                        <li className ="boton tituloSeccionPagina"><Link to='/listadoUsuarios' className="link">Administración de Usuario</Link></li>
+                        <li>
+                            <div className = "botonUsuario">
+                                <span className="nombreUsuario">Cerrar Sesión</span>
+                                <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
+                            </div>
+                        </li>
+                    </ul>
+                </header>
 
-                        <p className = "letraEncabezado cuadroParaUsuarios " >Número de Celular:</p>
-                        <p className="inputUsuario cuadroParaUsuarios" ><input type="tel" name="celular"/></p>
+                <main className = "tamañoPaginaIndex">
+                    <section>
+                        <h1 className="centrar tituloUsuario">Juanita Gómez   ID: 123456789</h1>
+                        <div className= "tablaPersona centrar">
 
-                        <p className = "letraEncabezado cuadroParaUsuarios " >Fecha de Ingreso:</p>
-                        <p className="inputUsuario cuadroParaUsuarios" > <input type="date" name="fechaingreso"/></p>
+                            <div className = "tablaproductos letraEncabezado">Numero de celular</div>
+                            <div className = "tablaproductos letraEncabezado">Fecha de nacimiento</div>
+                            <div className = "tablaproductos letraEncabezado">Fecha de ingreso</div>
+                            <div className = "tablaproductos letraEncabezado">Estado</div>
+                            <div className = "tablaproductos letraEncabezado">Rol</div>
 
-                        <p className = "letraEncabezado cuadroParaUsuarios " >Estado: </p>
-                        <p className="inputUsuario cuadroParaUsuarios" ><select name="estado">
-                        <option selected value="0"> Elige una opción </option>
-                        <option value="1">Pendiente</option> 
-                        <option value="2">Autorizado</option> 
-                        <option value="2">No Autorizado</option> 
-                        </select>
-                        </p>
-
-                        <p className = "letraEncabezado cuadroParaUsuarios">Rol:</p>  
-                        <p className="inputUsuario cuadroParaUsuarios">
-                            <select name="Rol">
-                                <option selected value="0"> Elige una opción </option>
-                                <option value="1">Administrador</option> 
-                                <option value="2">Vendedor</option> 
-                            </select>
-                        </p>
-                    </form>
-                    <div className = "botonAgregarUsuario botonModulos titulo centrar"> <span>Agregar Usuario</span></div>
-                </ul>
-            </main>
-            <footer>
-                <img className ="logoCodeOne" src="./media/logoCodeOne.png" alt ="logoCodeOne"/>   
-            </footer>
+                            <div className = "tablaproductos cuadroTablaInfoPersona " >--</div>
+                            <div className = "tablaproductos cuadroTablaInfoPersona " >--</div>
+                            <div className = "tablaproductos cuadroTablaInfoPersona " >--</div>
+                            <div className = "tablaproductos cuadroTablaInfoPersona " >--</div>
+                            <div className = "tablaproductos cuadroTablaInfoPersona " ></div>
+                        </div>            
+                    </section>
+                    <div className ="centrar">
+                        <section>
+                            <ul >
+                                <li>
+                                    <h4 className = "botonInfoProductos botonModulos centrar">
+                                        <span className = "letraBotonInfoProducto">Editar</span>
+                                    </h4>
+                                </li>
+                            </ul>
+                        </section>
+                        <section>
+                            <ul>
+                                <li>
+                                    <h4 className = "botonInfoProductos botonModulos centrar">
+                                        <span >Eliminar</span>
+                                    </h4>
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
+                </main>
+                <Footer />
+            </body>
         </div>
     );
 }
-export default infoUsuario;
+export default InfoUsuario;
 
 
-       
+

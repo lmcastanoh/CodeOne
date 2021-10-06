@@ -1,3 +1,5 @@
+import {Link} from 'react-router-dom';
+import Footer from 'components/Footer';
 /*Se importa logo */
 import logoPrana from "media/logoNavbar.png";
 import logoCodeOne from "media/logoCodeOne.png";
@@ -10,7 +12,7 @@ function InfoVentas() {
     return(
         <div className="infoVentas">
            <body>
-                <header> 
+           <header> 
                     <ul className="barraRedes">
                         <li><i className="fas fa-palette"></i></li>
                         <div className= "icoRedes">
@@ -21,21 +23,26 @@ function InfoVentas() {
                     </ul>
                     <ul className="navbar">
                         <li>
-                            <div> 
-                                <img className="boton logo" src={logoPrana} alt= "imagen" /> 
+                            <div>
+                                <Link to = "/" className ="link">
+                                    <img className="boton logo" src={logoPrana} alt= "imagen" /> 
+                                </Link>
                             </div>
                         </li>
 
                         <li>
                             <div className="buscar">
-                                <input placeholder ="Buscar Ventas"/>
+                                <input placeholder ="Buscar ventas"/>
                                 <img className="iconoBusqueda" src={iconoBuscar} alt="search" />
                             </div>
                         </li>
-                        <li className ="boton tituloSeccionPagina">Administración de Ventas</li>
+                        
+                            <li className ="boton tituloSeccionPagina"><Link to = "/listadoVentas" className ="link">Administración de Ventas</Link></li>
+                        
+                        
                         <li>
                             <div className = "botonUsuario">
-                                <span className="nombreUsuario">Ingresar/Registrar</span>
+                                <span className="nombreUsuario">Cerrar Sesión</span>
                                 <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
                             </div>
                         </li>
@@ -91,9 +98,7 @@ function InfoVentas() {
                         <div className = "cuadroTabla letraEncabezado">$110.000</div>
                     </section>
                 </main>
-                <footer>
-                    <img className ="logoCodeOne" src={logoCodeOne} alt ="logoCodeOne"/>
-                </footer>
+                <Footer />
             </body>
         </div>
     );
