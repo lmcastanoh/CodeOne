@@ -1,4 +1,5 @@
-
+import {Link} from 'react-router-dom';
+import Footer from 'components/Footer';
 /*Se importa logo */
 import logoPrana from "media/logoNavbar.png";
 import logoCodeOne from "media/logoCodeOne.png";
@@ -23,7 +24,13 @@ function Login() {
                 <main>
                     <section>
                         <ul className="tablaLogin">
-                            <li><h1 className = "tituloLogin"><img className="boton logo" src={logoPrana} alt= "imagen" /></h1></li>
+                            
+                                <li>
+                                    <Link to = "/" className ="link">
+                                        <h1 className = "tituloLogin"><img className="boton logo" src={logoPrana} alt= "imagen" /></h1>
+                                    </Link>
+                                </li>
+                            
                             
                             <li className = "tablaFormularioLogin">
                                 <form action="ejemplo.php" method="get">
@@ -44,9 +51,7 @@ function Login() {
                     
                 </main>
 
-                <footer>
-                <img className ="logoCodeOne" src={logoCodeOne} alt ="logoCodeOne"/>  
-                </footer>
+                <Footer />
             </body>
         </div>
     );

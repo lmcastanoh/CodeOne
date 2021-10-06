@@ -1,10 +1,10 @@
 import {Link} from 'react-router-dom';
+import Footer from 'components/Footer';
 /*Se importa logo */
 import logoPrana from "media/logoNavbar.png";
-import logoCodeOne from "media/logoCodeOne.png";
-/*Se importa iconos necesarios para la página*/
 import iconoUsuarioVerde from "media/iconoUsuario.png";
 import iconoBuscar from "media/iconoBusqueda.ico";
+/*Se importa iconos necesarios para la página*/
 import iconoUsuarioBlanco from "media/iconoUsuario2.png";
 import iconoReciboVenta from "media/Reciboventa.png";
 /* Se importa las imagenes del Carrusel*/
@@ -16,6 +16,8 @@ import mugAbogada from 'media/carruselProductos/mugAbogada.png';
 import cuadernoMorado from 'media/carruselProductos/cuadernoMorado.png';
 import planeador from 'media/carruselProductos/planeador.jpg';
 import baseCelular from 'media/carruselProductos/baseCelular.png' ;
+
+
 function Index() {
     return(
         <body>
@@ -43,23 +45,20 @@ function Index() {
                             <img className="iconoBusqueda" src={iconoBuscar} alt="search" />
                         </div>
                     </li>
-                    <Link to='/'>
-                        <li className ="boton tituloSeccionPagina">Home</li>
-                    </Link>
-                    <Link to='/login'>
-                        <li>
+                    <li className ="boton tituloSeccionPagina"><Link to='/' className="link">Home</Link></li>
+                    <li>
                             <div className = "botonUsuario">
-                                <span className="nombreUsuario">Ingresar/Registrar</span>
-                                <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
+                                    <span className="nombreUsuario"><Link to='/login' className="link">Ingresar/Registrar</Link></span>
+                                    <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
                             </div>
-                        </li>
-                    </Link>
+                    </li>
+                    
                 </ul>
             </header>  
             <main className = "tamañoPaginaIndex">
                 <section>
                     <ul className ="botonModulos">
-                        <Link to="/listadoProductos" >
+                        <Link to="/listadoProductos" className="link" >
                             <li><h1 className = "titulo">Productos</h1></li>
                                 <li>
                                     <div className = "carruselProductos">
@@ -79,7 +78,7 @@ function Index() {
                 <div className ="centrar">
                     <section>
                         <ul  className = "botonModulos">
-                            <Link to="/listadoVentas">
+                            <Link to="/listadoVentas" className="link">
                                 <li>
                                     <h1 className = "titulo centrar">
                                         <img className ="reciboVenta" src={iconoReciboVenta} alt="IconoVenta" Ventas />
@@ -92,7 +91,7 @@ function Index() {
                     </section>
                     <section>
                         <ul  className = "botonModulos">
-                            <Link to="/listadoUsuarios">
+                            <Link to="/listadoUsuarios" className="link">
                                 <li>
                                     <h1 className = "titulo centrar">
                                         <img className ="reciboVenta" src={iconoUsuarioBlanco} alt="IconoVenta" Ventas />
@@ -104,9 +103,7 @@ function Index() {
                     </section>
                 </div>
             </main>
-            <footer>
-                <img className ="logoCodeOne" src={logoCodeOne} alt ="logoCodeOne"/>  
-             </footer>
+            <Footer />
         </body>
     );
 }
