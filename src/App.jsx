@@ -13,6 +13,7 @@ import ComprobanteEditar from 'pages/comprobanteEditar.jsx';
 import Login from 'pages/login.jsx';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import 'styles/estilos.css';
+import LayoutP from './layout/LayoutP';
 function App() {
     return (
       <div className='App'>

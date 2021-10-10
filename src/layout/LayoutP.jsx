@@ -1,16 +1,13 @@
 import React from 'react'
 import Footer from 'components/Footer';
-import Header from 'components/Header';
 
-
-const layout = ({Children}) => {
+const LayoutP = ({Children}) => {
     return (
         <div className='mainContainer'>
-            <Header />
-            <main>{Children}</main>
+            <div>{Children}</div>
             <Footer />
         </div>
     );
 };
 
-export default layout
+export default LayoutP;
