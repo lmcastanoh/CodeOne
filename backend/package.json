@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+<<<<<<< HEAD
+=======
+  "type": "module",
+>>>>>>> 3c28e8ef7a524a4e15760d5fa12fe3f91d900bc2
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

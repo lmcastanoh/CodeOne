@@ -1,3 +1,5 @@
+import {Link} from 'react-router-dom';
+import Footer from 'components/Footer';
 /*Se importa logo */
 import logoPrana from "media/logoNavbar.png";
 import logoCodeOne from "media/logoCodeOne.png";
@@ -25,7 +27,9 @@ function ListadoUsuarios(){
                     <ul className="navbar">
                         <li>
                             <div> 
-                                <img className="boton logo" src={logoPrana} alt= "imagen" /> 
+                                <Link to = "/" className ="link">
+                                    <img className="boton logo" src={logoPrana} alt= "imagen" /> 
+                                </Link>
                             </div>
                         </li>
 
@@ -35,10 +39,12 @@ function ListadoUsuarios(){
                                 <img className="iconoBusqueda" src={iconoBuscar} alt="search" />
                             </div>
                         </li>
-                        <li className ="boton tituloSeccionPagina">Administración de Usuario</li>
+                       
+                        <li className ="boton tituloSeccionPagina"><Link to = "/listadoUsuarios" className ="link">Administración de Usuario </Link></li>
+                        
                         <li>
                             <div className = "botonUsuario">
-                                <span className="nombreUsuario">Ingresar/Registrar</span>
+                                <span className="nombreUsuario">Cerrar Sesión</span>
                                 <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
                             </div>
                         </li>
@@ -66,7 +72,7 @@ function ListadoUsuarios(){
                                 <div className = "cuadroTabla" >Maria Gómez</div>
                                 <div className = "cuadroTabla">Vendedor</div>
                                 <div className = "cuadroTabla">Pendiente</div>
-                                <div className = "cuadroTabla botonModulos letraEncabezado" >Ver Información</div>
+                                <div className = "cuadroTabla botonModulos letraEncabezado"><Link to = "/infoUsuario" className ="link">Ver Información</Link></div>
 
                                 <div className = "cuadroTabla iconosConfBorrar" >
                                     <img className ="icotablaUsuarios boton" src= {iconoGranaje} alt="Editar"/>
@@ -96,14 +102,12 @@ function ListadoUsuarios(){
 
                     <section>
                         <h3 className = "botonAgregarUsuario botonModulos centrar">
-                            <span className = "letraBotonInfoProducto">Agregar Usuario</span>
+                            <span className = "letraBotonInfoProducto"><Link to = "/agregarUsuario" className ="link">Agregar Usuario</Link></span>
                         </h3>
                     </section>
                 </main>
             
-                <footer>
-                    <img className ="logoCodeOne" src={logoCodeOne} alt ="logoCodeOne"/>
-                </footer>
+                <Footer />
             </body>
 
         </div>

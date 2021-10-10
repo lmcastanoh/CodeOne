@@ -1,11 +1,43 @@
 import {Link} from 'react-router-dom';
+import Footer from 'components/Footer';
 /*Se importa logo */
 import logoPrana from "media/logoNavbar.png";
-import logoCodeOne from "media/logoCodeOne.png";
 /*Se importa iconos necesarios para la página*/
 import iconoUsuarioVerde from "media/iconoUsuario.png";
 import iconoBuscar from "media/iconoBusqueda.ico";
+import React, {useState} from "react";
+import Productos from "../services/codeone";
+import http from "../http-common";
+
 function AgregarProducto() {
+
+
+    const [input, setInput] =useState({
+        id_producto: 0,
+        valor_unitario: 0.0,
+        estado: '',
+        descripcion: ''
+    }) 
+
+    function handleChange(event){
+        const {name, value} = event.target;
+        setInput(prevInput => {
+            return {
+                ...prevInput,
+                [name]: value
+            }
+        })
+        console.log(event.target);
+    }
+
+    function handleClic(event){
+        event.preventDefault();
+        http.post("/productos", input);
+        console.log(input);
+    }
+
+
+    
     return(
         <div className="agregarproducto">
             <body>
@@ -19,11 +51,13 @@ function AgregarProducto() {
                         </div>
                     </ul>
                     <ul className="navbar">
-                        <li>
-                            <div> 
-                                <img className="boton logo" src={logoPrana} alt= "imagen" /> 
-                            </div>
-                        </li>
+                        <Link className="link"to='/'>
+                            <li>
+                                <div> 
+                                    <img className="boton logo" src={logoPrana} alt= "imagen" /> 
+                                </div>
+                            </li>
+                        </Link>
 
                         <li>
                             <div className="buscar">
@@ -31,10 +65,10 @@ function AgregarProducto() {
                                 <img className="iconoBusqueda" src={iconoBuscar} alt="search" />
                             </div>
                         </li>
-                        <li className ="boton tituloSeccionPagina">Administración de Productos</li>
+                            <li className ="boton tituloSeccionPagina"><Link to='/listadoProductos' className ="link">Administración de Productos</Link></li>
                         <li>
                             <div className = "botonUsuario">
-                                <span className="nombreUsuario">Ingresar/Registrar</span>
+                                <span className="nombreUsuario">Cerrar Sesión</span>
                                 <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
                             </div>
                         </li>
@@ -46,36 +80,32 @@ function AgregarProducto() {
                     <form  className="tablaAgregarProductos" action="ejemplo.php" method="get" >
                         
                         <p className = "letraEncabezado cuadroProductos " >ID</p>
-                        <p className="inputProducto cuadroProductos" ><input type="number" name="ID" /></p>
+                        <p className="inputProducto cuadroProductos" ><input onChange={handleChange} type="number" name="id_producto" value={input.id_producto} /></p>
 
                         <p className = "letraEncabezado cuadroProductos" >Valor del Producto </p>
-                        <p className="inputProducto cuadroProductos"><input type="number" name="precio" /></p>
+                        <p className="inputProducto cuadroProductos"><input onChange={handleChange} type="number" name="valor_unitario" value={input.valor_unitario} /></p>
 
                         <p className = "letraEncabezado cuadroProductos " >Estado </p>
-                        <p className="inputProducto cuadroProductos" ><select name="estado">
+                        <p className="inputProducto cuadroProductos" ><select name="estado" >
                             <option selected value="0"> Elige una opción </option>
-                            <option value="1">Disponible</option> 
-                            <option value="2">No Disponible</option> </select></p>
+                            <option value="1" >Disponible</option> 
+                            <option value="2" >No Disponible</option> </select></p>
+                        
+                        <p className = "letraEncabezado cuadroProductos" >Estado </p>
+                        <p className="inputProducto cuadroProductos"><input onChange={handleChange} type="text" name="estado" value={input.estado}/></p>
 
            
                         <p className = "letraEncabezado cuadroProductos" >Descripcion </p>
-                        <p className="inputProducto cuadroProductos"><input type="text" name="Descripcion" /></p>
-
-                        <p className = "letraEncabezado cuadroProductos" >Cargar Imagen</p>
-                        <p className="inputProducto cuadroProductos"><input type="image" name="imagen" /></p>
+                        <p className="inputProducto cuadroProductos"><input onChange={handleChange} type="text" name="descripcion" value={input.descripcion}/></p>
 
 
                     </form>
-                    <div className = "botonAgregarUsuario botonModulos titulo centrar"> <span>Agregar Producto</span></div>
+                        <div  onClick={handleClic} className = "botonAgregarUsuario botonModulos titulo centrar"> <Link to='/comprobanteAgregar' className ="link"><span>Agregar Producto</span></Link></div>
                     </ul>
                 </main>
-
-                <footer>
-                    <img className ="logoCodeOne" src={logoCodeOne} alt ="logoCodeOne"/>
-                </footer>
+                <Footer />
             </body>
         </div>
     );
 }
 export default  AgregarProducto;
-    
