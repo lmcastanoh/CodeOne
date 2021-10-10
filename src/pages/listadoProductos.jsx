@@ -9,8 +9,31 @@ import iconoBuscar from "media/iconoBusqueda.ico";
 /*Iconos de editar o eliminar*/
 import iconoGranaje from "media/ruedaConfiguración.png";
 import iconoBasurero from "media/basurero.png";
+import React, {useState, useEffect} from "react";
+import Productos from "../services/codeone";
+import http from "../http-common";
 
 function ListadoProductos() {
+
+    const [productos, setProductos] = useState([]);
+
+    useEffect(() => {
+        retrieveProductos();
+      }, []);
+
+    const retrieveProductos = () => {
+        Productos.getAll()
+          .then(response => {
+            console.log(response.data);
+            setProductos(response.data.productos);
+            
+          })
+          .catch(e => {
+            console.log(e);
+          });
+      };
+
+
     return(
         <div classname="listadoProductos">
             <body>
@@ -46,118 +69,42 @@ function ListadoProductos() {
                     </ul>
                 </header>  
                 <main>
-                    <section>
-                        <h1 className = "tituloProductos">Productos</h1>
+                    <h1 className = "tituloProductos">Productos</h1>
+                    <div className = "botonAgregar botonModulos titulo centrar"><span><Link to = "/agregarProducto" className ="link">Agregar Productos</Link></span></div>
+                    <ul>
+                    <div className= "tablaProductos">
             
-                        <div className = "botonAgregar botonModulos titulo centrar"><span><Link to = "/agregarProducto" className ="link">Agregar Productos</Link></span></div>
-            
-                        <ul>
-                            <div className= "tablaCuadernos">
-            
-                                <div className = "cuadroTabla letraEncabezado">ID</div>
-                                <div className = "cuadroTabla letraEncabezado">Nombre</div>
-                                <div className = "cuadroTabla letraEncabezado">Descrpción</div>
-                                <div className = "cuadroTabla letraEncabezado">valor</div>
-                                <div className = "cuadroTabla letraEncabezado">Estado</div>
-                                <div className = "cuadroTabla letraEncabezado " >Ver Información</div>
-                                <div className = "cuadroTabla letraEncabezado">Editar</div>
-                                <div className = "cuadroTabla letraEncabezado">Eliminar</div>
-                                    
-                                <div className = "cuadroTabla ">0001</div>
-                                <div className = "cuadroTabla" >Tamaño Carta</div>
-                                <div className = "cuadroTabla">Personalizado</div>
-                                <div className = "cuadroTabla" >$45.000-$60.000</div>
-                                <div className = "cuadroTabla" >Disponible</div>
-                                <div className = "cuadroTabla botonModulos" ><Link to = "/infoProductos" className ="link">Ver Información</Link></div>
-                                <div className = "cuadroTabla botonModulos"><img className ="icoTabla" src= {iconoGranaje} alt="Editar"/></div>
-                                <div className = "cuadroTabla botonModulos"><img className ="icoTabla" src= {iconoBasurero} alt="Eliminar"/></div>
-                                    
-                
-                                <div className = "cuadroTabla ">0002</div>
-                                <div className = "cuadroTabla">Tamaño Media Carta</div>
-                                <div className = "cuadroTabla">Personalizado </div>
-                                <div className = "cuadroTabla">$35.000-$45.000</div>
-                                <div className = "cuadroTabla">Disponible</div>
-                                <div className = "cuadroTabla botonModulos" >Ver Información</div>
-                                <div className = "cuadroTabla botonModulos"><img className ="icoTabla" src= {iconoGranaje} alt="Editar"/></div>
-                                <div className = "cuadroTabla botonModulos"><img className ="icoTabla" src= {iconoBasurero} alt="Eliminar"/></div>
-                                
-                                    
-                
-                                <div className = "cuadroTabla">0003</div>
-                                <div className = "cuadroTabla">Libreta Telefónica</div>
-                                <div className = "cuadroTabla">Personalizado </div>
-                                <div className = "cuadroTabla">$18.000-$20.000</div>
-                                <div className = "cuadroTabla">Disponible</div>
-                                <div className = "cuadroTabla botonModulos" >Ver Información</div>
-                                <div className = "cuadroTabla botonModulos"><img className ="icoTabla" src= {iconoGranaje} alt="Editar"/></div>
-                                <div className = "cuadroTabla botonModulos"><img className ="icoTabla" src= {iconoBasurero} alt="Eliminar"/></div>
+                        <div className = "cuadroTabla letraEncabezado">ID</div>
+                        <div className = "cuadroTabla letraEncabezado">Nombre</div>
+                        <div className = "cuadroTabla letraEncabezado">Descripcion</div>
+                        <div className = "cuadroTabla letraEncabezado">Estado</div>
+                        <div className = "cuadroTabla letraEncabezado">Editar</div>
+                        <div className = "cuadroTabla letraEncabezado">Eliminar</div>
+                    </div>
 
-                                <div className = "cuadroTabla ">0004</div>
-                                <div className = "cuadroTabla" >Llavero</div>
-                                <div className = "cuadroTabla">Personalizado</div>
-                                <div className = "cuadroTabla" >$8.000</div>
-                                <div className = "cuadroTabla" >Disponible</div>
-                                <div className = "cuadroTabla botonModulos" >Ver Información</div>
+                    {productos.map((producto) => {
+                        return (
+
+                        <section>
+
+
+                            <div className= "tablaOrganizadores">
+                                <div className = "cuadroTabla">{producto.id_producto}</div>
+                                <div className = "cuadroTabla">{producto.nombre_producto}</div>
+                                <div className = "cuadroTabla">{producto.descripcion}</div>
+                                <div className = "cuadroTabla">{producto.estado}</div>
                                 <div className = "cuadroTabla botonModulos"><img className ="icoTabla" src= {iconoGranaje} alt="Editar"/></div>
                                 <div className = "cuadroTabla botonModulos"><img className ="icoTabla" src= {iconoBasurero} alt="Eliminar"/></div>
                 
-                                <div className = "cuadroTabla">0005</div>
-                                <div className = "cuadroTabla">Base Celulares</div>
-                                <div className = "cuadroTabla">Personalizado </div>
-                                <div className = "cuadroTabla">$20.000</div>
-                                <div className = "cuadroTabla">Disponible</div>
-                                <div className = "cuadroTabla botonModulos" >Ver Información</div>
-                                <div className = "cuadroTabla botonModulos"><img className ="icoTabla" src= {iconoGranaje} alt="Editar"/></div>
-                                <div className = "cuadroTabla botonModulos"><img className ="icoTabla" src= {iconoBasurero} alt="Eliminar"/></div>
-                                    
-            
-                                <div className = "cuadroTabla">0006</div>
-                                <div className = "cuadroTabla">Separadores Libros</div>
-                                <div className = "cuadroTabla">Personalizado</div>
-                                <div className = "cuadroTabla">$8.000</div>
-                                <div className = "cuadroTabla">Disponible</div>
-                                <div className = "cuadroTabla botonModulos" >Ver Información</div>
-                                <div className = "cuadroTabla botonModulos"><img className ="icoTabla" src= {iconoGranaje} alt="Editar"/></div>
-                                <div className = "cuadroTabla botonModulos"><img className ="icoTabla" src= {iconoBasurero} alt="Eliminar"/></div>
-            
-                                <div className = "cuadroTabla">0007</div>
-                                <div className = "cuadroTabla">Portaretratos</div>
-                                <div className = "cuadroTabla">Personalizado </div>
-                                <div className = "cuadroTabla">$20.000</div>
-                                <div className = "cuadroTabla">Disponible</div>
-                                <div className = "cuadroTabla botonModulos" >Ver Información</div>
-                                <div className = "cuadroTabla botonModulos"><img className ="icoTabla" src= {iconoGranaje} alt="Editar"/></div>
-                                <div className = "cuadroTabla botonModulos"><img className ="icoTabla" src= {iconoBasurero} alt="Eliminar"/></div>
-            
-                                <div className = "cuadroTabla">0008</div>
-                                <div className = "cuadroTabla">Mugs</div>
-                                <div className = "cuadroTabla">Personalizado </div>
-                                <div className = "cuadroTabla">$18.000</div>
-                                <div className = "cuadroTabla">Disponible</div>
-                                <div className = "cuadroTabla botonModulos" >Ver Información</div>
-                                <div className = "cuadroTabla botonModulos"><img className ="icoTabla" src= {iconoGranaje} alt="Editar"/></div>
-                                <div className = "cuadroTabla botonModulos"><img className ="icoTabla" src= {iconoBasurero} alt="Eliminar"/></div>
-                                    
-                                <div className = "cuadroTabla">0009</div>
-                                <div className = "cuadroTabla">Lapiceros</div>
-                                <div className = "cuadroTabla">Personalizado </div>
-                                <div className = "cuadroTabla">$10.000</div>
-                                <div className = "cuadroTabla">Disponible</div>
-                                <div className = "cuadroTabla botonModulos" >Ver Información</div>
-                                <div className = "cuadroTabla botonModulos"><img className ="icoTabla" src= {iconoGranaje} alt="Editar"/></div>
-                                <div className = "cuadroTabla botonModulos"><img className ="icoTabla" src= {iconoBasurero} alt="Eliminar"/></div>
-                                    
-            
                             </div>
-            
-                        </ul>
-            
-                    </section>
-            
-            
-            
-            
+                        
+
+                        </section>
+
+                        );
+                    })}
+                    </ul>
+
             
                 </main>
                     
