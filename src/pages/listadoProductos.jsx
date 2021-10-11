@@ -78,6 +78,7 @@ function ListadoProductos() {
                         <div className = "cuadroTabla letraEncabezado">Nombre</div>
                         <div className = "cuadroTabla letraEncabezado">Descripcion</div>
                         <div className = "cuadroTabla letraEncabezado">Estado</div>
+                        <div className = "cuadroTabla letraEncabezado " >Ver Información</div>
                         <div className = "cuadroTabla letraEncabezado">Editar</div>
                         <div className = "cuadroTabla letraEncabezado">Eliminar</div>
                     </div>
@@ -93,6 +94,7 @@ function ListadoProductos() {
                                 <div className = "cuadroTabla">{producto.nombre_producto}</div>
                                 <div className = "cuadroTabla">{producto.descripcion}</div>
                                 <div className = "cuadroTabla">{producto.estado}</div>
+                                <div className = "cuadroTabla letraEncabezado " >Ver Información</div>
                                 <div className = "cuadroTabla botonModulos"><img className ="icoTabla" src= {iconoGranaje} alt="Editar"/></div>
                                 <div className = "cuadroTabla botonModulos"><img className ="icoTabla" src= {iconoBasurero} alt="Eliminar"/></div>
                 

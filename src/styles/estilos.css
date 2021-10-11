@@ -191,11 +191,10 @@ footer{
 .encabezadoTabal{
 display: grid;
 grid-column: auto;
-grid-template-columns: 160px 160px 160px 160px 160px 160px 160px 160px;
+grid-template-columns: 160px 160px 160px 160px 160px 160px 160px;
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 color: #54571f;
 text-align: center;
-
 }
 
 .icoTabla{
@@ -218,19 +217,18 @@ text-align: center;
   
 }
 
-
-
 .tablaProductos{
   display: grid;
   border-color: #54571f;
   grid-column: auto;
-  grid-template-columns: 160px 160px 160px 160px 160px 160px;
+  grid-template-columns: 160px 160px 160px 160px 160px 160px 160px;
   grid-template-rows: 50px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #54571f;
   font-size: 15px;
   text-align: center;
   width: 100%;
+  height: 100%;
   justify-content: center;
 }
 .botonAgregar{
@@ -712,7 +710,7 @@ text-align: center;
   border-color: #54571f;
   grid-column: auto;
   grid-template-columns:330px 330px ;
-  grid-template-rows: 65px 65px 65px 65px  ;
+  grid-template-rows: 65px 65px 65px 65px 65px 65px ;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #54571f;
   font-size: 18px;
@@ -720,7 +718,7 @@ text-align: center;
   width: 100%;
   justify-content:center;
   margin: 0px;
-  height: 340px;
+  height: 100%;
 }
 .cuadroProductos{
   padding: 2px 0px 0px 0px;
