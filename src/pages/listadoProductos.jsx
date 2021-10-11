@@ -15,6 +15,8 @@ import http from "../http-common";
 
 function ListadoProductos() {
 
+
+
     const [productos, setProductos] = useState([]);
 
     useEffect(() => {
@@ -32,6 +34,12 @@ function ListadoProductos() {
             console.log(e);
           });
       };
+
+      const deleteProducto = (id_producto) => {
+        Productos.deleteProducto(id_producto)
+          alert('Producto eliminado');
+      };
+
 
 
     return(
@@ -69,7 +77,8 @@ function ListadoProductos() {
                     </ul>
                 </header>  
                 <main>
-                               
+                <h1 className = "tituloProductos">Listado de productos</h1>
+                    <ul>                               
                    
                     <div className= "tablaOrganizadores">
             
@@ -90,17 +99,23 @@ function ListadoProductos() {
                                 <div className = "cuadroTabla">{producto.id_producto}</div>
                                 <div className = "cuadroTabla">{producto.descripcion}</div>
                                 <div className = "cuadroTabla">{producto.estado}</div>
-                                <div className = "cuadroTabla botonModulos"><img className ="icoTabla" src= {iconoGranaje} alt="Editar"/></div>
-                                <div className = "cuadroTabla botonModulos"><img className ="icoTabla" src= {iconoBasurero} alt="Eliminar"/></div>
+                            
+
+                                <Link to={{
+                                    pathname: '/editarProducto',
+                                    state: {id_producto:productos.id_producto}
+                                }} img className ="icoTabla"><div className = "cuadroTabla botonModulos"><img className ="icoTabla" src= {iconoGranaje} alt="Editar"/>
+                                </div></Link>
+                                <div className = "cuadroTabla botonModulos"><img className ="icoTabla" onClick={() => deleteProducto(producto.id_producto)} src= {iconoBasurero} alt="Eliminar"/></div>
                 
                             </div>
-
                         </section>
 
                         );
                     })}
+                            <div className = "botonAgregarProducto botonModulos titulo centrar" ><span><Link to='/agregarProducto' className="link">Agregar productos</Link></span></div>
 
-            
+                    </ul>
                 </main>
                     
                 <Footer />

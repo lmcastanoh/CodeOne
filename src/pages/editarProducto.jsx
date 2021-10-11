@@ -8,8 +8,11 @@ import iconoBuscar from "media/iconoBusqueda.ico";
 import React, {useState} from "react";
 import Productos from "../services/codeone";
 import http from "../http-common";
+import { useLocation } from 'react-router-dom';
 
-function AgregarProducto() {
+
+function EditarProducto(props) {
+
 
 
     const [input, setInput] =useState({
@@ -39,7 +42,9 @@ function AgregarProducto() {
 
     
     return(
-        <div className="agregarproducto">
+        
+        <div className="editarProducto">
+
             <body>
                 <header> 
                     <ul className="barraRedes">
@@ -75,32 +80,33 @@ function AgregarProducto() {
                     </ul>
                 </header> 
                 <main>
-                    <h1 className = "tituloProductos">Agregar Productos</h1>
+                    <h1 className = "tituloProductos">Editar Productos</h1>
                     <ul>
                     <form  className="tablaAgregarProductos" action="ejemplo.php" method="get" >
                         
                         <p className = "letraEncabezado cuadroProductos " >ID</p>
-                        <p className="inputProducto cuadroProductos" ><input onChange={handleChange} type="number" name="id_producto" autocomplete="off" value={input.id_producto} /></p>
+                        <p className="inputProducto cuadroProductos" ><input onChange={handleChange} name="id_producto" value={input.id_producto}/></p>
 
                         <p className = "letraEncabezado cuadroProductos" >Valor del Producto </p>
-                        <p className="inputProducto cuadroProductos"><input onChange={handleChange} type="number" name="valor_unitario" autocomplete="off" value={input.valor_unitario} /></p>
+                        <p className="inputProducto cuadroProductos"><input onChange={handleChange} type="number" name="valor_unitario"  value={input.valor_unitario} /></p>
 
                         
                         <p className = "letraEncabezado cuadroProductos" >Estado </p>
-                        <p className="inputProducto cuadroProductos"><input onChange={handleChange} type="text" name="estado" autocomplete="off" value={input.estado}/></p>
+                        <p className="inputProducto cuadroProductos"><input onChange={handleChange} type="text" name="estado" value={input.estado}/></p>
 
            
                         <p className = "letraEncabezado cuadroProductos" >Descripcion </p>
-                        <p className="inputProducto cuadroProductos"><input onChange={handleChange} type="text" name="descripcion" autocomplete="off" value={input.descripcion}/></p>
+                        <p className="inputProducto cuadroProductos"><input onChange={handleChange} type="text" name="descripcion" value={input.descripcion}/></p>
 
 
                     </form>
-                        <div  onClick={handleClic} className = "botonAgregarUsuario botonModulos titulo centrar"> <Link to='/comprobanteAgregar' className ="link"><span>Agregar Producto</span></Link></div>
+                        <div  onClick={handleClic} className = "botonAgregarUsuario botonModulos titulo centrar"> <Link to='/comprobanteAgregar' className ="link"><span>Guardar Cambios</span></Link></div>
                     </ul>
                 </main>
                 <Footer />
             </body>
         </div>
+
     );
 }
-export default  AgregarProducto;
+export default  EditarProducto;
