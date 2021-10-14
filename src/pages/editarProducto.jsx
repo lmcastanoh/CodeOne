@@ -12,61 +12,63 @@ import { useLocation } from 'react-router-dom';
 
 
 function EditarProducto(props) {
-    let initialProductoState = ""
-
-    let editing = false
     const location = useLocation()
     console.log(location)
 
-    const [input, setInput] =useState({
-        id_producto: '',
-        valor_unitario: 0.0,
-        estado: '',
-        descripcion: ''
-        
-    }) 
-
-    if (props.location.state && props.location.state.currentProducto) {
-        editing = true;
-        initialProductoState = props.location.state.currentProducto.descripcion
-      }
-
-    const [producto, setProducto] = useState(initialProductoState);
-    const [enviado, setEnviado] = useState(false);
-
-  const handleInputChange = event => {
-    setProducto(event.target.value);
-  };
-
-  const saveProducto = () => {
-    var data = {
-      id: props.producto.id_producto,
-      descripcion: props.producto.descripcion,
-      estado: props.producto.estado,
-      valor_unitario: props.producto.valor_unitario
-    };
-};
-
+    let i_id_producto = location.state.id_producto;
+    let i_valor_unitario = location.state.valor_unitario;
+    let i_estado = location.state.estado;
+    let i_descripcion = location.state.descripcion;
+    let editing = false;
+  
+  /*  if (props.location.state ) {
+        editing = true;*/
+   /*const [viejaInfo, setViejaInfo] = useState({
+        i_id_producto : props.location.state.id_producto,
+        i_valor_unitario : props.location.state.valor_unitario,
+        i_estado : props.location.state.estado,
+        i_descripcion : props.location.state.descripcion
+    });
+      /*}*/
     
-
-    function handleChange(event){
-        const {name, value} = event.target;
-        setInput(prevInput => {
-            return {
-                ...prevInput,
-                [name]: value
-            }
-        })
-        console.log(event.target);
-    }
-
-    function handleClic(event){
-        event.preventDefault();
-        http.put("/productos", input);
-        console.log(input);
-    }
-
-
+      const [nuevaInfo, setNuevaInfo] = useState({
+        id_producto: i_id_producto,
+        valor_unitario: i_valor_unitario,
+        estado: i_estado,
+        descripcion: i_descripcion
+      });
+    const [submitted, setSubmitted] = useState(false);
+  
+    const handleInputChange = event => {
+          const {name, value} = event.target;
+          setNuevaInfo(prevInput => {
+              return {
+                  ...prevInput,
+                  [name]: value
+              }
+          })
+          console.log(event.target);
+    };
+  
+    const saveProducto = () => {
+      var data = {
+          id_producto: nuevaInfo.id_producto,
+          descripcion: nuevaInfo.descripcion,
+          valor_unitario: nuevaInfo.valor_unitario, 
+          estado: nuevaInfo.estado
+      };
+  
+     
+        Productos.updateProducto(data)
+          .then(response => {
+            setSubmitted(true);
+            console.log(response.data);
+          })
+          .catch(e => {
+            console.log(e);
+          });
+    
+    };
     
     return(
         
@@ -112,22 +114,22 @@ function EditarProducto(props) {
                     <form  className="tablaAgregarProductos" action="ejemplo.php" method="get" >
                         
                         <p className = "letraEncabezado cuadroProductos " >ID</p>
-                        <p className="inputProducto cuadroProductos" ><input onChange={handleChange} name="id_producto" defaultValue={location.state.id_producto} readOnly="readonly"/></p>
+                        <p className="inputProducto cuadroProductos" ><input onChange={handleInputChange} name="id_producto" value={nuevaInfo.id_producto} readOnly="readonly"/></p>
 
                         <p className = "letraEncabezado cuadroProductos" >Valor del Producto </p>
-                        <p className="inputProducto cuadroProductos"><input onChange={handleChange} type="number" name="valor_unitario"  defaultValue={location.valor_unitario} /></p>
+                        <p className="inputProducto cuadroProductos"><input onChange={handleInputChange} type="number" name="valor_unitario"  value={nuevaInfo.valor_unitario} /></p>
 
                         
                         <p className = "letraEncabezado cuadroProductos" >Estado </p>
-                        <p className="inputProducto cuadroProductos"><input onChange={handleChange} type="text" name="estado" defaultValue={location.state.estado}/></p>
+                        <p className="inputProducto cuadroProductos"><input onChange={handleInputChange} type="text" name="estado" value={nuevaInfo.estado}/></p>
 
            
                         <p className = "letraEncabezado cuadroProductos" >Descripcion </p>
-                        <p className="inputProducto cuadroProductos"><input onChange={handleChange} type="text" name="descripcion" defaultValue={location.state.descripcion}/></p>
+                        <p className="inputProducto cuadroProductos"><input onChange={handleInputChange} type="text" name="descripcion" value={nuevaInfo.descripcion}/></p>
 
 
                     </form>
-                        <div  onClick={handleClic} className = "botonAgregarUsuario botonModulos titulo centrar"> <Link to='/listadoProductos' className ="link"><span>Guardar Cambios</span></Link></div>
+                        <div  onClick={saveProducto} className = "botonAgregarUsuario botonModulos titulo centrar"> <Link to='/listadoProductos' className ="link"><span>Guardar Cambios</span></Link></div>
                     </ul>
                 </main>
                 <Footer />

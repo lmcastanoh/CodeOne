@@ -109,8 +109,9 @@ function ListadoProductos() {
                                     valor_unitario:producto.valor_unitario, estado: producto.estado},
                                 }} img className ="icoTabla"><div className = "cuadroTabla botonModulos"><img className ="icoTabla" src= {iconoGranaje} alt="Editar"/>
                                 </div></Link>
+                                
                                 <div className = "cuadroTabla botonModulos"><img className ="icoTabla" onClick={() => deleteProducto(producto.id_producto)} src= {iconoBasurero} alt="Eliminar"/></div>
-                
+                            
                             </div>
                         </section>
 
