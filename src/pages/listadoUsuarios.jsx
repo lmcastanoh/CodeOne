@@ -13,10 +13,7 @@ import React, { useEffect, useState } from "react";
 
 
 const ListadoUsuarios = ({listaUsuarios}) => {
-    const [usuarios, setUsuarios] = useState([]);
-    useEffect(() => {
-    console.log('Esta es la lista de usuarios', listaUsuarios)
-    }, [listaUsuarios])
+    
 
 
 
@@ -79,7 +76,7 @@ const ListadoUsuarios = ({listaUsuarios}) => {
                                                 <img className ="icotablaUsuarios boton " src= {iconoGranaje} alt="Editar"/>
                                                 <img className ="icotablaUsuarios boton " src= {iconoBasurero} alt="Editar"/>
                                             </div>    
-                                            <div className = "cuadroTabla ">{usuario.id}</div>
+                                            <div className = "cuadroTabla "></div>
                                             <div className = "cuadroTabla" >Maria Gómez</div>
                                             <div className = "cuadroTabla">Vendedor</div>
                                             <div className = "cuadroTabla">Pendiente</div>

@@ -8,39 +8,72 @@ import iconoBuscar from "media/iconoBusqueda.ico";
 import React, {useState} from "react";
 import Productos from "../services/codeone";
 import http from "../http-common";
-
-function AgregarProducto() {
-
-
-    const [input, setInput] =useState({
-        id_producto: 0,
-        nombre: '',
-        valor_unitario: 0.0,
-        estado: '',
-        descripcion: ''
-    }) 
-
-    function handleChange(event){
-        const {name, value} = event.target;
-        setInput(prevInput => {
-            return {
-                ...prevInput,
-                [name]: value
-            }
-        })
-        console.log(event.target);
-    }
-
-    function handleClic(event){
-        event.preventDefault();
-        http.post("/productos", input);
-        console.log(input);
-    }
+import { useLocation } from 'react-router-dom';
 
 
+function EditarProducto(props) {
+    const location = useLocation()
+    console.log(location)
+
+    let i_id_producto = location.state.id_producto;
+    let i_valor_unitario = location.state.valor_unitario;
+    let i_estado = location.state.estado;
+    let i_descripcion = location.state.descripcion;
+    let editing = false;
+  
+  /*  if (props.location.state ) {
+        editing = true;*/
+   /*const [viejaInfo, setViejaInfo] = useState({
+        i_id_producto : props.location.state.id_producto,
+        i_valor_unitario : props.location.state.valor_unitario,
+        i_estado : props.location.state.estado,
+        i_descripcion : props.location.state.descripcion
+    });
+      /*}*/
+    
+      const [nuevaInfo, setNuevaInfo] = useState({
+        id_producto: i_id_producto,
+        valor_unitario: i_valor_unitario,
+        estado: i_estado,
+        descripcion: i_descripcion
+      });
+    const [submitted, setSubmitted] = useState(false);
+  
+    const handleInputChange = event => {
+          const {name, value} = event.target;
+          setNuevaInfo(prevInput => {
+              return {
+                  ...prevInput,
+                  [name]: value
+              }
+          })
+          console.log(event.target);
+    };
+  
+    const saveProducto = () => {
+      var data = {
+          id_producto: nuevaInfo.id_producto,
+          descripcion: nuevaInfo.descripcion,
+          valor_unitario: nuevaInfo.valor_unitario, 
+          estado: nuevaInfo.estado
+      };
+  
+     
+        Productos.updateProducto(data)
+          .then(response => {
+            setSubmitted(true);
+            console.log(response.data);
+          })
+          .catch(e => {
+            console.log(e);
+          });
+    
+    };
     
     return(
-        <div className="agregarproducto">
+        
+        <div className="editarProducto">
+
             <body>
                 <header> 
                     <ul className="barraRedes">
@@ -76,33 +109,33 @@ function AgregarProducto() {
                     </ul>
                 </header> 
                 <main>
-                    <h1 className = "tituloProductos">Agregar Productos</h1>
+                    <h1 className = "tituloProductos">Editar Productos</h1>
                     <ul>
                     <form  className="tablaAgregarProductos" action="ejemplo.php" method="get" >
                         
                         <p className = "letraEncabezado cuadroProductos " >ID</p>
-                        <p className="inputProducto cuadroProductos" ><input onChange={handleChange} type="number" name="id_producto" autocomplete="off" value={input.id_producto} /></p>
+                        <p className="inputProducto cuadroProductos" ><input onChange={handleInputChange} name="id_producto" value={nuevaInfo.id_producto} readOnly="readonly"/></p>
 
                         <p className = "letraEncabezado cuadroProductos" >Valor del Producto </p>
-                        <p className="inputProducto cuadroProductos"><input onChange={handleChange} type="number" name="valor_unitario" autocomplete="off" value={input.valor_unitario} /></p>
+                        <p className="inputProducto cuadroProductos"><input onChange={handleInputChange} type="number" name="valor_unitario"  value={nuevaInfo.valor_unitario} /></p>
 
                         
                         <p className = "letraEncabezado cuadroProductos" >Estado </p>
-                        <p className="inputProducto cuadroProductos"><input onChange={handleChange} type="text" name="estado" autocomplete="off" value={input.estado}/></p>
+                        <p className="inputProducto cuadroProductos"><input onChange={handleInputChange} type="text" name="estado" value={nuevaInfo.estado}/></p>
 
            
                         <p className = "letraEncabezado cuadroProductos" >Descripcion </p>
-                        <p className="inputProducto cuadroProductos"><input onChange={handleChange} type="text" name="descripcion" autocomplete="off" value={input.descripcion}/></p>
+                        <p className="inputProducto cuadroProductos"><input onChange={handleInputChange} type="text" name="descripcion" value={nuevaInfo.descripcion}/></p>
 
 
                     </form>
-                        
+                        <div  onClick={saveProducto} className = "botonAgregarUsuario botonModulos titulo centrar"> <Link to='/listadoProductos' className ="link"><span>Guardar Cambios</span></Link></div>
                     </ul>
-                    <button  onClick={handleClic} className = "botonAgregarUsuario botonModulos titulo centrar"> <Link to='/comprobanteAgregar' className ="link"><span>Agregar Producto</span></Link></button>
                 </main>
                 <Footer />
             </body>
         </div>
+
     );
 }
-export default  AgregarProducto;
+export default  EditarProducto;

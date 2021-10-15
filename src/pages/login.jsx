@@ -5,9 +5,16 @@ import logoPrana from "media/logoNavbar.png";
 import logoCodeOne from "media/logoCodeOne.png";
 /*Se importa iconos necesarios para la página*/
 import logogmail from 'media/gmail.png';
+import GoogleLogin from 'react-google-login';
 
 function Login() {
+    const respuestaGoogle=(respuesta)=>{
+        console.log(respuesta);
+
+    }
+    
     return(
+    
         <div className="login">
             <body>
                 <header>
@@ -42,7 +49,14 @@ function Login() {
                                     <p className="tituloOlvideContra cursorMano centrar">Olvide la contraseña</p>
                                     <p> <button type="button" className = "botonEnviarLogin botonModulos titulo centrar"> <span>Enviar</span></button></p>
                                     <p> <button type="button" className = "botonEnviarLogin botonModulos titulo centrar"> <span>Registrase</span></button></p>
-                                    <p><img className="imagenGmail cursorMano" src={logogmail} alt="Gmail" /></p>
+                                    <p><GoogleLogin
+        clientId="1017717902955-2c60rivbr7gncp8lfpl6j9sgmdrq6ccu.apps.googleusercontent.com"
+        buttonText="Login"
+        onSuccess={respuestaGoogle}
+        onFailure={respuestaGoogle}
+        cookiePolicy={'single_host_origin'}
+      />,
+      document.getElementById('googleButton')</p>
                                 </form>
                             </li>
 
