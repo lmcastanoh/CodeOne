@@ -81,13 +81,13 @@ function AgregarProducto() {
                     <form  className="tablaAgregarProductos" action="ejemplo.php" method="get" >
                         
                         <p className = "letraEncabezado cuadroProductos " >ID</p>
-                        <p className="inputProducto cuadroProductos" ><input onChange={handleChange} type="number" name="id_producto" value={input.id_producto} /></p>
+                        <p className="inputProducto cuadroProductos" ><input onChange={handleChange} type="number" name="id_producto" value={input.id_producto} required/></p>
 
                         <p className = "letraEncabezado cuadroProductos" >Nombre </p>
-                        <p className="inputProducto cuadroProductos"><input onChange={handleChange} type="text" name="nombre" value={input.nombre}/></p>
+                        <p className="inputProducto cuadroProductos"><input onChange={handleChange} type="text" name="nombre" value={input.nombre} required/></p>
 
                         <p className = "letraEncabezado cuadroProductos" >Valor del Producto </p>
-                        <p className="inputProducto cuadroProductos"><input onChange={handleChange} type="number" name="valor_unitario" value={input.valor_unitario} /></p>
+                        <p className="inputProducto cuadroProductos"><input onChange={handleChange} type="number" name="valor_unitario" value={input.valor_unitario} required/></p>
 
                         <p className = "letraEncabezado cuadroProductos " >Estado </p>
                         <p className="inputProducto cuadroProductos" ><select name="estado" >
@@ -96,7 +96,7 @@ function AgregarProducto() {
                             <option value="2" >No Disponible</option> </select></p>
                         
                         <p className = "letraEncabezado cuadroProductos" >Estado </p>
-                        <p className="inputProducto cuadroProductos"><input onChange={handleChange} type="text" name="estado" value={input.estado}/></p>
+                        <p className="inputProducto cuadroProductos"><input onChange={handleChange} type="text" name="estado" value={input.estado} required/></p>
 
            
                         <p className = "letraEncabezado cuadroProductos" >Descripcion </p>

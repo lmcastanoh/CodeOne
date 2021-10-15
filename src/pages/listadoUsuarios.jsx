@@ -9,9 +9,17 @@ import iconoBuscar from "media/iconoBusqueda.ico";
 /*Iconos de editar o eliminar*/
 import iconoGranaje from "media/ruedaConfiguración.png";
 import iconoBasurero from "media/basurero.png";
+import React, { useEffect, useState } from "react";
 
 
-function ListadoUsuarios(){
+const ListadoUsuarios = ({listaUsuarios}) => {
+    const [usuarios, setUsuarios] = useState([]);
+    useEffect(() => {
+    console.log('Esta es la lista de usuarios', listaUsuarios)
+    }, [listaUsuarios])
+
+
+
     return(
         <div className="ListadodeUsuarios">
            <body>
@@ -62,37 +70,26 @@ function ListadoUsuarios(){
                                 <div className = "letraEncabezado">Nombre</div>
                                 <div className = "letraEncabezado">Rol</div>
                                 <div className = "letraEncabezado">Estado</div>
-                                <div className = "letraEncabezado" > </div>                     
+                                <div className = "letraEncabezado" > </div>   
 
-                                <div className = "cuadroTabla iconosConfBorrar" >
-                                    <img className ="icotablaUsuarios boton " src= {iconoGranaje} alt="Editar"/>
-                                    <img className ="icotablaUsuarios boton " src= {iconoBasurero} alt="Editar"/>
-                                </div>    
-                                <div className = "cuadroTabla ">123</div>
-                                <div className = "cuadroTabla" >Maria Gómez</div>
-                                <div className = "cuadroTabla">Vendedor</div>
-                                <div className = "cuadroTabla">Pendiente</div>
-                                <div className = "cuadroTabla botonModulos letraEncabezado"><Link to = "/infoUsuario" className ="link">Ver Información</Link></div>
+                                {ListadoUsuarios.map((usuarios) => {
+                                    return(
+                                        <section>
+                                            <div className = "cuadroTabla iconosConfBorrar" >
+                                                <img className ="icotablaUsuarios boton " src= {iconoGranaje} alt="Editar"/>
+                                                <img className ="icotablaUsuarios boton " src= {iconoBasurero} alt="Editar"/>
+                                            </div>    
+                                            <div className = "cuadroTabla ">{usuario.id}</div>
+                                            <div className = "cuadroTabla" >Maria Gómez</div>
+                                            <div className = "cuadroTabla">Vendedor</div>
+                                            <div className = "cuadroTabla">Pendiente</div>
+                                            <div className = "cuadroTabla botonModulos letraEncabezado"><Link to = "/infoUsuario" className ="link">Ver Información</Link></div>
+                                        </section>
 
-                                <div className = "cuadroTabla iconosConfBorrar" >
-                                    <img className ="icotablaUsuarios boton" src= {iconoGranaje} alt="Editar"/>
-                                    <img className ="icotablaUsuarios boton" src= {iconoBasurero} alt="Editar"/>
-                                </div>  
-                                <div className = "cuadroTabla ">--</div>
-                                <div className = "cuadroTabla">--</div>
-                                <div className = "cuadroTabla">--</div>
-                                <div className = "cuadroTabla">--</div>
-                                <div className = "cuadroTabla botonModulos letraEncabezado" >Ver Información</div>
+                                    );
+                                })}                  
 
-                                <div className = "cuadroTabla iconosConfBorrar" >
-                                    <img className ="icotablaUsuarios boton" src= {iconoGranaje} alt="Editar"/>
-                                    <img className ="icotablaUsuarios boton" src= {iconoBasurero} alt="Editar"/>
-                                </div>  
-                                <div className = "cuadroTabla">--</div>
-                                <div className = "cuadroTabla">--</div>
-                                <div className = "cuadroTabla">--</div>
-                                <div className = "cuadroTabla">--</div>
-                                <div className = "cuadroTabla botonModulos letraEncabezado" >Ver Información</div>
+                                
 
                             </div>
         

@@ -7,6 +7,19 @@ body{
   margin: 0px;
   
 }
+main{
+  height: 100%;
+  width: 100%;
+}
+html {
+  min-height: 100%;
+  position: relative;
+}
+body {
+  margin: 0;
+  margin-bottom: 40px;
+}
+
 .barraRedes{
   background-color: #F2F3F4;
   margin:0px;
@@ -154,16 +167,16 @@ body{
   padding: 6px;
 }
 
-
 footer{
   border-top: 3px solid #f29263;
   background-color: #F2F3F4;
   border-bottom: 3px #F2F3F4;
   padding: 15px 15px 15px 0px;
   justify-content: space-around;
-  position:unset;
+  position: absolute;
   bottom: 0;
-  overflow: visible;
+  width: 99%;
+  height: 40px;
 }
 .tamañoPaginaIndex{
   height: 390px;
@@ -671,16 +684,17 @@ text-align: center;
 }
 .botonAgregarUsuario{
   background-color: #f29263;
-  font-size: 20px;
+  font-size: 15px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #54571f;
   width: 170px;
   font-weight: bold;
   text-align: center;
-  padding: 1px;
+  padding: 3px;
   border-radius: 20px;
   margin-top: 0px;
   margin-left: 600px;
+  margin-bottom: 50px;
 }
 .iconosConfBorrar{
     background-color: #ffffff;
