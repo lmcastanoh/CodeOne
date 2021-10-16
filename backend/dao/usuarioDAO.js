@@ -1,99 +1,110 @@
 import mongodb from "mongodb"
 const ObjectId = mongodb.ObjectID
-let producto
+let usuario
 
-export default class ProductoDAO {
+export default class UsuarioDAO {
   static async injectDB(conn) {
-    if (producto) {
+    if (usuario) {
       return
     }
     try {
-      producto = await conn.db(process.env.RESTREVIEWS_NS).collection("producto")
+      usuario = await conn.db(process.env.RESTREVIEWS_NS).collection("usuario")
     } catch (e) {
       console.error(
-        `Unable to establish a collection handle in ProductoDAO: ${e}`,
+        `Unable to establish a collection handle in usuarioDAO: ${e}`,
       )
     }
   }
 
 
-  static async getProducto({
+  static async getUsuario({
     filters = null,
     page = 0,
-    productosPerPage = 20,
+    usuariosPerPage = 20,
   } = {}) {
     let query
     if (filters) {
-      if ("descripcion" in filters) {
-        query = { $text: { $search: filters["descripcion"] } }
-      } else if ("id_producto" in filters) {
-        query = { "id_producto": { $eq: filters["id_producto"] } }
+      if ("nombre" in filters) {
+        query = { $text: { $search: filters["nombre"] } }
+      } else if ("id_usuario" in filters) {
+        query = { "id_usuario": { $eq: filters["id_usuario"] } }
       }
     }
 
     let cursor
     
     try {
-      cursor = await producto
+      cursor = await usuario
         .find(query)
     } catch (e) {
       console.error(`Unable to issue find command, ${e}`)
-      return { productosList: [], totalNumProductos: 0 }
+      return { usuariosList: [], totalNumusuarios: 0 }
     }
 
-    const displayCursor = cursor.limit(productosPerPage).skip(productosPerPage * page)
+    const displayCursor = cursor.limit(usuariosPerPage).skip(usuariosPerPage * page)
 
     try {
-      const productosList = await displayCursor.toArray()
-      const totalNumProductos = await producto.countDocuments(query)
+      const usuariosList = await displayCursor.toArray()
+      const totalNumusuarios = await usuario.countDocuments(query)
 
-      return { productosList, totalNumProductos }
+      return { usuariosList, totalNumusuarios }
     } catch (e) {
       console.error(
         `Unable to convert cursor to array or problem counting documents, ${e}`,
       )
-      return { productosList: [], totalNumProductos: 0 }
+      return { usuariosList: [], totalNumusuarios: 0 }
     }
   }
 
-  static async addProducto(id_producto, descripcion, valor_unitario,estado) {
+  static async addUsuario(id_usuario,nombre,correo,celular,fecha_nacimiento,fecha_ingreso,estado,rol) {
     try {
-      const productoDoc = { id_producto: id_producto,
-        descripcion: descripcion,
-        valor_unitario: valor_unitario,
-        estado: estado, }
+      const usuarioDoc = { 
+        id_usuario:id_usuario,
+        nombre:nombre, 
+        correo:correo,
+        celular:celular,
+        fecha_nacimiento: fecha_nacimiento,
+        fecha_ingreso: fecha_ingreso,
+        estado: estado,
+        rol:rol,
+      }
 
-      return await producto.insertOne(productoDoc)
+      return await usuario.insertOne(usuarioDoc)
     } catch (e) {
       console.error(`Unable to post review: ${e}`)
       return { error: e }
     }
   }
 
-  static async updateProducto(id_producto,descripcion, valor_unitario,estado) {
+  static async updateUsuario(id_usuario,nombre,correo,celular,fecha_nacimiento,fecha_ingreso,estado,rol) {
     try {
-      const updateProducto = await producto.updateOne(
-        /*{ id_producto:"3"},*/
-        {id_producto: id_producto},
-        { $set: { descripcion: descripcion, 
-          valor_unitario: valor_unitario, estado: estado  } },
+      const updateusuario = await usuario.updateOne(
+        /*{ id_usuario:"3"},*/
+        {id_usuario: id_usuario},
+        { $set: { nombre:nombre, 
+          correo:correo,
+          celular:celular,
+          fecha_nacimiento: fecha_nacimiento,
+          fecha_ingreso: fecha_ingreso,
+          estado: estado,
+          rol:rol  } },
       )
 
-      return updateProducto
+      return updateUsuario
     } catch (e) {
       console.error(`Unable to update review: ${e}`)
       return { error: e }
     }
   }
 
-  static async deleteProducto(id_producto) {
+  static async deleteUsuario(id_usuario) {
 
     try {
-      const deleteProducto = await producto.deleteOne({
-        id_producto: id_producto
+      const deleteusuario = await usuario.deleteOne({
+        id_usuario: id_usuario
       })
 
-      return deleteProducto
+      return deleteUsuario
     } catch (e) {
       console.error(`Unable to delete review: ${e}`)
       return { error: e }
@@ -102,7 +113,7 @@ export default class ProductoDAO {
 
 
 }
-  /*static async getProductoByID(id) {
+  /*static async getusuarioByID(id) {
     try {
       const pipeline = [
         {

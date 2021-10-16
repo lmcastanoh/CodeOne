@@ -2,6 +2,8 @@ import Index from 'pages';
 import ListadoProductos from 'pages/listadoProductos.jsx';
 import InfoProductos from 'pages/infoProductos.jsx';
 import AgregarProducto from 'pages/agregarProducto.jsx';
+import EditarProducto from 'pages/editarProducto.jsx';
+import EditarUsuario from 'pages/editarUsuario.jsx';
 import ListadoUsuarios from 'pages/listadoUsuarios.jsx';
 import InfoUsuario from 'pages/infoUsuario';
 import AgregarUsuario from 'pages/agregarUsuario.jsx';
@@ -27,6 +29,9 @@ function App() {
               <Route path='/agregarProducto'>
                 <AgregarProducto />
               </Route>
+              <Route path='/editarProducto'>
+                <EditarProducto />
+              </Route>
               <Route path='/listadoVentas'>
                 <ListadoVentas />
               </Route> 
@@ -44,6 +49,9 @@ function App() {
               </Route>
               <Route path='/agregarUsuario'>
                 <AgregarUsuario />
+              </Route>
+              <Route path='/editarUsuario'>
+                <EditarUsuario />
               </Route>
               <Route path='/comprobanteAgregar'>
                 <ComprobaciónAgregar />
