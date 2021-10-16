@@ -1,6 +1,6 @@
 import Index from 'pages';
 import ListadoProductos from 'pages/listadoProductos.jsx';
-import InfoProductos from 'pages/infoProductos.jsx';
+import InfoProductos from 'pages/infoProductos';
 import AgregarProducto from 'pages/agregarProducto.jsx';
 import EditarProducto from 'pages/editarProducto.jsx';
 import EditarUsuario from 'pages/editarUsuario.jsx';
@@ -22,6 +22,7 @@ function App() {
       domain="prana-personalizados.us.auth0.com"
       clientId="1U9JJrvhZv7Qf3lHrw5Fm5xUXlcJrDYg"
       redirectUri={window.location.origin}
+      audience= 'api-autenticación-prana-personalizados'
       >
         <div className='App'>
           <Router>
