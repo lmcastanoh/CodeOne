@@ -229,6 +229,17 @@ text-align: center;
   height: 30px;
   
 }
+.cuadroTablaUsuarios{
+  background-color:#F2F3F4;
+  margin: 0px;
+  padding: 2px;
+  text-align:center;
+  border: 0px;
+  border-radius: 15px;
+  width: 115px;
+  height: 30px;
+  
+}
 
 .tablaProductos{
   display: grid;
@@ -244,6 +255,19 @@ text-align: center;
   height: 100%;
   justify-content: center;
 }
+.tablaUsuarios{
+  display: grid;
+  border-color: #54571f;
+  grid-column: auto;
+  grid-template-columns: 130px 130px 130px 130px 130px 130px 130px 130px 130px 130px ;
+  grid-template-rows: 50px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #78796e;
+  font-size: 13px;
+  text-align: center;
+  width: 100%;
+  justify-content: center;
+}
 .botonAgregar{
   background-color: #f29263;
   font-size: 20px;
@@ -252,7 +276,7 @@ text-align: center;
   width: 200px;
   font-weight: bold;
   padding: 2px;
-  margin-left: 30px;
+  margin-left: 50px;
 }
 
 /*Página Agregar Usuarios*/
@@ -262,10 +286,9 @@ text-align: center;
   border-color: #54571f;
   grid-column: auto;
   grid-template-columns:330px 330px ;
-  grid-template-rows: 50px 50px 50px 50px 50px 50px 50px 50px ;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #54571f;
-  font-size: 18px;
+  font-size: 15px;
   text-align: center;
   width: 100%;
   justify-content:center;
@@ -330,7 +353,7 @@ text-align: center;
   width: 200px;
   font-weight: bold;
   padding: 2px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   margin-left: 40%;
 }
 
@@ -664,25 +687,15 @@ text-align: center;
   height: 30px;
   justify-content:space-between;
 }
-.tablaUsuarios{
-  display: grid;
-  border-color: #54571f;
-  grid-column: auto;
-  grid-template-columns: 160px 160px 160px 160px 160px 160px;
-  grid-template-rows: 50px 50px 50px 50px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #54571f;
-  font-size: 15px;
-  text-align: center;
-  width: 100%;
-  justify-content: center;
-  }
+
 .icotablaUsuarios{
   height: 20px;
   padding: 4px 20px 0px 20px;
   border-radius: 20px;
 }
 .botonAgregarUsuario{
+  grid-template-columns: 200px 200px;
+  grid-template-rows:  50px 50px 50px 50px 50px 50px 50px 50px;
   background-color: #f29263;
   font-size: 15px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -692,7 +705,7 @@ text-align: center;
   text-align: center;
   padding: 3px;
   border-radius: 20px;
-  margin-top: 0px;
+  margin-top: 30px;
   margin-left: 600px;
   margin-bottom: 50px;
 }

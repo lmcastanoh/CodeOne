@@ -6,37 +6,38 @@ import logoCodeOne from "media/logoCodeOne.png";
 /*Se importa iconos necesarios para la página*/
 import iconoUsuarioVerde from "media/iconoUsuario.png";
 import iconoBuscar from "media/iconoBusqueda.ico";
-import React, { useEffect, useState } from "react";
+import React, {useState} from "react";
+import Usuarios from "../services/usuario";
+import http from "../http-common";
 
+function AgregarUsuario() {
+    const [input, setInput] =useState({
+        id_usuario: 0,
+        nombre: "",
+        correo: "",
+        celular: "",
+        fecha_nacimiento: "",
+        fecha_ingreso: "",
+        estado:"",
+        rol: ""
+    }) 
 
-const AgregarUsuario = () => {
-
-    const [nombreUsuario, setNombreUsuario] =useState(''); 
-
-    useEffect(() => {
-        
-    }, [])
-    
-    
-
-    useEffect(() => {
-        console.log('Hola soy un Use');
-        
-    }, []);
-
-    const cambioNombre = (e) =>{
-        setNombreUsuario('Nombre :',e.target.value);
-
-    };
-
-    const enviarDatosBackend = ()=>{
-        console.log('Guardar Datos');
-
+    function handleChange(event){
+        const {name, value} = event.target;
+        setInput(prevInput => {
+            return {
+                ...prevInput,
+                [name]: value
+            }
+        })
+        console.log(event.target);
     }
-    useEffect(() => {
-        console.log('Esto es una funcion que se ejecuta cada que cambia el nombre')
-    }, [nombreUsuario]);
 
+    function handleClic(event){
+        event.preventDefault();
+        http.post("/usuarios", input);
+        console.log(input);
+    }
 
     return(
         <div className="AgregarUsuario">
@@ -78,41 +79,36 @@ const AgregarUsuario = () => {
                     <h1 className = "tituloProductos">Agregar Usuario</h1>
                     <ul>
                         <form  className="tablaAgregarUsuarios" action="ejemplo.php" method="get" >
-                            <p className = "letraEncabezado  " >Nombre: </p>
-                            <p className="inputUsuario cuadroParaUsuarios"><input onChange={cambioNombre} type="text" name="nombre" size="40" /></p>
+
+                        <p className = "letraEncabezado " >ID: </p>
+                            <p className="inputUsuario cuadroParaUsuarios"><input type="text" onChange={handleChange} name="id_usuario" size="40" value={input.id_usuario} /></p>
+
+                            <p className = "letraEncabezado " >Nombre: </p>
+                            <p className="inputUsuario cuadroParaUsuarios"><input type="text" onChange={handleChange} name="nombre" size="40" value={input.nombre} /></p>
 
                             <p className = "letraEncabezado " >Correo Gmail: </p>
-                            <p className="inputUsuario cuadroParaUsuarios"><input onChange={(e) => {console.log('Correo :',e.target.value)}} type="email" name="email" size="40" /></p>
+                            <p className="inputUsuario cuadroParaUsuarios"><input type="email" onChange={handleChange} name="correo" size="40" value={input.correo} /></p>
 
                             <p className = "letraEncabezado  " >Número de Celular:</p>
-                            <p className="inputUsuario cuadroParaUsuarios" ><input type="tel" name="celular" /></p>
+                            <p className="inputUsuario cuadroParaUsuarios" ><input type="tel" onChange={handleChange} name="celular" value={input.celular}/></p>
 
                             <p className = "letraEncabezado  " >Fecha de Nacimiento:</p>
-                            <p className="inputUsuario cuadroParaUsuarios " > <input type="date" name="fechanacimiento" /></p>
+                            <p className="inputUsuario cuadroParaUsuarios " > <input type="date" onChange={handleChange} name="fecha_nacimiento" value={input.fecha_nacimiento}/></p>
                     
                             <p className = "letraEncabezado  " >Fecha de Ingreso:</p>
-                            <p className="inputUsuario cuadroParaUsuarios" > <input type="date" name="fechaingreso" /></p>
+                            <p className="inputUsuario cuadroParaUsuarios" > <input type="date" onChange={handleChange} name="fecha_ingreso" value={input.fecha_ingreso}/></p>
 
-                            <p className = "letraEncabezado  " >Estado: </p>
-                            <p className="inputUsuario cuadroParaUsuarios" ><select name="estado">
-                                <option selected value="0"> Elige una opción </option>
-                                <option value="1">Pendiente</option> 
-                                <option value="2">Autorizado</option> 
-                                <option value="2">No Autorizado</option></select>
-                            </p>
+                            <p className = "letraEncabezado  " >Estado:</p>
+                            <p className="inputUsuario cuadroParaUsuarios" > <input type="text" onChange={handleChange} name="estado" value={input.estado}/></p>
 
-                            <p className = "letraEncabezado ">Rol:</p>  
-                            <p className="inputUsuario cuadroParaUsuarios">
-                                <select name="Rol">
-                                    <option selected value="0"> Elige una opción </option>
-                                    <option value="1">Administrador</option> 
-                                    <option value="2">Vendedor</option> 
-                                </select>
-                            </p>
+                            <p className = "letraEncabezado  " >Rol:</p>
+                            <p className="inputUsuario cuadroParaUsuarios" > <input type="text" onChange={handleChange} name="rol" value={input.rol} /></p>
 
 
                         </form>
-                        <button type="button" oneClick={enviarDatosBackend} className = "botonAgregarUsuario botonModulos titulo centrar"><Link to='/comprobanteAgregar' className="link"> <span>Agregar Usuario</span></Link></button>
+                    </ul>
+                    <ul>
+                    <div onClick={handleClic} className = "botonAgregarUsuario botonModulos titulo centrar"><Link to='/comprobanteAgregar' className="link"> <span>Agregar Usuario</span></Link></div>
                     </ul>
                 </main>
                 <Footer />

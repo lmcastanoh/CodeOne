@@ -9,11 +9,36 @@ import iconoBuscar from "media/iconoBusqueda.ico";
 /*Iconos de editar o eliminar*/
 import iconoGranaje from "media/ruedaConfiguración.png";
 import iconoBasurero from "media/basurero.png";
-import React, { useEffect, useState } from "react";
+import React, {useState, useEffect} from "react";
+import Usuarios from "../services/usuario";
+import http from "../http-common";
 
 
-const ListadoUsuarios = ({listaUsuarios}) => {
-    
+function ListadoUsuarios(){
+
+    const [usuarios, setUsuarios] = useState([]);
+
+    useEffect(() => {
+        retrieveUsuarios();
+      }, []);
+
+    const retrieveUsuarios = () => {
+        Usuarios.getAll()
+          .then(response => {
+            console.log(response.data);
+            setUsuarios(response.data.usuarios);
+            
+          })
+          .catch(e => {
+            console.log(e);
+          });
+      };
+
+      const deleteUsuario = (id_usuario) => {
+        Usuarios.deleteUsuario(id_usuario)
+          alert('Usuario eliminado');
+      };
+
 
 
 
@@ -57,48 +82,64 @@ const ListadoUsuarios = ({listaUsuarios}) => {
                 </header> 
                 
                 <main>
-                    <section>
-                        <h1 className = "tituloProductos">Usuarios</h1>    
-                        <ul>
-                            <div className= "tablaUsuarios">
+                <h1 className = "tituloProductos">Usuarios</h1>
+                <ul>                               
+                   
+                   <div className= "tablaUsuarios">
+           
+                       <div className = "cuadroTablaUsuarios letraEncabezado">ID</div>
+                       <div className = "cuadroTablaUsuarios letraEncabezado">Nombre</div>
+                       <div className = "cuadroTablaUsuarios letraEncabezado">Correo</div>
+                       <div className = "cuadroTablaUsuarios letraEncabezado">Celular</div>
+                       <div className = "cuadroTablaUsuarios letraEncabezado">Fecha nacimiento</div>
+                       <div className = "cuadroTablaUsuarios letraEncabezado">Fecha ingreso</div>
+                       <div className = "cuadroTablaUsuarios letraEncabezado">Estado</div>
+                       <div className = "cuadroTablaUsuarios letraEncabezado">Rol</div>
+                       <div className = "cuadroTablaUsuarios letraEncabezado">Editar</div>
+                       <div className = "cuadroTablaUsuarios letraEncabezado">Eliminar</div>
+                   </div>
 
-                                <div className = "letraEncabezado" > </div>      
-                                <div className = "letraEncabezado">ID</div>
-                                <div className = "letraEncabezado">Nombre</div>
-                                <div className = "letraEncabezado">Rol</div>
-                                <div className = "letraEncabezado">Estado</div>
-                                <div className = "letraEncabezado" > </div>   
+                   {usuarios.map((usuario) => {
+                       return (
 
-                                {ListadoUsuarios.map((usuarios) => {
-                                    return(
-                                        <section>
-                                            <div className = "cuadroTabla iconosConfBorrar" >
-                                                <img className ="icotablaUsuarios boton " src= {iconoGranaje} alt="Editar"/>
-                                                <img className ="icotablaUsuarios boton " src= {iconoBasurero} alt="Editar"/>
-                                            </div>    
-                                            <div className = "cuadroTabla "></div>
-                                            <div className = "cuadroTabla" >Maria Gómez</div>
-                                            <div className = "cuadroTabla">Vendedor</div>
-                                            <div className = "cuadroTabla">Pendiente</div>
-                                            <div className = "cuadroTabla botonModulos letraEncabezado"><Link to = "/infoUsuario" className ="link">Ver Información</Link></div>
-                                        </section>
+                       <section>
 
-                                    );
-                                })}                  
 
-                                
+                           <div className= "tablaUsuarios">
+                               <div className = "cuadroTablaUsuarios">{usuario.id_usuario}</div>
+                               <div className = "cuadroTablaUsuarios">{usuario.nombre}</div>
+                               <div className = "cuadroTablaUsuarios">{usuario.correo}</div>
+                               <div className = "cuadroTablaUsuarios">{usuario.celular}</div>
+                               <div className = "cuadroTablaUsuarios">{usuario.fecha_nacimiento}</div>
+                               <div className = "cuadroTablaUsuarios">{usuario.fecha_ingreso}</div>
+                               <div className = "cuadroTablaUsuarios">{usuario.estado}</div>
+                               <div className = "cuadroTablaUsuarios">{usuario.rol}</div>
 
-                            </div>
-        
-                        </ul>            
-        
-                    </section>
+                               <Link to={{
+                                   pathname: '/editarUsuario',
+                                   state: {id_usuario:usuario.id_usuario,
+                                       nombre:usuario.nombre, 
+                                       correo:usuario.correo,
+                                       celular:usuario.celular,
+                                       fecha_nacimiento: usuario.fecha_nacimiento,
+                                       fecha_ingreso: usuario.fecha_ingreso,
+                                       estado: usuario.estado,
+                                       rol:usuario.rol},
+                               }} img className ="icoTabla"><div className = "cuadroTablaUsuarios botonModulos"><img className ="icoTabla" src= {iconoGranaje} alt="Editar"/>
+                               </div></Link>
+                               
+                               <div className = "cuadroTablaUsuarios botonModulos"><img className ="icoTabla" onClick={() => deleteUsuario(usuario.id_usuario)} src= {iconoBasurero} alt="Eliminar"/></div>
+                           
+                           </div>
+                       </section>
 
-                    <section>
-                        <h3 className = "botonAgregarUsuario botonModulos centrar">
-                            <span className = "letraBotonInfoProducto"><Link to = "/agregarUsuario" className ="link">Agregar Usuario</Link></span>
-                        </h3>
-                    </section>
+                       );
+                   })}
+                           
+                   </ul>
+                   <ul>
+                   <div className = "botonAgregarUsuario botonModulos titulo centrar" ><span><Link to='/agregarUsuario' className="link">Agregar usuario</Link></span></div>
+                   </ul>
                 </main>
             
                 <Footer />
