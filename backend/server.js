@@ -1,6 +1,8 @@
 import express from "express"
 import cors from "cors"
 import producto from "./api/producto.route.js"
+import jwt from 'express-jwt';
+import jwks from 'jwks-rsa';
 
 const app = express()
 

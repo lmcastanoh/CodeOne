@@ -15,7 +15,7 @@ function AgregarProducto() {
 
     const [input, setInput] =useState({
         id_producto: 0,
-        nombre: '',
+        nombre_producto: '',
         valor_unitario: 0.0,
         estado: '',
         descripcion: ''
@@ -85,6 +85,9 @@ function AgregarProducto() {
                             <p className = "letraEncabezado cuadroProductos " >ID</p>
                             <p className="inputProducto cuadroProductos" ><input onChange={handleChange} type="number" name="id_producto" autocomplete="off" value={input.id_producto} /></p>
 
+                            <p className = "letraEncabezado cuadroProductos " >Nombre</p>
+                            <p className="inputProducto cuadroProductos" ><input onChange={handleChange} type="text" name="nombre_producto" autocomplete="off" value={input.nombre_producto} /></p>
+
                             <p className = "letraEncabezado cuadroProductos" >Valor del Producto </p>
                             <p className="inputProducto cuadroProductos"><input onChange={handleChange} type="number" name="valor_unitario" autocomplete="off" value={input.valor_unitario} /></p>
 
@@ -100,7 +103,7 @@ function AgregarProducto() {
                         </form>
                             
                         </ul>
-                        <button  onClick={handleClic} className = "botonAgregarUsuario botonModulos titulo centrar"> <Link to='/comprobanteAgregar' className ="link"><span>Agregar Producto</span></Link></button>
+                        <ul><button  onClick={handleClic} className = "botonAgregar botonModulos titulo centrar"> <Link to='/comprobanteAgregar' className ="link"><span>Agregar Producto</span></Link></button></ul>
                     </main>
                     <Footer />
                 </body>
