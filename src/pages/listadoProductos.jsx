@@ -15,6 +15,8 @@ import http from "../http-common";
 
 function ListadoProductos() {
 
+
+
     const [productos, setProductos] = useState([]);
 
     useEffect(() => {
@@ -32,6 +34,12 @@ function ListadoProductos() {
             console.log(e);
           });
       };
+
+      const deleteProducto = (id_producto) => {
+        Productos.deleteProducto(id_producto)
+          alert('Producto eliminado');
+      };
+
 
 
     return(
@@ -69,12 +77,14 @@ function ListadoProductos() {
                     </ul>
                 </header>  
                 <main>
-                               
+                <h1 className = "tituloProductos">Listado de productos</h1>
+                    <ul>                               
                    
                     <div className= "tablaOrganizadores">
             
                         <div className = "cuadroTabla letraEncabezado">ID</div>
                         <div className = "cuadroTabla letraEncabezado">Descripcion</div>
+                        <div className = "cuadroTabla letraEncabezado">valor</div>
                         <div className = "cuadroTabla letraEncabezado">Estado</div>
                         <div className = "cuadroTabla letraEncabezado">Editar</div>
                         <div className = "cuadroTabla letraEncabezado">Eliminar</div>
@@ -89,18 +99,27 @@ function ListadoProductos() {
                             <div className= "tablaOrganizadores">
                                 <div className = "cuadroTabla">{producto.id_producto}</div>
                                 <div className = "cuadroTabla">{producto.descripcion}</div>
+                                <div className = "cuadroTabla">{producto.valor_unitario}</div>
                                 <div className = "cuadroTabla">{producto.estado}</div>
-                                <div className = "cuadroTabla botonModulos"><img className ="icoTabla" src= {iconoGranaje} alt="Editar"/></div>
-                                <div className = "cuadroTabla botonModulos"><img className ="icoTabla" src= {iconoBasurero} alt="Eliminar"/></div>
-                
-                            </div>
+                            
 
+                                <Link to={{
+                                    pathname: '/editarProducto',
+                                    state: {id_producto:producto.id_producto, descripcion:producto.descripcion,
+                                    valor_unitario:producto.valor_unitario, estado: producto.estado},
+                                }} img className ="icoTabla"><div className = "cuadroTabla botonModulos"><img className ="icoTabla" src= {iconoGranaje} alt="Editar"/>
+                                </div></Link>
+                                
+                                <div className = "cuadroTabla botonModulos"><img className ="icoTabla" onClick={() => deleteProducto(producto.id_producto)} src= {iconoBasurero} alt="Eliminar"/></div>
+                            
+                            </div>
                         </section>
 
                         );
                     })}
+                            <div className = "botonAgregarProducto botonModulos titulo centrar" ><span><Link to='/agregarProducto' className="link">Agregar productos</Link></span></div>
 
-            
+                    </ul>
                 </main>
                     
                 <Footer />

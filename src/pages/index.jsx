@@ -1,4 +1,5 @@
 import {Link} from 'react-router-dom';
+import { useAuth0 } from "@auth0/auth0-react";
 import Footer from 'components/Footer';
 /*Se importa logo */
 import logoPrana from "media/logoNavbar.png";
@@ -18,7 +19,9 @@ import planeador from 'media/carruselProductos/planeador.jpg';
 import baseCelular from 'media/carruselProductos/baseCelular.png' ;
 
 
-function Index() {
+const Index = () => {
+        const { loginWithRedirect } = useAuth0();
+        
     return(
         <body>
             <header> 
@@ -48,7 +51,9 @@ function Index() {
                     <li className ="boton tituloSeccionPagina"><Link to='/' className="link">Home</Link></li>
                     <li>
                             <div className = "botonUsuario">
-                                    <span className="nombreUsuario"><Link to='/login' className="link">Ingresar/Registrar</Link></span>
+                                    <span onClick={() => loginWithRedirect()} className="nombreUsuario">
+                                       Ingresar/Registrar
+                                    </span>
                                     <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
                             </div>
                     </li>
