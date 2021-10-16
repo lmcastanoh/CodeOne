@@ -121,7 +121,6 @@ const AgregarUsuario = () => {
                 </PrivateRoute>
             </div>
         
-    
     );
     
 };
