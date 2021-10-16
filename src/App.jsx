@@ -1,6 +1,6 @@
 import Index from 'pages';
 import ListadoProductos from 'pages/listadoProductos.jsx';
-import InfoProductos from 'pages/infoProductos.jsx';
+import InfoProductos from 'pages/infoproductos.jsx';
 import AgregarProducto from 'pages/agregarProducto.jsx';
 import ListadoUsuarios from 'pages/listadoUsuarios.jsx';
 import InfoUsuario from 'pages/infoUsuario';
