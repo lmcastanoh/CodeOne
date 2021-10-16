@@ -9,7 +9,7 @@ import React, {useState} from "react";
 import {useEffect} from "react";
 import Usuarios from "../services/usuario";
 import http from "../http-common";
-import PrivateRote from './PrivateRoute';
+import PrivateRoute from 'components/PrivateRoute';
 import { useAuth0 } from "@auth0/auth0-react";
 
 
@@ -45,8 +45,8 @@ const AgregarUsuario = () => {
     }
 
     return(
-        <PrivateRote>
             <div className="AgregarUsuario">
+                <PrivateRoute>
                 <body> 
                     <header> 
                         <ul className="barraRedes">
@@ -118,8 +118,9 @@ const AgregarUsuario = () => {
                     </main>
                     <Footer />
                 </body>
+                </PrivateRoute>
             </div>
-        </PrivateRote>
+        
     
     );
     
