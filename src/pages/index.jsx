@@ -55,7 +55,7 @@ const Index = () => {
                     <li>
                             <div className = "botonUsuario">
                                     <span onClick={() => loginWithRedirect()} className="nombreUsuario">Ingresar/Registrar</span>
-                                    <span onClick={() => logout({ returnTo: window.location.origin })} className="nombreUsuario">Cerrar Sesión</span>
+                                    <span onClick={() => logout({ returnTo: window.location.origin })} className="nombreUsuario">/Cerrar Sesión</span>
                                     <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
                                     
                             </div>

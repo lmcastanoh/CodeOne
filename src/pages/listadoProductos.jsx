@@ -12,6 +12,7 @@ import iconoBasurero from "media/basurero.png";
 import React, {useState, useEffect} from "react";
 import Productos from "../services/codeone";
 import http from "../http-common";
+import PrivateRoute from 'components/PrivateRoute';
 
 function ListadoProductos() {
 
@@ -44,6 +45,7 @@ function ListadoProductos() {
 
     return(
         <div classname="listadoProductos">
+            <PrivateRoute>
             <body>
                 <header> 
                     <ul className="barraRedes">
@@ -127,7 +129,9 @@ function ListadoProductos() {
                     
                 <Footer />
             </body>
+            </PrivateRoute>
         </div>
+        
     );
 }
 export default ListadoProductos;
