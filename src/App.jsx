@@ -75,6 +75,7 @@ function App() {
           </Router>
         </div>
       </Auth0Provider>
+      
     );
   }
   export default App;

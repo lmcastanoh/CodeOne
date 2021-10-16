@@ -106,13 +106,15 @@ function AgregarUsuario() {
 
 
                         </form>
-                        <div onClick={handleClic} className = "botonAgregarUsuario botonModulos titulo centrar"><Link to='/comprobanteAgregar' className="link"> <span>Agregar Usuario</span></Link></div>
+                    </ul>
+                    <ul>
+                    <div onClick={handleClic} className = "botonAgregarUsuario botonModulos titulo centrar"><Link to='/comprobanteAgregar' className="link"> <span>Agregar Usuario</span></Link></div>
                     </ul>
                 </main>
                 <Footer />
             </body>
         </div>
     );
-}
+};
 export default AgregarUsuario;
 

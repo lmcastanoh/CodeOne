@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom';
-import { useAuth0 } from "@auth0/auth0-react";
+import {useAuth0} from "@auth0/auth0-react";
 import Footer from 'components/Footer';
 /*Se importa logo */
 import logoPrana from "media/logoNavbar.png";
@@ -19,9 +19,9 @@ import planeador from 'media/carruselProductos/planeador.jpg';
 import baseCelular from 'media/carruselProductos/baseCelular.png' ;
 
 
+
 const Index = () => {
-        const { loginWithRedirect } = useAuth0();
-        
+    const { loginWithRedirect } = useAuth0();
     return(
         <body>
             <header> 
@@ -51,13 +51,10 @@ const Index = () => {
                     <li className ="boton tituloSeccionPagina"><Link to='/' className="link">Home</Link></li>
                     <li>
                             <div className = "botonUsuario">
-                                    <span onClick={() => loginWithRedirect()} className="nombreUsuario">
-                                       Ingresar/Registrar
-                                    </span>
+                                    <span onClick={() => loginWithRedirect()} className="nombreUsuario">Ingresar/Registrar</span>
                                     <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
                             </div>
                     </li>
-                    
                 </ul>
             </header>  
             <main className = "tamañoPaginaIndex">
