@@ -8,11 +8,12 @@ const PrivateRoute = ({ children }) => {
   if (isLoading) {
     return <div>Loading ...</div>;
   }
-    return isAuthenticated ? (
-        <> {children} </>
-    ) : (
+
+  return isAuthenticated ? (
+    <> {children} </>
+  ) : (
         <div>
-        <div className="mensajeAutorización">No estas autorizado para este sitio</div>
+        <span className="mensajeAutorización">No estas autorizado para este sitio</span>
         <Link className='link' to='/'><span className = 'botonVolverHome botonModulos titulo centrar '>Llevame al home</span></Link>
         </div>
   );
