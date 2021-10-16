@@ -10,6 +10,7 @@ import React, {useState} from "react";
 import Usuarios from "../services/usuario";
 import http from "../http-common";
 import { useLocation } from 'react-router-dom';
+import PrivateRoute from 'components/PrivateRoute';
 
 function EditarUsuario(props) {
     const location = useLocation()
@@ -85,76 +86,78 @@ function EditarUsuario(props) {
     
     return(
         <div className="EditarUsuario">
-            <body> 
-                <header> 
-                    <ul className="barraRedes">
-                        <li><i className="fas fa-palette"></i></li>
-                        <div className= "icoRedes">
-                            <li><i className=" fab fa-facebook"></i></li>
-                            <li><i className=" fab fa-instagram"></i></li>
-                            <li><i className="fab fa-whatsapp"></i></li>
-                        </div>
-                    </ul>
-                    <ul className="navbar">
-                        <Link to='/'>
+            <PrivateRoute>
+                <body> 
+                    <header> 
+                        <ul className="barraRedes">
+                            <li><i className="fas fa-palette"></i></li>
+                            <div className= "icoRedes">
+                                <li><i className=" fab fa-facebook"></i></li>
+                                <li><i className=" fab fa-instagram"></i></li>
+                                <li><i className="fab fa-whatsapp"></i></li>
+                            </div>
+                        </ul>
+                        <ul className="navbar">
+                            <Link to='/'>
+                                <li>
+                                    <div> 
+                                        <img className="boton logo" src={logoPrana} alt= "imagen" /> 
+                                    </div>
+                                </li>
+                            </Link>
+
                             <li>
-                                <div> 
-                                    <img className="boton logo" src={logoPrana} alt= "imagen" /> 
+                                <div className="buscar">
+                                    <input placeholder ="Buscar Usuarios"/>
+                                    <img className="iconoBusqueda" src={iconoBuscar} alt="search" />
                                 </div>
                             </li>
-                        </Link>
+                            <li className ="boton tituloSeccionPagina"><Link to = '/listadoUsuarios' className="link">Administración de Usuario</Link></li>
+                            <li>
+                                <div className = "botonUsuario">
+                                    <span className="nombreUsuario">Cerrar Sesión</span>
+                                    <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
+                                </div>
+                            </li>
+                        </ul>
+                    </header> 
+                    <main>
+                        <h1 className = "tituloProductos">Agregar Usuario</h1>
+                        <ul>
+                            <form  className="tablaAgregarUsuarios" action="ejemplo.php" method="get" >
 
-                        <li>
-                            <div className="buscar">
-                                <input placeholder ="Buscar Usuarios"/>
-                                <img className="iconoBusqueda" src={iconoBuscar} alt="search" />
-                            </div>
-                        </li>
-                        <li className ="boton tituloSeccionPagina"><Link to = '/listadoUsuarios' className="link">Administración de Usuario</Link></li>
-                        <li>
-                            <div className = "botonUsuario">
-                                <span className="nombreUsuario">Cerrar Sesión</span>
-                                <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
-                            </div>
-                        </li>
-                    </ul>
-                </header> 
-                <main>
-                    <h1 className = "tituloProductos">Agregar Usuario</h1>
-                    <ul>
-                        <form  className="tablaAgregarUsuarios" action="ejemplo.php" method="get" >
+                            <p className = "letraEncabezado " >ID: </p>
+                                <p className="inputUsuario cuadroParaUsuarios"><input type="text" onChange={handleInputChange} name="id_usuario" size="40" value={nuevaInfo.id_usuario} /></p>
 
-                        <p className = "letraEncabezado " >ID: </p>
-                            <p className="inputUsuario cuadroParaUsuarios"><input type="text" onChange={handleInputChange} name="id_usuario" size="40" value={nuevaInfo.id_usuario} /></p>
+                                <p className = "letraEncabezado " >Nombre: </p>
+                                <p className="inputUsuario cuadroParaUsuarios"><input type="text" onChange={handleInputChange} name="nombre" size="40" value={nuevaInfo.nombre} /></p>
 
-                            <p className = "letraEncabezado " >Nombre: </p>
-                            <p className="inputUsuario cuadroParaUsuarios"><input type="text" onChange={handleInputChange} name="nombre" size="40" value={nuevaInfo.nombre} /></p>
+                                <p className = "letraEncabezado " >Correo Gmail: </p>
+                                <p className="inputUsuario cuadroParaUsuarios"><input type="email" onChange={handleInputChange} name="correo" size="40" value={nuevaInfo.correo} /></p>
 
-                            <p className = "letraEncabezado " >Correo Gmail: </p>
-                            <p className="inputUsuario cuadroParaUsuarios"><input type="email" onChange={handleInputChange} name="correo" size="40" value={nuevaInfo.correo} /></p>
+                                <p className = "letraEncabezado  " >Número de Celular:</p>
+                                <p className="inputUsuario cuadroParaUsuarios" ><input type="tel" onChange={handleInputChange} name="celular" value={nuevaInfo.celular}/></p>
 
-                            <p className = "letraEncabezado  " >Número de Celular:</p>
-                            <p className="inputUsuario cuadroParaUsuarios" ><input type="tel" onChange={handleInputChange} name="celular" value={nuevaInfo.celular}/></p>
+                                <p className = "letraEncabezado  " >Fecha de Nacimiento:</p>
+                                <p className="inputUsuario cuadroParaUsuarios " > <input type="date" onChange={handleInputChange} name="fecha_nacimiento" value={nuevaInfo.fecha_nacimiento}/></p>
+                        
+                                <p className = "letraEncabezado  " >Fecha de Ingreso:</p>
+                                <p className="inputUsuario cuadroParaUsuarios" > <input type="date" onChange={handleInputChange} name="fecha_ingreso" value={nuevaInfo.fecha_ingreso}/></p>
 
-                            <p className = "letraEncabezado  " >Fecha de Nacimiento:</p>
-                            <p className="inputUsuario cuadroParaUsuarios " > <input type="date" onChange={handleInputChange} name="fecha_nacimiento" value={nuevaInfo.fecha_nacimiento}/></p>
-                    
-                            <p className = "letraEncabezado  " >Fecha de Ingreso:</p>
-                            <p className="inputUsuario cuadroParaUsuarios" > <input type="date" onChange={handleInputChange} name="fecha_ingreso" value={nuevaInfo.fecha_ingreso}/></p>
+                                <p className = "letraEncabezado  " >Estado:</p>
+                                <p className="inputUsuario cuadroParaUsuarios" > <input type="text" onChange={handleInputChange} name="estado" value={nuevaInfo.estado}/></p>
 
-                            <p className = "letraEncabezado  " >Estado:</p>
-                            <p className="inputUsuario cuadroParaUsuarios" > <input type="text" onChange={handleInputChange} name="estado" value={nuevaInfo.estado}/></p>
-
-                            <p className = "letraEncabezado  " >Rol:</p>
-                            <p className="inputUsuario cuadroParaUsuarios" > <input type="text" onChange={handleInputChange} name="rol" value={nuevaInfo.rol} /></p>
+                                <p className = "letraEncabezado  " >Rol:</p>
+                                <p className="inputUsuario cuadroParaUsuarios" > <input type="text" onChange={handleInputChange} name="rol" value={nuevaInfo.rol} /></p>
 
 
-                        </form>
-                        <div onClick={saveUsuario} className = "botonAgregarUsuario botonModulos titulo centrar"><Link to='/listadoUsuarios' className="link"> <span>Guardar Cambios</span></Link></div>
-                    </ul>
-                </main>
-                <Footer />
-            </body>
+                            </form>
+                            <div onClick={saveUsuario} className = "botonAgregarUsuario botonModulos titulo centrar"><Link to='/listadoUsuarios' className="link"> <span>Guardar Cambios</span></Link></div>
+                        </ul>
+                    </main>
+                    <Footer />
+                </body>
+            </PrivateRoute>
         </div>
     );
 }

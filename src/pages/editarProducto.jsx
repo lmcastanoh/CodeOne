@@ -9,6 +9,7 @@ import React, {useState} from "react";
 import Productos from "../services/codeone";
 import http from "../http-common";
 import { useLocation } from 'react-router-dom';
+import PrivateRoute from 'components/PrivateRoute';
 
 
 function EditarProducto(props) {
@@ -73,67 +74,69 @@ function EditarProducto(props) {
     return(
         
         <div className="editarProducto">
+            <PrivateRoute>
 
-            <body>
-                <header> 
-                    <ul className="barraRedes">
-                        <li><i className="fas fa-palette"></i></li>
-                        <div className= "icoRedes">
-                            <li><i className=" fab fa-facebook"></i></li>
-                            <li><i className=" fab fa-instagram"></i></li>
-                            <li><i className="fab fa-whatsapp"></i></li>
-                        </div>
-                    </ul>
-                    <ul className="navbar">
-                        <Link className="link"to='/'>
+                <body>
+                    <header> 
+                        <ul className="barraRedes">
+                            <li><i className="fas fa-palette"></i></li>
+                            <div className= "icoRedes">
+                                <li><i className=" fab fa-facebook"></i></li>
+                                <li><i className=" fab fa-instagram"></i></li>
+                                <li><i className="fab fa-whatsapp"></i></li>
+                            </div>
+                        </ul>
+                        <ul className="navbar">
+                            <Link className="link"to='/'>
+                                <li>
+                                    <div> 
+                                        <img className="boton logo" src={logoPrana} alt= "imagen" /> 
+                                    </div>
+                                </li>
+                            </Link>
+
                             <li>
-                                <div> 
-                                    <img className="boton logo" src={logoPrana} alt= "imagen" /> 
+                                <div className="buscar">
+                                    <input placeholder ="Buscar Productos"/>
+                                    <img className="iconoBusqueda" src={iconoBuscar} alt="search" />
                                 </div>
                             </li>
-                        </Link>
+                                <li className ="boton tituloSeccionPagina"><Link to='/listadoProductos' className ="link">Administración de Productos</Link></li>
+                            <li>
+                                <div className = "botonUsuario">
+                                    <span className="nombreUsuario">Cerrar Sesión</span>
+                                    <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
+                                </div>
+                            </li>
+                        </ul>
+                    </header> 
+                    <main>
+                        <h1 className = "tituloProductos">Editar Productos</h1>
+                        <ul>
+                        <form  className="tablaAgregarProductos" action="ejemplo.php" method="get" >
+                            
+                            <p className = "letraEncabezado cuadroProductos " >ID</p>
+                            <p className="inputProducto cuadroProductos" ><input onChange={handleInputChange} name="id_producto" value={nuevaInfo.id_producto} readOnly="readonly"/></p>
 
-                        <li>
-                            <div className="buscar">
-                                <input placeholder ="Buscar Productos"/>
-                                <img className="iconoBusqueda" src={iconoBuscar} alt="search" />
-                            </div>
-                        </li>
-                            <li className ="boton tituloSeccionPagina"><Link to='/listadoProductos' className ="link">Administración de Productos</Link></li>
-                        <li>
-                            <div className = "botonUsuario">
-                                <span className="nombreUsuario">Cerrar Sesión</span>
-                                <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
-                            </div>
-                        </li>
-                    </ul>
-                </header> 
-                <main>
-                    <h1 className = "tituloProductos">Editar Productos</h1>
-                    <ul>
-                    <form  className="tablaAgregarProductos" action="ejemplo.php" method="get" >
-                        
-                        <p className = "letraEncabezado cuadroProductos " >ID</p>
-                        <p className="inputProducto cuadroProductos" ><input onChange={handleInputChange} name="id_producto" value={nuevaInfo.id_producto} readOnly="readonly"/></p>
+                            <p className = "letraEncabezado cuadroProductos" >Valor del Producto </p>
+                            <p className="inputProducto cuadroProductos"><input onChange={handleInputChange} type="number" name="valor_unitario"  value={nuevaInfo.valor_unitario} /></p>
 
-                        <p className = "letraEncabezado cuadroProductos" >Valor del Producto </p>
-                        <p className="inputProducto cuadroProductos"><input onChange={handleInputChange} type="number" name="valor_unitario"  value={nuevaInfo.valor_unitario} /></p>
+                            
+                            <p className = "letraEncabezado cuadroProductos" >Estado </p>
+                            <p className="inputProducto cuadroProductos"><input onChange={handleInputChange} type="text" name="estado" value={nuevaInfo.estado}/></p>
 
-                        
-                        <p className = "letraEncabezado cuadroProductos" >Estado </p>
-                        <p className="inputProducto cuadroProductos"><input onChange={handleInputChange} type="text" name="estado" value={nuevaInfo.estado}/></p>
-
-           
-                        <p className = "letraEncabezado cuadroProductos" >Descripcion </p>
-                        <p className="inputProducto cuadroProductos"><input onChange={handleInputChange} type="text" name="descripcion" value={nuevaInfo.descripcion}/></p>
+            
+                            <p className = "letraEncabezado cuadroProductos" >Descripcion </p>
+                            <p className="inputProducto cuadroProductos"><input onChange={handleInputChange} type="text" name="descripcion" value={nuevaInfo.descripcion}/></p>
 
 
-                    </form>
-                        <div  onClick={saveProducto} className = "botonAgregarUsuario botonModulos titulo centrar"> <Link to='/listadoProductos' className ="link"><span>Guardar Cambios</span></Link></div>
-                    </ul>
-                </main>
-                <Footer />
-            </body>
+                        </form>
+                            <div  onClick={saveProducto} className = "botonAgregarUsuario botonModulos titulo centrar"> <Link to='/listadoProductos' className ="link"><span>Guardar Cambios</span></Link></div>
+                        </ul>
+                    </main>
+                    <Footer />
+                </body>
+            </PrivateRoute>
         </div>
 
     );
