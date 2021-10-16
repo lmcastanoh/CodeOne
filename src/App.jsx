@@ -1,6 +1,6 @@
 import Index from 'pages';
 import ListadoProductos from 'pages/listadoProductos.jsx';
-import InfoProductos from 'pages/infoProductos';
+import InfoProductos from 'pages/infoProductos.jsx';
 import AgregarProducto from 'pages/agregarProducto.jsx';
 import EditarProducto from 'pages/editarProducto.jsx';
 import EditarUsuario from 'pages/editarUsuario.jsx';
@@ -16,13 +16,13 @@ import Login from 'pages/login.jsx';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import 'styles/estilos.css';
 import { Auth0Provider } from "@auth0/auth0-react";
-
 function App() {
     return (
-      <Auth0Provider>
-        domain="prana-personalizados.us.auth0.com"
-        clientId="1U9JJrvhZv7Qf3lHrw5Fm5xUXlcJrDYg"
-        redirectUri={window.location.origin}
+      <Auth0Provider
+      domain="prana-personalizados.us.auth0.com"
+      clientId="1U9JJrvhZv7Qf3lHrw5Fm5xUXlcJrDYg"
+      redirectUri={window.location.origin}
+      >
         <div className='App'>
           <Router>
               <Switch>

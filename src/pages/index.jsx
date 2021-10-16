@@ -1,5 +1,4 @@
 import {Link} from 'react-router-dom';
-import {useAuth0} from "@auth0/auth0-react";
 import Footer from 'components/Footer';
 /*Se importa logo */
 import logoPrana from "media/logoNavbar.png";
@@ -17,7 +16,7 @@ import mugAbogada from 'media/carruselProductos/mugAbogada.png';
 import cuadernoMorado from 'media/carruselProductos/cuadernoMorado.png';
 import planeador from 'media/carruselProductos/planeador.jpg';
 import baseCelular from 'media/carruselProductos/baseCelular.png' ;
-
+import { useAuth0 } from "@auth0/auth0-react";
 
 
 const Index = () => {
@@ -110,5 +109,4 @@ const Index = () => {
     );
 }
 export default Index;
-
 
