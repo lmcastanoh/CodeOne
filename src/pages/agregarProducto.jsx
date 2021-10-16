@@ -14,6 +14,7 @@ function AgregarProducto() {
 
     const [input, setInput] =useState({
         id_producto: 0,
+        nombre: '',
         valor_unitario: 0.0,
         estado: '',
         descripcion: ''
@@ -95,8 +96,9 @@ function AgregarProducto() {
 
 
                     </form>
-                        <div  onClick={handleClic} className = "botonAgregarUsuario botonModulos titulo centrar"> <Link to='/comprobanteAgregar' className ="link"><span>Agregar Producto</span></Link></div>
+                        
                     </ul>
+                    <button  onClick={handleClic} className = "botonAgregarUsuario botonModulos titulo centrar"> <Link to='/comprobanteAgregar' className ="link"><span>Agregar Producto</span></Link></button>
                 </main>
                 <Footer />
             </body>

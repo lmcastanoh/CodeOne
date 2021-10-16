@@ -135,8 +135,10 @@ function ListadoUsuarios(){
 
                        );
                    })}
-                           <div className = "botonAgregarProducto botonModulos titulo centrar" ><span><Link to='/agregarUsuario' className="link">Agregar usuario</Link></span></div>
-
+                           
+                   </ul>
+                   <ul>
+                   <div className = "botonAgregarUsuario botonModulos titulo centrar" ><span><Link to='/agregarUsuario' className="link">Agregar usuario</Link></span></div>
                    </ul>
                 </main>
             
