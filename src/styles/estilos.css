@@ -1016,6 +1016,7 @@ text-align: center;
 .mainConteiner > footer{
   background-color: #F2F3F4;
 }
+
 /*Autorización login */
 .mensajeAutorización{
   display: flex;
@@ -1042,3 +1043,4 @@ text-align: center;
   margin-bottom: 10px;
   margin-left: 40%;
 }
+
