@@ -10,6 +10,7 @@ import GoogleLogin from 'react-google-login';
 function Login() {
     const respuestaGoogle=(respuesta)=>{
         console.log(respuesta);
+        console.log(respuesta.profileObj);
 
     }
     
@@ -49,14 +50,15 @@ function Login() {
                                     <p className="tituloOlvideContra cursorMano centrar">Olvide la contraseña</p>
                                     <p> <button type="button" className = "botonEnviarLogin botonModulos titulo centrar"> <span>Enviar</span></button></p>
                                     <p> <button type="button" className = "botonEnviarLogin botonModulos titulo centrar"> <span>Registrase</span></button></p>
-                                    <p><GoogleLogin
+                                    <p ><GoogleLogin
         clientId="1017717902955-2c60rivbr7gncp8lfpl6j9sgmdrq6ccu.apps.googleusercontent.com"
-        buttonText="Login"
+        render={renderProps => (
+            <button type="button" className = "botonEnviarLogin botonModulos titulo centrar" onClick={renderProps.onClick} disabled={renderProps.disabled}><span>Iniciar con Gmail</span></button>
+          )}
         onSuccess={respuestaGoogle}
         onFailure={respuestaGoogle}
         cookiePolicy={'single_host_origin'}
-      />,
-      document.getElementById('googleButton')</p>
+      /></p>
                                 </form>
                             </li>
 
