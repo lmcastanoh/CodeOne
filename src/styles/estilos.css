@@ -246,7 +246,7 @@ text-align: center;
   border-color: #54571f;
   grid-column: auto;
   grid-template-columns: 160px 160px 160px 160px 160px 160px 160px 160px;
-  grid-template-rows: 50px;
+  grid-template-rows: 65px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #54571f;
   font-size: 15px;
@@ -254,20 +254,9 @@ text-align: center;
   width: 100%;
   height: 100%;
   justify-content: center;
+  margin-left: 5%; 
 }
-.tablaUsuarios{
-  display: grid;
-  border-color: #54571f;
-  grid-column: auto;
-  grid-template-columns: 130px 130px 130px 130px 130px 130px 130px 130px 130px 130px ;
-  grid-template-rows: 50px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #78796e;
-  font-size: 13px;
-  text-align: center;
-  width: 100%;
-  justify-content: center;
-}
+
 .botonAgregar{
   background-color: #f29263;
   font-size: 20px;
@@ -276,9 +265,20 @@ text-align: center;
   width: 200px;
   font-weight: bold;
   padding: 2px;
-  margin-left: 50px;
+  margin-left: 40% ;
+  margin-bottom: 3%;
 }
-
+.botonAgregarProductos{
+  background-color: #f29263;
+  font-size: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #54571f;
+  width: 200px;
+  font-weight: bold;
+  padding: 2px;
+  margin-bottom: 10px;
+  margin-left: 8%;
+}
 /*Página Agregar Usuarios*/
 
 .tablaAgregarUsuarios{
@@ -294,6 +294,19 @@ text-align: center;
   justify-content:center;
   margin: 0px;
   height: 360px;
+}
+.tablaUsuarios{
+  display: grid;
+  border-color: #54571f;
+  grid-column: auto;
+  grid-template-columns: 130px 130px 130px 130px 130px 130px 130px 130px 130px 130px ;
+  grid-template-rows: 50px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #78796e;
+  font-size: 13px;
+  text-align: center;
+  width: 100%;
+  justify-content: center;
 }
 .cuadroParaUsuarios{
   background-color: #F2F3F4;
@@ -737,12 +750,11 @@ text-align: center;
   border-color: #54571f;
   grid-column: auto;
   grid-template-columns:330px 330px ;
-  grid-template-rows: 65px 65px 65px 65px 65px 65px ;
+  grid-template-rows: 65px 65px 65px 65px 65px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #54571f;
   font-size: 18px;
   text-align: center;
-  width: 100%;
   justify-content:center;
   margin: 0px;
   height: 100%;
@@ -1016,7 +1028,6 @@ text-align: center;
 .mainConteiner > footer{
   background-color: #F2F3F4;
 }
-
 /*Autorización login */
 .mensajeAutorización{
   display: flex;
@@ -1043,4 +1054,3 @@ text-align: center;
   margin-bottom: 10px;
   margin-left: 40%;
 }
-

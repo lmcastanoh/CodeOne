@@ -121,9 +121,7 @@ const AgregarUsuario = () => {
                 </PrivateRoute>
             </div>
         
-    
     );
     
 };
 export default AgregarUsuario;
-

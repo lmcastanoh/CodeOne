@@ -42,7 +42,6 @@ function ListadoProductos() {
       };
 
 
-
     return(
         <div classname="listadoProductos">
             <PrivateRoute>
@@ -80,6 +79,8 @@ function ListadoProductos() {
                 </header>  
                 <main>
                 <h1 className = "tituloProductos">Listado de productos</h1>
+                <span className = "botonAgregarProductos botonModulos titulo centrar"><Link to='/agregarProducto' className="link">Agregar productos</Link></span>
+
                     <ul>                               
                    
                     <div className= "tablaProductos">
@@ -89,7 +90,6 @@ function ListadoProductos() {
                         <div className = "cuadroTabla letraEncabezado">Descripcion</div>
                         <div className = "cuadroTabla letraEncabezado">valor</div>
                         <div className = "cuadroTabla letraEncabezado">Estado</div>
-                        <div className = "cuadroTabla letraEncabezado " >Ver Información</div>
                         <div className = "cuadroTabla letraEncabezado">Editar</div>
                         <div className = "cuadroTabla letraEncabezado">Eliminar</div>
                     </div>
@@ -122,8 +122,7 @@ function ListadoProductos() {
 
                         );
                     })}
-                            <div className = "botonAgregarProducto botonModulos titulo centrar" ><span><Link to='/agregarProducto' className="link">Agregar productos</Link></span></div>
-
+                            
                     </ul>
                 </main>
                     
