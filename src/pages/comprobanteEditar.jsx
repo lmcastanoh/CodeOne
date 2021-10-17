@@ -10,6 +10,7 @@ import PrivateRoute from 'components/PrivateRoute';
 import { useAuth0 } from "@auth0/auth0-react";
 
 const ComprobanteEditar =() =>{
+    const { logout } = useAuth0();
 
     return(
         <div className="comprobanteEditar">

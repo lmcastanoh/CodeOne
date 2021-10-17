@@ -10,6 +10,7 @@ import PrivateRoute from 'components/PrivateRoute';
 import { useAuth0 } from "@auth0/auth0-react";
 
 const AgregarVenta = () => {
+    const { logout } = useAuth0();
     return(
         <div classname="agregarVentas"> 
             <PrivateRoute>
