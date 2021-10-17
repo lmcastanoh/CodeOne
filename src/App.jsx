@@ -22,7 +22,7 @@ function App() {
       domain="prana-personalizados.us.auth0.com"
       clientId="1U9JJrvhZv7Qf3lHrw5Fm5xUXlcJrDYg"
       redirectUri={window.location.origin}
-      audience= 'api-autenticación-prana-personalizados'
+      audience='api-autenticación-prana-personalizados'
       >
         <div className='App'>
           <Router>
