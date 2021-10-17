@@ -4,7 +4,7 @@ import InfoProductos from 'pages/infoProductos';
 import AgregarProducto from 'pages/agregarProducto.jsx';
 import EditarProducto from 'pages/editarProducto.jsx';
 import EditarUsuario from 'pages/editarUsuario.jsx';
-import ListadoUsuarios from 'pages/lnpistadoUsuarios.jsx';
+import ListadoUsuarios from 'pages/listadoUsuarios.jsx';
 import InfoUsuario from 'pages/infoUsuario';
 import AgregarUsuario from 'pages/agregarUsuario.jsx';
 import InfoVentas from 'pages/infoVentas.jsx';
