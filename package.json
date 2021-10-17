@@ -14,7 +14,11 @@
     "express-jwt": "^6.1.0",
     "express-jwt-authz": "^2.4.1",
     "jwks-rsa": "^2.0.5",
+<<<<<<< HEAD
     "package-lock.json": "^1.0.0",
+=======
+    "nodemon": "^2.0.13",
+>>>>>>> 9a5264e3197dd14f8fdeae94a8e11093bc9b9bee
     "postcss": "^7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
