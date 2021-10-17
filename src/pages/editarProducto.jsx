@@ -10,9 +10,10 @@ import Productos from "../services/codeone";
 import http from "../http-common";
 import { useLocation } from 'react-router-dom';
 import PrivateRoute from 'components/PrivateRoute';
+import { useAuth0 } from "@auth0/auth0-react";
 
-
-function EditarProducto(props) {
+const EditarProducto=(props) => {
+    const { logout } = useAuth0();
     const location = useLocation()
     console.log(location)
 
@@ -107,7 +108,7 @@ function EditarProducto(props) {
                                 <li className ="boton tituloSeccionPagina"><Link to='/listadoProductos' className ="link">Administración de Productos</Link></li>
                             <li>
                                 <div className = "botonUsuario">
-                                    <span className="nombreUsuario">Cerrar Sesión</span>
+                                    <span onClick={() => logout({ returnTo: window.location.origin })} className="nombreUsuario">/Cerrar Sesión</span>
                                     <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
                                 </div>
                             </li>

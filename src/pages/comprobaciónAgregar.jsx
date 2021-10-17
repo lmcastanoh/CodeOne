@@ -7,8 +7,9 @@ import logoCodeOne from "media/logoCodeOne.png";
 import iconoUsuarioVerde from "media/iconoUsuario.png";
 import iconoBuscar from "media/iconoBusqueda.ico";
 import PrivateRoute from 'components/PrivateRoute';
+import { useAuth0 } from "@auth0/auth0-react";
 
-function ComprobaciónAgregar() {
+const ComprobaciónAgregar = () =>{
 
     return(
         <div className="comprobaciónAgregar">
@@ -41,7 +42,7 @@ function ComprobaciónAgregar() {
                             <li className ="boton tituloSeccionPagina"></li>
                             <li>
                                 <div className = "botonUsuario">
-                                    <span className="nombreUsuario">Cerrar Sesión</span>
+                                    <span onClick={() => logout({ returnTo: window.location.origin })} className="nombreUsuario">/Cerrar Sesión</span>
                                     <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
                                 </div>
                             </li>

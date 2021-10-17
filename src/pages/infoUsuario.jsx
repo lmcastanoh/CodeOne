@@ -7,8 +7,11 @@ import logoCodeOne from "media/logoCodeOne.png";
 import iconoUsuarioVerde from "media/iconoUsuario.png";
 import iconoBuscar from "media/iconoBusqueda.ico";
 import PrivateRoute from 'components/PrivateRoute';
+import { useAuth0 } from "@auth0/auth0-react";
 
-function InfoUsuario () {
+const InfoUsuario =() =>{
+    const { logout } = useAuth0();
+
     return(
         <div className="infoPersona">
             <PrivateRoute>
@@ -40,7 +43,7 @@ function InfoUsuario () {
                             <li className ="boton tituloSeccionPagina"><Link to='/listadoUsuarios' className="link">Administración de Usuario</Link></li>
                             <li>
                                 <div className = "botonUsuario">
-                                    <span className="nombreUsuario">Cerrar Sesión</span>
+                                    <span onClick={() => logout({ returnTo: window.location.origin })} className="nombreUsuario">/Cerrar Sesión</span>
                                     <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
                                 </div>
                             </li>

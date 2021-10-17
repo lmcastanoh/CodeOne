@@ -13,10 +13,11 @@ import React, {useState, useEffect} from "react";
 import Usuarios from "../services/usuario";
 import http from "../http-common";
 import PrivateRoute from 'components/PrivateRoute';
+import { useAuth0 } from "@auth0/auth0-react";
 
+const ListadoUsuarios=()=>{
 
-function ListadoUsuarios(){
-
+    const { logout } = useAuth0();
     const [usuarios, setUsuarios] = useState([]);
 
     useEffect(() => {
@@ -76,7 +77,7 @@ function ListadoUsuarios(){
                             
                             <li>
                                 <div className = "botonUsuario">
-                                    <span className="nombreUsuario">Cerrar Sesión</span>
+                                    <span onClick={() => logout({ returnTo: window.location.origin })} className="nombreUsuario">/Cerrar Sesión</span>
                                     <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
                                 </div>
                             </li>
