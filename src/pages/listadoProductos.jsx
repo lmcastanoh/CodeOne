@@ -12,6 +12,7 @@ import iconoBasurero from "media/basurero.png";
 import React, {useState, useEffect} from "react";
 import Productos from "../services/codeone";
 import http from "../http-common";
+import PrivateRoute from 'components/PrivateRoute';
 
 function ListadoProductos() {
 
@@ -41,9 +42,9 @@ function ListadoProductos() {
       };
 
 
-
     return(
         <div classname="listadoProductos">
+            <PrivateRoute>
             <body>
                 <header> 
                     <ul className="barraRedes">
@@ -78,11 +79,14 @@ function ListadoProductos() {
                 </header>  
                 <main>
                 <h1 className = "tituloProductos">Listado de productos</h1>
+                <span className = "botonAgregarProductos botonModulos titulo centrar"><Link to='/agregarProducto' className="link">Agregar productos</Link></span>
+
                     <ul>                               
                    
-                    <div className= "tablaOrganizadores">
+                    <div className= "tablaProductos">
             
                         <div className = "cuadroTabla letraEncabezado">ID</div>
+                        <div className = "cuadroTabla letraEncabezado">Nombre</div>
                         <div className = "cuadroTabla letraEncabezado">Descripcion</div>
                         <div className = "cuadroTabla letraEncabezado">valor</div>
                         <div className = "cuadroTabla letraEncabezado">Estado</div>
@@ -96,8 +100,9 @@ function ListadoProductos() {
                         <section>
 
 
-                            <div className= "tablaOrganizadores">
+                            <div className= "tablaProductos">
                                 <div className = "cuadroTabla">{producto.id_producto}</div>
+                                <div className = "cuadroTabla">{producto.nombre_producto}</div>
                                 <div className = "cuadroTabla">{producto.descripcion}</div>
                                 <div className = "cuadroTabla">{producto.valor_unitario}</div>
                                 <div className = "cuadroTabla">{producto.estado}</div>
@@ -117,14 +122,15 @@ function ListadoProductos() {
 
                         );
                     })}
-                            <div className = "botonAgregarProducto botonModulos titulo centrar" ><span><Link to='/agregarProducto' className="link">Agregar productos</Link></span></div>
-
+                            
                     </ul>
                 </main>
                     
                 <Footer />
             </body>
+            </PrivateRoute>
         </div>
+        
     );
 }
 export default ListadoProductos;

@@ -16,9 +16,15 @@ import mugAbogada from 'media/carruselProductos/mugAbogada.png';
 import cuadernoMorado from 'media/carruselProductos/cuadernoMorado.png';
 import planeador from 'media/carruselProductos/planeador.jpg';
 import baseCelular from 'media/carruselProductos/baseCelular.png' ;
+import { useAuth0 } from "@auth0/auth0-react";
 
 
-function Index() {
+const Index = () => {
+    
+    const { loginWithRedirect } = useAuth0();
+
+    const { logout } = useAuth0();
+
     return(
         <body>
             <header> 
@@ -48,11 +54,12 @@ function Index() {
                     <li className ="boton tituloSeccionPagina"><Link to='/' className="link">Home</Link></li>
                     <li>
                             <div className = "botonUsuario">
-                                    <span className="nombreUsuario"><Link to='/login' className="link">Ingresar/Registrar</Link></span>
+                                    <span onClick={() => loginWithRedirect()} className="nombreUsuario">Ingresar/Registrar</span>
+                                    <span onClick={() => logout({ returnTo: window.location.origin })} className="nombreUsuario">/Cerrar Sesión</span>
                                     <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
+                                    
                             </div>
                     </li>
-                    
                 </ul>
             </header>  
             <main className = "tamañoPaginaIndex">
