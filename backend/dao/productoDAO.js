@@ -71,7 +71,7 @@ export default class ProductoDAO {
     }
   }
 
-  static async updateProducto(id_producto,descripcion, valor_unitario,estado) {
+  static async updateProducto(id_producto,nombre_producto,descripcion, valor_unitario,estado) {
     try {
       const updateProducto = await producto.updateOne(
         /*{ id_producto:"3"},*/
