@@ -72,9 +72,12 @@ const ListadoUsuarios=()=>{
                             </li>
 
                             <li>
-                                <div className="buscar">
-                                    <input placeholder ="Buscar Usuarios"/>
-                                    <img className="iconoBusqueda" src={iconoBuscar} alt="search" />
+                                <div className = "botonUsuario">
+                                    <div className ="tablaCerrarSesion">
+                                        <span className="nombreUsuario letraIniciarSesion">Estefania</span>
+                                        <span onClick={() => cerrarSesion()} className="nombreUsuario letraCerrarSesion">Cerrar Sesión</span> 
+                                    </div>
+                                        <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
                                 </div>
                             </li>
                         

@@ -112,10 +112,13 @@ const EditarProducto=(props) => {
                             </li>
                                 <li className ="boton tituloSeccionPagina"><Link to='/listadoProductos' className ="link">Administración de Productos</Link></li>
                             <li>
-                                <div className = "botonUsuario">
-                                    <span onClick={() => cerrarSesion()} className="nombreUsuario">Cerrar Sesión</span>
-                                    <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
+                            <div className = "botonUsuario">
+                                <div className ="tablaCerrarSesion">
+                                    <span className="nombreUsuario letraIniciarSesion">Estefania</span>
+                                    <span onClick={() => cerrarSesion()} className="nombreUsuario letraCerrarSesion">Cerrar Sesión</span> 
                                 </div>
+                                    <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
+                            </div>
                             </li>
                         </ul>
                     </header> 
