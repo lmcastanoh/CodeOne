@@ -1,8 +1,4 @@
-import {Link} from 'react-router-dom';
 import Footer from 'components/Footer';
-/*Se importa iconos necesarios para la página*/
-import iconoUsuarioVerde from "media/iconoUsuario.png";
-import iconoBuscar from "media/iconoBusqueda.ico";
 import cuadernoPsico from 'media/carruselProductos/cuadernoPsico.png';
 import PrivateRoute from 'components/PrivateRoute';
 import HeaderP from 'components/HeaderP';
@@ -14,7 +10,7 @@ const InfoProductos =() =>{
         <div className="infoProductos">
             <PrivateRoute>
                 <body>
-                <HeaderP linkModulo= '/listadoProductos' nombreModulo = "Administración de Productos"/>
+                <HeaderP nombreBuscador='Buscar Producto' linkModulo= '/listadoProductos' nombreModulo = "Administración de Productos"/>
 
                         <main>
                             <section>

@@ -130,3 +130,6 @@ export default class UsuarioController {
     }
   }
 }*/
+export const consultarOcrearusuario = async (req, callback)=>{
+
+}

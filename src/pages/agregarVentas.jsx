@@ -9,7 +9,7 @@ const AgregarVenta = () => {
         <div classname="agregarVentas"> 
             <PrivateRoute>
                 <body>
-                    <HeaderP linkModulo= '/listadoVentas' nombreModulo = "Administración de Ventas"/>    
+                    <HeaderP nombreBuscador='Buscar Venta' linkModulo= '/listadoVentas' nombreModulo = "Administración de Ventas"/>    
                     <main>
                         <section>
                             <h1 className = "tituloVentas">030 Venta</h1>

@@ -1,6 +1,6 @@
 import express from "express"
 import ProductoCtrl from "./producto.controller.js"
-import UsuarioCtrl from "./usuario.controller.js"
+import UsuarioCtrl, { consultarOcrearusuario } from "./usuario.controller.js"
 
 const router = express.Router()
 
@@ -17,6 +17,9 @@ router
   .post(ProductoCtrl.apiPostProducto)
   .put(ProductoCtrl.apiUpdateProducto)
   .delete(ProductoCtrl.apiDeleteProducto)
+  
+  router
+  .router("/usuarios/self")
 
   router
   .route("/usuarios")

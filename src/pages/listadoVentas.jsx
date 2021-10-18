@@ -14,7 +14,7 @@ const ListadoVentas=() =>{
         <div className="listadoVentas">
             <PrivateRoute>
                 <body>
-                    <HeaderP nombreBuscador='Buscar Ventas' linkModulo= '/listadoVentas' nombreModulo = "Administración de Ventas"/>
+                    <HeaderP nombreBuscador='Buscar Venta' linkModulo= '/listadoVentas' nombreModulo = "Administración de Ventas"/>
                         <main className= "tamañoPaginaIndex">
                             <section>
                                 <h1 className = "tituloProductos">Listado de Ventas</h1>

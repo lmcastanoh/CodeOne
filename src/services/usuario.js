@@ -20,3 +20,4 @@ class Usuarios {
 }
 
 export default new Usuarios();
+

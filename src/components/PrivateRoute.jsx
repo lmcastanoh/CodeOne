@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import { Link } from 'react-router-dom';
+import { obtenerDatosUsuarios } from 'http-common';
 
 const PrivateRoute = ({ children }) => {
   const { isAuthenticated, isLoading, loginWithRedirect, getAccessTokenSilently } = useAuth0();
@@ -13,6 +14,14 @@ const PrivateRoute = ({ children }) => {
         audience: 'api-autenticación-prana-personalizados',
       });
       localStorage.setItem("token",accessToken)
+      console.log(accessToken);
+      await obtenerDatosUsuarios((response)=>{
+        console.log("response",response)
+      },
+      (err)=>{
+        console.log("err",err)
+      }
+      )
       
     };
     if(isAuthenticated){
