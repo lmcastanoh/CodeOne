@@ -12,6 +12,7 @@ const HeaderP = ({nombreModulo, linkModulo}) => {
         logout({returnTo: 'http://localhost:3000/listadoProductos'})
     localStorage.setItem('token', null)
     }
+    const { loginWithRedirect } = useAuth0();
     const Ruta = ({ ruta, nombre, usuario})=>{
         console.log('usuario', usuario);
         const isActive = useActiveRoute(ruta);
@@ -50,11 +51,11 @@ const HeaderP = ({nombreModulo, linkModulo}) => {
             <li>
                 <div className = "botonUsuario">
                     <div>
-                        <span  className="nombreUsuario letraIniciarSesion"><Ruta ruta='/listadoProductos/perfil' nombre ='Iniciar Sesión' usuario ={user} /> </span>
+                        <span onClick={() => loginWithRedirect()} className="nombreUsuario boton letraIniciarSesion"><Ruta ruta='/listadoProductos/perfil' nombre ='Iniciar Sesión' usuario ={user} /> </span>
                     </div>
                     <div className ="tablaCerrarSesion"> 
                         <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
-                        <span onClick={() => cerrarSesion()} className=" letraCerrarSesion">Cerrar Sesión</span>
+                        <span onClick={() => cerrarSesion()} className="boton letraCerrarSesion">Cerrar Sesión</span>
                     </div>
                 </div>
             </li>
