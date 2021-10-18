@@ -44,7 +44,7 @@ const ListadoUsuarios=()=>{
         <div className="ListadodeUsuarios">
             <PrivateRoute>
             <body>
-                <HeaderP linkModulo= '/listadoUsuarios' nombreModulo = "Administración de Usuarios"/>
+                <HeaderP nombreBuscador='Buscar Usuario' linkModulo= '/listadoUsuarios' nombreModulo = "Administración de Usuarios"/>
                     <main>
                     <h1 className = "tituloProductos">Usuarios</h1>
                     <ul>                               

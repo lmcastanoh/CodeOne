@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 import { useAuth0 } from "@auth0/auth0-react";
 import useActiveRoute from 'hooks/useActiveRoute';
 
-const HeaderP = ({nombreModulo, linkModulo}) => {
+const HeaderP = ({nombreModulo, linkModulo, nombreBuscador}) => {
     const { user , logout } = useAuth0();
     const cerrarSesion =()=> {
         logout({returnTo: 'http://localhost:3000/listadoProductos'})
@@ -43,7 +43,7 @@ const HeaderP = ({nombreModulo, linkModulo}) => {
 
             <li>
                 <div className="buscar">
-                    <input placeholder ="Buscar Productos"/>
+                    <input placeholder ={nombreBuscador}/>
                     <img className="iconoBusqueda" src={iconoBuscar} alt="search" />
                 </div>
             </li>
