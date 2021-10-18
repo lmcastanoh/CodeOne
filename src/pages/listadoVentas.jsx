@@ -10,6 +10,7 @@ import iconoBuscar from "media/iconoBusqueda.ico";
 import iconoGranaje from "media/ruedaConfiguración.png";
 import iconoBasurero from "media/basurero.png";
 import PrivateRoute from 'components/PrivateRoute';
+import { useAuth0 } from "@auth0/auth0-react";
 
 const ListadoVentas=() =>{
     
