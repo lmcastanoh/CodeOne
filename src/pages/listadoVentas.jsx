@@ -12,6 +12,14 @@ import iconoBasurero from "media/basurero.png";
 import PrivateRoute from 'components/PrivateRoute';
 
 const ListadoVentas=() =>{
+    
+    const { logout } = useAuth0();
+    const cerrarSesion =()=> {
+        logout({returnTo: 'http://localhost:3000/listadoProductos'})
+    localStorage.setItem('token', null)
+    }
+
+
     return(
         <div className="listadoVentas">
             <PrivateRoute>
@@ -46,7 +54,7 @@ const ListadoVentas=() =>{
                             
                             <li>
                                 <div className = "botonUsuario">
-                                    <span className="nombreUsuario">Cerrar Sesión</span>
+                                    <span onClick={() => cerrarSesion()} className="nombreUsuario">Cerrar Sesión</span>
                                     <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
                                 </div>
                             </li>

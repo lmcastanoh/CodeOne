@@ -9,15 +9,19 @@ const PrivateRoute = ({ children }) => {
   useEffect(() => {
 
     const fetchAuth0Token = async ()=>{
+
       const accessToken = await getAccessTokenSilently({
         audience: 'api-autenticación-prana-personalizados',
       });
-      console.log(accessToken);
+      localStorage.setItem("token",accessToken)
+      
+    };
+    if(isAuthenticated){
+      fetchAuth0Token();
     }
-   fetchAuth0Token()
-  }, [])
+  }, [isAuthenticated, getAccessTokenSilently]);
 
-  console.log(isAuthenticated);
+  
   if (isLoading) {
     return <div>Loading ...</div>;
   }

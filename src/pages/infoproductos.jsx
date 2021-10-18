@@ -12,6 +12,11 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 const InfoProductos =() =>{
     const { logout } = useAuth0();
+    const cerrarSesion =()=> {
+        logout({returnTo: 'http://localhost:3000/listadoProductos'})
+    localStorage.setItem('token', null)
+    }
+
     return(
         <div className="infoProductos">
             <PrivateRoute>
@@ -41,7 +46,7 @@ const InfoProductos =() =>{
                                 <li className ="boton tituloSeccionPagina"><Link to = "/listadoProductos" className ="link">Administración de Productos</Link></li>
                                 <li>
                                     <div className = "botonUsuario">
-                                        <span onClick={() => logout({ returnTo: window.location.origin })} className="nombreUsuario">/Cerrar Sesión</span>
+                                        <span onClick={() => cerrarSesion()} className="nombreUsuario">Cerrar Sesión</span>
                                         <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
                                     </div>
                                 </li>

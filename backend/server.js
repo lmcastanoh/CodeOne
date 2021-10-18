@@ -23,6 +23,7 @@ var jwtCheck = jwt({
 
 app.use(jwtCheck)
 
+
 app.use("/api/v1/producto", producto)
 app.use("*", (req, res) => res.status(404).json({ error: "not found"}))
 
