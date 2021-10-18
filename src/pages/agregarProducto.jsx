@@ -8,9 +8,11 @@ import iconoBuscar from "media/iconoBusqueda.ico";
 import React, {useState} from "react";
 import Productos from "../services/codeone";
 import http from "../http-common";
+import { useAuth0 } from "@auth0/auth0-react";
 import PrivateRoute from 'components/PrivateRoute';
 
-function AgregarProducto() {
+const AgregarProducto =() =>{
+    const { logout } = useAuth0();
 
 
     const [input, setInput] =useState({
@@ -71,7 +73,7 @@ function AgregarProducto() {
                                 <li className ="boton tituloSeccionPagina"><Link to='/listadoProductos' className ="link">Administración de Productos</Link></li>
                             <li>
                                 <div className = "botonUsuario">
-                                    <span className="nombreUsuario">Cerrar Sesión</span>
+                                    <span onClick={() => logout({ returnTo: window.location.origin })} className="nombreUsuario">/Cerrar Sesión</span>
                                     <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
                                 </div>
                             </li>

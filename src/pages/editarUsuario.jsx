@@ -11,8 +11,10 @@ import Usuarios from "../services/usuario";
 import http from "../http-common";
 import { useLocation } from 'react-router-dom';
 import PrivateRoute from 'components/PrivateRoute';
+import { useAuth0 } from "@auth0/auth0-react";
 
-function EditarUsuario(props) {
+const EditarUsuario =(props) =>{
+    const { logout } = useAuth0();
     const location = useLocation()
     console.log(location)
 
@@ -115,7 +117,7 @@ function EditarUsuario(props) {
                             <li className ="boton tituloSeccionPagina"><Link to = '/listadoUsuarios' className="link">Administración de Usuario</Link></li>
                             <li>
                                 <div className = "botonUsuario">
-                                    <span className="nombreUsuario">Cerrar Sesión</span>
+                                    <span onClick={() => logout({ returnTo: window.location.origin })} className="nombreUsuario">/Cerrar Sesión</span>
                                     <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
                                 </div>
                             </li>

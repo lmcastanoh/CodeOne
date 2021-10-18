@@ -4,18 +4,17 @@ import { Link } from 'react-router-dom';
 
 const PrivateRoute = ({ children }) => {
   const { isAuthenticated, isLoading, getAccessTokenSilently} = useAuth0();
-
   useEffect(()=>{
     const fetchAuth0Token = async () =>{
       const accessToken = await getAccessTokenSilently({
         audience: 'api-autenticación-prana-personalizados',
       });
-      console.log(accessToken)
+      localStorage.setItem("token",accessToken);
     };
-    
-    fetchAuth0Token()
-
-  },[]);
+    if (isAuthenticated){
+      fetchAuth0Token()
+    }
+  },[isAuthenticated, getAccessTokenSilently]);
 
 
   console.log(isAuthenticated);
