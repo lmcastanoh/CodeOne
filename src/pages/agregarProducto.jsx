@@ -12,6 +12,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import PrivateRoute from 'components/PrivateRoute';
 
 const AgregarProducto =() =>{
+    const { loginWithRedirect } = useAuth0();
     const { logout } = useAuth0();
     const cerrarSesion =()=> {
         logout({returnTo: 'http://localhost:3000/agregarProducto'})
@@ -76,10 +77,13 @@ const AgregarProducto =() =>{
                             </li>
                                 <li className ="boton tituloSeccionPagina"><Link to='/listadoProductos' className ="link">Administración de Productos</Link></li>
                             <li>
-                                <div className = "botonUsuario">
-                                    <span onClick={() => cerrarSesion()} className="nombreUsuario">Cerrar Sesión</span>
-                                    <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
+                            <div className = "botonUsuario">
+                                <div className ="tablaCerrarSesion">
+                                    <span onClick={() => loginWithRedirect()} className="nombreUsuario letraIniciarSesion">Estefania</span>
+                                    <span onClick={() => cerrarSesion()} className="nombreUsuario letraCerrarSesion">Cerrar Sesión</span> 
                                 </div>
+                                    <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
+                            </div>
                             </li>
                         </ul>
                     </header> 

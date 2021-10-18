@@ -59,10 +59,11 @@ const Index = () => {
                     <li className ="boton tituloSeccionPagina"><Link to='/' className="link">Home</Link></li>
                     <li>
                             <div className = "botonUsuario">
-                                    <span onClick={() => loginWithRedirect()} className="nombreUsuario">Ingresar/Registrar</span>
-                                    <span onClick={() => cerrarSesion()} className="nombreUsuario">Cerrar Sesión</span>
+                                <div className ="tablaCerrarSesion">
+                                    <span onClick={() => loginWithRedirect()} className="nombreUsuario letraIniciarSesion">Ingresar/Registrar</span>
+                                    <span onClick={() => cerrarSesion()} className="nombreUsuario letraCerrarSesion">Cerrar Sesión</span> 
+                                </div>
                                     <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
-                                    
                             </div>
                     </li>
                 </ul>
