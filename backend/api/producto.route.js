@@ -17,9 +17,6 @@ router
   .post(ProductoCtrl.apiPostProducto)
   .put(ProductoCtrl.apiUpdateProducto)
   .delete(ProductoCtrl.apiDeleteProducto)
-  
-  router
-  .router("/usuarios/self")
 
   router
   .route("/usuarios")

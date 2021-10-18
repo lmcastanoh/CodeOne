@@ -1,5 +1,6 @@
 import http from "../http-common";
 
+
 class Usuarios {
   getAll(page = 0) {
     return http.get("/usuarios");

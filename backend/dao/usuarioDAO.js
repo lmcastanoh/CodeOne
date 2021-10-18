@@ -55,6 +55,7 @@ export default class UsuarioDAO {
       return { usuariosList: [], totalNumusuarios: 0 }
     }
   }
+ 
 
   static async addUsuario(id_usuario,nombre,correo,celular,fecha_nacimiento,fecha_ingreso,estado,rol) {
     try {
