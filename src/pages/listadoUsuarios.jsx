@@ -19,19 +19,6 @@ import useActiveRoute from 'hooks/useActiveRoute';
 const ListadoUsuarios=()=>{
 
     const {user, logout } = useAuth0();
-    const Ruta = ({usario}) => {
-        console.log("usuario",usuario);
-        return(
-            <span>
-               {usario ? (
-               <>{usuario.name}</>
-               ) : (
-                <> {nombre} </>
-               )}
-            </span>
-             
-        )
-    }
 
     const cerrarSesion =()=> {
         logout({returnTo: 'http://localhost:3000/listadoProductos'})
