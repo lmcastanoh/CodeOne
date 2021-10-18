@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 import { useAuth0 } from "@auth0/auth0-react";
 import useActiveRoute from 'hooks/useActiveRoute';
 
-const HeaderP = () => {
+const HeaderP = ({nombreModulo, linkModulo}) => {
     const { user , logout } = useAuth0();
     const cerrarSesion =()=> {
         logout({returnTo: 'http://localhost:3000/listadoProductos'})
@@ -46,11 +46,11 @@ const HeaderP = () => {
                     <img className="iconoBusqueda" src={iconoBuscar} alt="search" />
                 </div>
             </li>
-            <li className ="boton tituloSeccionPagina"><Link to = "/listadoProductos" className ="link">Administración de Productos</Link></li>
+            <li className ="boton tituloSeccionPagina"><Link to = {linkModulo} className ="link">{nombreModulo}</Link></li>
             <li>
                 <div className = "botonUsuario">
                     <div>
-                        <span  className="nombreUsuario letraIniciarSesion"><Ruta ruta='/listadoProductos/perfil' nombre ='Perfil' usuario ={user} /> </span>
+                        <span  className="nombreUsuario letraIniciarSesion"><Ruta ruta='/listadoProductos/perfil' nombre ='Iniciar Sesión' usuario ={user} /> </span>
                     </div>
                     <div className ="tablaCerrarSesion"> 
                         <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>

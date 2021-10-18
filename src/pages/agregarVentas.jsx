@@ -1,60 +1,15 @@
 import {Link} from 'react-router-dom';
 import Footer from 'components/Footer';
-/*Se importa logo */
-import logoPrana from "media/logoNavbar.png";
-import logoCodeOne from "media/logoCodeOne.png";
-/*Se importa iconos necesarios para la página*/
-import iconoUsuarioVerde from "media/iconoUsuario.png";
-import iconoBuscar from "media/iconoBusqueda.ico";
 import PrivateRoute from 'components/PrivateRoute';
-import { useAuth0 } from "@auth0/auth0-react";
+import HeaderP from 'components/HeaderP';
 
 const AgregarVenta = () => {
-    const { logout } = useAuth0();
-    const cerrarSesion =()=> {
-        logout({returnTo: 'http://localhost:3000/listadoProductos'})
-    localStorage.setItem('token', null)
-    }
 
     return(
         <div classname="agregarVentas"> 
             <PrivateRoute>
                 <body>
-                    <header> 
-                        <ul className="barraRedes">
-                            <li><i className="fas fa-palette"></i></li>
-                            <div className= "icoRedes">
-                                <li><i className=" fab fa-facebook"></i></li>
-                                <li><i className=" fab fa-instagram"></i></li>
-                                <li><i className="fab fa-whatsapp"></i></li>
-                            </div>
-                        </ul>
-                        <ul className="navbar">
-                            <Link to='/'>
-                                <li>
-                                    <div> 
-                                        <img className="boton logo" src={logoPrana} alt= "imagen" /> 
-                                    </div>
-                                </li>
-                            </Link>
-                            <li>
-                                <div className="buscar">
-                                    <input placeholder ="Buscar Ventas"/>
-                                    <img className="iconoBusqueda" src={iconoBuscar} alt="search" />
-                                </div>
-                            </li>
-                            <li className ="boton tituloSeccionPagina"><Link to='/listadoVentas' className="link">Administración de Ventas</Link></li>
-                            <li>
-                            <div className = "botonUsuario">
-                                <div className ="tablaCerrarSesion">
-                                    <span className="nombreUsuario letraIniciarSesion">Estefania</span>
-                                    <span onClick={() => cerrarSesion()} className="nombreUsuario letraCerrarSesion">Cerrar Sesión</span> 
-                                </div>
-                                    <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
-                            </div>
-                            </li>
-                        </ul>
-                    </header>    
+                    <HeaderP linkModulo= '/listadoVentas' nombreModulo = "Administración de Ventas"/>    
                     <main>
                         <section>
                             <h1 className = "tituloVentas">030 Venta</h1>
