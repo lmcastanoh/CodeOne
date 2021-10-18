@@ -1,12 +1,5 @@
 import {Link} from 'react-router-dom';
 import Footer from 'components/Footer';
-/*Se importa logo */
-import logoPrana from "media/logoNavbar.png";
-import logoCodeOne from "media/logoCodeOne.png";
-/*Se importa iconos necesarios para la página*/
-import iconoUsuarioVerde from "media/iconoUsuario.png";
-import iconoBuscar from "media/iconoBusqueda.ico";
-/*Iconos de editar o eliminar*/
 import iconoGranaje from "media/ruedaConfiguración.png";
 import iconoBasurero from "media/basurero.png";
 import React, {useState, useEffect} from "react";
