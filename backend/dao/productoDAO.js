@@ -16,7 +16,6 @@ export default class ProductoDAO {
     }
   }
 
-
   static async getProducto({
     filters = null,
     page = 0,

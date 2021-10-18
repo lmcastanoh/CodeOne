@@ -22,6 +22,11 @@ import { useAuth0 } from "@auth0/auth0-react";
 const Index = () => {
     
     const { loginWithRedirect } = useAuth0();
+    const cerrarSesion =()=> {
+        logout({returnTo: 'http://localhost:3000/listadoProductos'})
+    localStorage.setItem('token', null)
+    }
+
 
     const { logout } = useAuth0();
 
@@ -55,7 +60,7 @@ const Index = () => {
                     <li>
                             <div className = "botonUsuario">
                                     <span onClick={() => loginWithRedirect()} className="nombreUsuario">Ingresar/Registrar</span>
-                                    <span onClick={() => logout({ returnTo: window.location.origin })} className="nombreUsuario">/Cerrar Sesión</span>
+                                    <span onClick={() => cerrarSesion()} className="nombreUsuario">Cerrar Sesión</span>
                                     <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
                                     
                             </div>

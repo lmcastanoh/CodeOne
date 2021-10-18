@@ -15,6 +15,11 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 const EditarUsuario =(props) =>{
     const { logout } = useAuth0();
+    const cerrarSesion =()=> {
+        logout({returnTo: 'http://localhost:3000/listadoProductos'})
+    localStorage.setItem('token', null)
+    }
+
     const location = useLocation()
     console.log(location)
 
@@ -117,7 +122,7 @@ const EditarUsuario =(props) =>{
                             <li className ="boton tituloSeccionPagina"><Link to = '/listadoUsuarios' className="link">Administración de Usuario</Link></li>
                             <li>
                                 <div className = "botonUsuario">
-                                    <span onClick={() => logout({ returnTo: window.location.origin })} className="nombreUsuario">/Cerrar Sesión</span>
+                                    <span onClick={() => cerrarSesion()} className="nombreUsuario">Cerrar Sesión</span>
                                     <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
                                 </div>
                             </li>

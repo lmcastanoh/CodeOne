@@ -13,6 +13,10 @@ import PrivateRoute from 'components/PrivateRoute';
 
 const AgregarProducto =() =>{
     const { logout } = useAuth0();
+    const cerrarSesion =()=> {
+        logout({returnTo: 'http://localhost:3000/agregarProducto'})
+    localStorage.setItem('token', null)
+    }
 
 
     const [input, setInput] =useState({
@@ -73,7 +77,7 @@ const AgregarProducto =() =>{
                                 <li className ="boton tituloSeccionPagina"><Link to='/listadoProductos' className ="link">Administración de Productos</Link></li>
                             <li>
                                 <div className = "botonUsuario">
-                                    <span onClick={() => logout({ returnTo: window.location.origin })} className="nombreUsuario">/Cerrar Sesión</span>
+                                    <span onClick={() => cerrarSesion()} className="nombreUsuario">Cerrar Sesión</span>
                                     <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
                                 </div>
                             </li>
