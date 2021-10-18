@@ -109,23 +109,18 @@ body {
 .nombreUsuario{
   display: grid;
   grid-column: auto;
-  grid-template-columns: 150px;
+  grid-template-columns: 180px;
   grid-template-rows: 200px;
-  font-size:medium;
+  font-size:21px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
-  width: 150px;
+  width: 180px;
   font-weight: bold;
-  padding: 2px;
+  padding: 3px;
   display: flex;
   justify-content: center;
   margin-right: 50px;
   padding: auto;
-}
-.nombreUsuario:hover{
-  cursor: pointer;
-  transform:scale(1.01);
-  font-weight:600;
 }
 .botonUsuario{
   display: flex;
@@ -1080,7 +1075,4 @@ text-align: center;
 }
 .letraCerrarSesion{
   font-size: 15px;
-}
-.letraIniciarSesion{
-  font-size: 20px;
 }

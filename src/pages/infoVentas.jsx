@@ -13,7 +13,7 @@ const InfoVentas=() => {
         <div className="infoVentas">
             <PrivateRoute>
                 <body>
-                    <HeaderP linkModulo= '/listadoVentas' nombreModulo = "Administración de Ventas"/>
+                    <HeaderP nombreBuscador='Buscar Venta' linkModulo= '/listadoVentas' nombreModulo = "Administración de Ventas"/>
                         <main>
                             <section>
                                 <h1 className = "tituloVentas">001 Ventas <img className="boton icoTablaVentas" src={iconoGranaje} /></h1>

@@ -29,7 +29,7 @@ const Index = () => {
 
     return(
         <body>
-            <HeaderP linkModulo= '/index' nombreModulo = "Home"/>
+            <HeaderP nombreBuscador='Buscar' linkModulo= '/index' nombreModulo = "Home"/>
                 <main className = "tamañoPaginaIndex">
                     <section>
                         <ul className ="botonModulos">
@@ -83,4 +83,3 @@ const Index = () => {
     );
 }
 export default Index;
-
