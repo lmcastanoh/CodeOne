@@ -12,7 +12,6 @@ import { useAuth0 } from "@auth0/auth0-react";
 import PrivateRoute from 'components/PrivateRoute';
 
 const AgregarProducto =() =>{
-
     const { logout } = useAuth0();
     const cerrarSesion =()=> {
         logout({returnTo: 'http://localhost:3000/agregarProducto'})

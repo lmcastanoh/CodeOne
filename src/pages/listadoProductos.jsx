@@ -77,10 +77,10 @@ const ListadoProductos =() => {
                         <li>
                             <div className = "botonUsuario">
                                 <div className ="tablaCerrarSesion">
-                                        <span className="nombreUsuario letraIniciarSesion">Estefania</span>
-                                        <span onClick={() => cerrarSesion()} className="nombreUsuario letraCerrarSesion">Cerrar Sesión</span> 
+                                    <span className="nombreUsuario letraIniciarSesion">Estefania</span>
+                                    <span onClick={() => cerrarSesion()} className="nombreUsuario letraCerrarSesion">Cerrar Sesión</span> 
                                 </div>
-                                <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
+                                    <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
                             </div>
                         </li>
                     </ul>

@@ -14,10 +14,25 @@ import Usuarios from "../services/usuario";
 import http from "../http-common";
 import PrivateRoute from 'components/PrivateRoute';
 import { useAuth0 } from "@auth0/auth0-react";
+import useActiveRoute from 'hooks/useActiveRoute';
 
 const ListadoUsuarios=()=>{
 
-    const { logout } = useAuth0();
+    const {user, logout } = useAuth0();
+    const Ruta = ({usario}) => {
+        console.log("usuario",usuario);
+        return(
+            <span>
+               {usario ? (
+               <>{usuario.name}</>
+               ) : (
+                <> {nombre} </>
+               )}
+            </span>
+             
+        )
+    }
+
     const cerrarSesion =()=> {
         logout({returnTo: 'http://localhost:3000/listadoProductos'})
     localStorage.setItem('token', null)
@@ -54,7 +69,7 @@ const ListadoUsuarios=()=>{
             <PrivateRoute>
             <body>
                     <header> 
-                        <ul className="barraRedes">
+                    <ul className="barraRedes">
                             <li><i className="fas fa-palette"></i></li>
                             <div className= "icoRedes">
                                 <li><i className=" fab fa-facebook"></i></li>
@@ -63,13 +78,13 @@ const ListadoUsuarios=()=>{
                             </div>
                         </ul>
                         <ul className="navbar">
-                            <li>
-                                <div> 
-                                    <Link to = "/" className ="link">
+                            <Link to='/'>
+                                <li>
+                                    <div> 
                                         <img className="boton logo" src={logoPrana} alt= "imagen" /> 
-                                    </Link>
-                                </div>
-                            </li>
+                                    </div>
+                                </li>
+                            </Link>
 
                             <li>
                                 <div className="buscar">
@@ -77,13 +92,12 @@ const ListadoUsuarios=()=>{
                                     <img className="iconoBusqueda" src={iconoBuscar} alt="search" />
                                 </div>
                             </li>
-                        
-                            <li className ="boton tituloSeccionPagina"><Link to = "/listadoUsuarios" className ="link">Administración de Usuario </Link></li>
-                            
+                            <li className ="boton tituloSeccionPagina"><Link to = '/listadoUsuarios' className="link">Administración de Usuario</Link></li>
                             <li>
                                 <div className = "botonUsuario">
                                     <div className ="tablaCerrarSesion">
-                                        <span className="nombreUsuario letraIniciarSesion">Estefania</span>
+                                        
+                                        <span className="nombreUsuario letraIniciarSesion" >Estefania</span>
                                         <span onClick={() => cerrarSesion()} className="nombreUsuario letraCerrarSesion">Cerrar Sesión</span> 
                                     </div>
                                     <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
