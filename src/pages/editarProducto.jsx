@@ -76,7 +76,7 @@ const EditarProducto=(props) => {
             <PrivateRoute>
 
                 <body>
-                    <HeaderP linkModulo= '/listadoProductos' nombreModulo = "Administración de Productos"/>
+                    <HeaderP nombreBuscador='Buscar Producto' linkModulo= '/listadoProductos' nombreModulo = "Administración de Productos"/>
                     <main>
                         <h1 className = "tituloProductos">Editar Productos</h1>
                         <ul>

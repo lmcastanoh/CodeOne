@@ -1,11 +1,5 @@
 import {Link} from 'react-router-dom';
 import Footer from 'components/Footer';
-/*Se importa logo */
-import logoPrana from "media/logoNavbar.png";
-import logoCodeOne from "media/logoCodeOne.png";
-/*Se importa iconos necesarios para la página*/
-import iconoUsuarioVerde from "media/iconoUsuario.png";
-import iconoBuscar from "media/iconoBusqueda.ico";
 /*Iconos de editar o eliminar*/
 import iconoGranaje from "media/ruedaConfiguración.png";
 import iconoBasurero from "media/basurero.png";
@@ -15,15 +9,10 @@ import http from "../http-common";
 import PrivateRoute from 'components/PrivateRoute';
 import { useAuth0 } from "@auth0/auth0-react";
 import useActiveRoute from 'hooks/useActiveRoute';
+import HeaderP from 'components/HeaderP';
 
 const ListadoUsuarios=()=>{
 
-    const {user, logout } = useAuth0();
-
-    const cerrarSesion =()=> {
-        logout({returnTo: 'http://localhost:3000/listadoProductos'})
-    localStorage.setItem('token', null)
-    }
 
     const [usuarios, setUsuarios] = useState([]);
 
@@ -55,48 +44,10 @@ const ListadoUsuarios=()=>{
         <div className="ListadodeUsuarios">
             <PrivateRoute>
             <body>
-                    <header> 
-                    <ul className="barraRedes">
-                            <li><i className="fas fa-palette"></i></li>
-                            <div className= "icoRedes">
-                                <li><i className=" fab fa-facebook"></i></li>
-                                <li><i className=" fab fa-instagram"></i></li>
-                                <li><i className="fab fa-whatsapp"></i></li>
-                            </div>
-                        </ul>
-                        <ul className="navbar">
-                            <Link to='/'>
-                                <li>
-                                    <div> 
-                                        <img className="boton logo" src={logoPrana} alt= "imagen" /> 
-                                    </div>
-                                </li>
-                            </Link>
-
-                            <li>
-                                <div className="buscar">
-                                    <input placeholder ="Buscar Usuarios"/>
-                                    <img className="iconoBusqueda" src={iconoBuscar} alt="search" />
-                                </div>
-                            </li>
-                            <li className ="boton tituloSeccionPagina"><Link to = '/listadoUsuarios' className="link">Administración de Usuario</Link></li>
-                            <li>
-                                <div className = "botonUsuario">
-                                    <div className ="tablaCerrarSesion">
-                                        
-                                        <span className="nombreUsuario letraIniciarSesion" >Estefania</span>
-                                        <span onClick={() => cerrarSesion()} className="nombreUsuario letraCerrarSesion">Cerrar Sesión</span> 
-                                    </div>
-                                    <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
-                                </div>
-                            </li>
-                        </ul>
-                    </header> 
-                    
+                <HeaderP linkModulo= '/listadoUsuarios' nombreModulo = "Administración de Usuarios"/>
                     <main>
                     <h1 className = "tituloProductos">Usuarios</h1>
                     <ul>                               
-                    
                     <div className= "tablaUsuarios">
             
                         <div className = "cuadroTablaUsuarios letraEncabezado">ID</div>
