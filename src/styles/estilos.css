@@ -103,10 +103,18 @@ body {
 }
 
 .iconoUsuario{
-  height: 75px;
+  height: 70px;
+  margin-left: 14px;
 }
 .nombreUsuario{
   font-size: 20px;
+  border: 2px solid red;
+  width: 200px;
+  height: 100px;
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  margin-right: 50px;
 }
 .nombreUsuario:hover{
   cursor: pointer;
@@ -1057,16 +1065,16 @@ text-align: center;
 .tablaCerrarSesion{
   display: grid;
   grid-column: auto;
-  grid-template-columns: 200px;
-  grid-template-rows: 25px 25px;
-  margin-right: 40px;
-  text-align: center;
+  grid-template-columns: 90px;
+  grid-template-rows: 80px 25px;
   justify-content: center;
+  align-items: center;
   margin-top: 17px;
+  padding: 1px;
 }
 .letraCerrarSesion{
   font-size: 15px;
 }
 .letraIniciarSesion{
-  font-size: 25px;
+  font-size: 20px;
 }

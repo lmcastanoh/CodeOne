@@ -14,9 +14,10 @@ import Productos from "../services/codeone";
 import http from "../http-common";
 import PrivateRoute from 'components/PrivateRoute';
 import { useAuth0 } from "@auth0/auth0-react";
+import useActiveRoute from 'hooks/useActiveRoute';
 
 const ListadoProductos =() => {
-    const { logout } = useAuth0();
+    const { user , logout } = useAuth0();
     const cerrarSesion =()=> {
         logout({returnTo: 'http://localhost:3000/listadoProductos'})
     localStorage.setItem('token', null)
@@ -46,6 +47,16 @@ const ListadoProductos =() => {
           alert('Producto eliminado');
       };
 
+      const Ruta = ({ ruta, nombre, usuario})=>{
+          console.log('usuario', usuario);
+          const isActive = useActiveRoute(ruta);
+          return(
+              <span  to ={ruta}>
+                  {usuario ? <>{usuario.name}</>: 
+                  <>{nombre}</> }
+              </span>
+          )
+      }
 
     return(
         <div classname="listadoProductos">
@@ -76,11 +87,13 @@ const ListadoProductos =() => {
                         <li className ="boton tituloSeccionPagina"><Link to = "/listadoProductos" className ="link">Administración de Productos</Link></li>
                         <li>
                             <div className = "botonUsuario">
-                                <div className ="tablaCerrarSesion">
-                                    <span className="nombreUsuario letraIniciarSesion">Estefania</span>
-                                    <span onClick={() => cerrarSesion()} className="nombreUsuario letraCerrarSesion">Cerrar Sesión</span> 
+                                <div>
+                                    <span  className="nombreUsuario letraIniciarSesion"><Ruta ruta='/listadoProductos/perfil' nombre ='Perfil' usuario ={user} /> </span>
                                 </div>
+                                <div className ="tablaCerrarSesion"> 
                                     <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
+                                    <span onClick={() => cerrarSesion()} className=" letraCerrarSesion">Cerrar Sesión</span>
+                                </div>
                             </div>
                         </li>
                     </ul>
