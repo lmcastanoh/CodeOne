@@ -55,7 +55,10 @@ const ListadoVentas=() =>{
                             
                             <li>
                                 <div className = "botonUsuario">
-                                    <span onClick={() => cerrarSesion()} className="nombreUsuario">Cerrar Sesión</span>
+                                    <div className ="tablaCerrarSesion">
+                                        <span className="nombreUsuario letraIniciarSesion">Estefania</span>
+                                        <span onClick={() => cerrarSesion()} className="nombreUsuario letraCerrarSesion">Cerrar Sesión</span> 
+                                    </div>  
                                     <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
                                 </div>
                             </li>
