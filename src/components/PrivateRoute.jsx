@@ -12,7 +12,7 @@ const PrivateRoute = ({ children }) => {
       const accessToken = await getAccessTokenSilently({
         audience: 'api-autenticación-prana-personalizados',
       });
-      console.log(accessToken)
+      console.log(accessToken);
     }
    fetchAuth0Token()
   }, [])
