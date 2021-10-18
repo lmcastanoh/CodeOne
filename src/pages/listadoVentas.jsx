@@ -11,7 +11,7 @@ import iconoGranaje from "media/ruedaConfiguración.png";
 import iconoBasurero from "media/basurero.png";
 import PrivateRoute from 'components/PrivateRoute';
 
-function ListadoVentas() {
+const ListadoVentas=() =>{
     return(
         <div className="listadoVentas">
             <PrivateRoute>

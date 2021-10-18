@@ -8,7 +8,10 @@ import iconoUsuarioVerde from "media/iconoUsuario.png";
 import iconoBuscar from "media/iconoBusqueda.ico";
 import cuadernoPsico from 'media/carruselProductos/cuadernoPsico.png';
 import PrivateRoute from 'components/PrivateRoute';
-function InfoProductos() {
+import { useAuth0 } from "@auth0/auth0-react";
+
+const InfoProductos =() =>{
+    const { logout } = useAuth0();
     return(
         <div className="infoProductos">
             <PrivateRoute>
@@ -38,7 +41,7 @@ function InfoProductos() {
                                 <li className ="boton tituloSeccionPagina"><Link to = "/listadoProductos" className ="link">Administración de Productos</Link></li>
                                 <li>
                                     <div className = "botonUsuario">
-                                        <span className="nombreUsuario">Cerrar Sesión</span>
+                                        <span onClick={() => logout({ returnTo: window.location.origin })} className="nombreUsuario">/Cerrar Sesión</span>
                                         <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
                                     </div>
                                 </li>

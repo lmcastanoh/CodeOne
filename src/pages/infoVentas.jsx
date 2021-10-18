@@ -8,8 +8,11 @@ import iconoUsuarioVerde from "media/iconoUsuario.png";
 import iconoBuscar from "media/iconoBusqueda.ico";
 import iconoGranaje from "media/ruedaConfiguración.png";
 import PrivateRoute from 'components/PrivateRoute';
+import { useAuth0 } from "@auth0/auth0-react";
 
-function InfoVentas() {
+const InfoVentas=() => {
+    const { logout } = useAuth0();
+
     return(
         <div className="infoVentas">
             <PrivateRoute>
@@ -44,7 +47,7 @@ function InfoVentas() {
                             
                             <li>
                                 <div className = "botonUsuario">
-                                    <span className="nombreUsuario">Cerrar Sesión</span>
+                                    <span onClick={() => logout({ returnTo: window.location.origin })} className="nombreUsuario">/Cerrar Sesión</span>
                                     <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
                                 </div>
                             </li>

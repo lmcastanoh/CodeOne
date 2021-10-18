@@ -13,8 +13,10 @@ import React, {useState, useEffect} from "react";
 import Productos from "../services/codeone";
 import http from "../http-common";
 import PrivateRoute from 'components/PrivateRoute';
+import { useAuth0 } from "@auth0/auth0-react";
 
-function ListadoProductos() {
+const ListadoProductos =() => {
+    const { logout } = useAuth0();
 
 
 
@@ -71,7 +73,7 @@ function ListadoProductos() {
                         <li className ="boton tituloSeccionPagina"><Link to = "/listadoProductos" className ="link">Administración de Productos</Link></li>
                         <li>
                             <div className = "botonUsuario">
-                                <span className="nombreUsuario">Cerrar Sesión</span>
+                                <span onClick={() => logout({ returnTo: window.location.origin })} className="nombreUsuario">Cerrar Sesión</span>
                                 <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
                             </div>
                         </li>
