@@ -28,7 +28,7 @@ const Index = () => {
     }
 
 
-    const { logout } = useAuth0();
+    const { user, logout } = useAuth0();
 
     return(
         <body>
