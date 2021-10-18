@@ -17,6 +17,7 @@ import cuadernoMorado from 'media/carruselProductos/cuadernoMorado.png';
 import planeador from 'media/carruselProductos/planeador.jpg';
 import baseCelular from 'media/carruselProductos/baseCelular.png' ;
 import { useAuth0 } from "@auth0/auth0-react";
+import HeaderP from 'components/HeaderP';
 
 
 const Index = () => {
@@ -32,42 +33,7 @@ const Index = () => {
 
     return(
         <body>
-            <header> 
-                <ul className="barraRedes">
-                    <li><i className="fas fa-palette"></i></li>
-                    <div className= "icoRedes">
-                        <li><i className=" fab fa-facebook"></i></li>
-                        <li><i className=" fab fa-instagram"></i></li>
-                        <li><i className="fab fa-whatsapp"></i></li>
-                    </div>
-                </ul>
-                <ul className="navbar">
-                    <Link to='/'>
-                        <li>
-                            <div> 
-                                <img className="boton logo" src={logoPrana} alt= "imagen" /> 
-                            </div>
-                        </li>
-                    </Link>
-
-                    <li>
-                        <div className="buscar">
-                            <input placeholder ="Buscar"/>
-                            <img className="iconoBusqueda" src={iconoBuscar} alt="search" />
-                        </div>
-                    </li>
-                    <li className ="boton tituloSeccionPagina"><Link to='/' className="link">Home</Link></li>
-                    <li>
-                            <div className = "botonUsuario">
-                                <div className ="tablaCerrarSesion">
-                                    <span onClick={() => loginWithRedirect()} className="nombreUsuario letraIniciarSesion">Ingresar/Registrar</span>
-                                    <span onClick={() => cerrarSesion()} className="nombreUsuario letraCerrarSesion">Cerrar Sesión</span> 
-                                </div>
-                                    <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
-                            </div>
-                    </li>
-                </ul>
-            </header>  
+            <HeaderP/>
             <main className = "tamañoPaginaIndex">
                 <section>
                     <ul className ="botonModulos">
