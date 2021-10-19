@@ -80,7 +80,7 @@ const EditarProducto=(props) => {
                     <main>
                         <h1 className = "tituloProductos">Editar Productos</h1>
                         <ul>
-                        <form  className="tablaAgregarProductos" action="ejemplo.php" method="get" >
+                        <form  className="tablaAgregarUsuarios" action="ejemplo.php" method="get" >
                             
                             <p className = "letraEncabezado cuadroProductos " >ID</p>
                             <p className="inputProducto cuadroProductos" ><input onChange={handleInputChange} name="id_producto" value={nuevaInfo.id_producto} readOnly="readonly"/></p>
@@ -101,7 +101,9 @@ const EditarProducto=(props) => {
 
 
                         </form>
-                            <div  onClick={saveProducto} className = "botonAgregarUsuario botonModulos titulo centrar"> <Link to='/listadoProductos' className ="link"><span>Guardar Cambios</span></Link></div>
+                        </ul>
+                        <ul>
+                        <div onClick={saveProducto} className = "botonAgregarUsuario botonModulos titulo centrar"> <Link to='/listadoProductos' className ="link"><span>Guardar Cambios</span></Link></div>
                         </ul>
                     </main>
                     <Footer />

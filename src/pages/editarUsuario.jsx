@@ -62,7 +62,6 @@ const EditarUsuario =(props) =>{
         nombre: nuevaInfo.nombre,
         correo: nuevaInfo.correo,
         celular: nuevaInfo.celular,
-        fecha_nacimiento: nuevaInfo.fecha_nacimiento,
         fecha_ingreso: nuevaInfo.fecha_ingreso,
         estado: nuevaInfo.estado,
         rol: nuevaInfo.rol        
@@ -86,11 +85,11 @@ const EditarUsuario =(props) =>{
                 <body> 
                     <HeaderP nombreBuscador='Buscar Usuario' linkModulo= '/listadoUsuarios' nombreModulo = "Administración de Usuarios"/>
                         <main>
-                            <h1 className = "tituloProductos">Agregar Usuario</h1>
+                            <h1 className = "tituloProductos">Editar Usuario</h1>
                             <ul>
                                 <form  className="tablaAgregarUsuarios" action="ejemplo.php" method="get" >
 
-                                <p className = "letraEncabezado " >ID: </p>
+                                    <p className = "letraEncabezado " >ID: </p>
                                     <p className="inputUsuario cuadroParaUsuarios"><input type="text" onChange={handleInputChange} name="id_usuario" size="40" value={nuevaInfo.id_usuario} /></p>
 
                                     <p className = "letraEncabezado " >Nombre: </p>
@@ -101,9 +100,6 @@ const EditarUsuario =(props) =>{
 
                                     <p className = "letraEncabezado  " >Número de Celular:</p>
                                     <p className="inputUsuario cuadroParaUsuarios" ><input type="tel" onChange={handleInputChange} name="celular" value={nuevaInfo.celular}/></p>
-
-                                    <p className = "letraEncabezado  " >Fecha de Nacimiento:</p>
-                                    <p className="inputUsuario cuadroParaUsuarios " > <input type="date" onChange={handleInputChange} name="fecha_nacimiento" value={nuevaInfo.fecha_nacimiento}/></p>
                             
                                     <p className = "letraEncabezado  " >Fecha de Ingreso:</p>
                                     <p className="inputUsuario cuadroParaUsuarios" > <input type="date" onChange={handleInputChange} name="fecha_ingreso" value={nuevaInfo.fecha_ingreso}/></p>
@@ -117,7 +113,7 @@ const EditarUsuario =(props) =>{
 
                                 </form>
                                 <div onClick={saveUsuario} className = "botonAgregarUsuario botonModulos titulo centrar"><Link to='/listadoUsuarios' className="link"> <span>Guardar Cambios</span></Link></div>
-                            </ul>
+                              </ul>
                         </main>
                     <Footer />
                 </body>
