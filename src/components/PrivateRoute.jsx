@@ -17,7 +17,7 @@ const PrivateRoute = ({ children }) => {
       });
       localStorage.setItem("token",accessToken);
       console.log(accessToken);
-      await {obtenerDatosUsuario}((response)=>{
+      await obtenerDatosUsuario((response)=>{
         console.log('response', response);
       },
       (err) => {
