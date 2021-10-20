@@ -12,12 +12,12 @@ const AgregarVenta = () => {
                     <HeaderP nombreBuscador='Buscar Venta' linkModulo= '/listadoVentas' nombreModulo = "Administración de Ventas"/>    
                     <main>
                         <section>
-                            <h1 className = "tituloVentas">030 Venta</h1>
+                            <h1 className = "tituloVentas"> Venta</h1>
                             
                             <ul>
                                 <div className="tablaVentasProducto">
                                     <li className= "tablaVenta2">
-                                        <div className = "cuadroTabla cuadroBlanco letraEncabezado">ID del Producto</div>
+                                        <div className = "cuadroTabla cuadroBlanco letraEncabezado">ID Venta</div>
                                         <div className = "cuadroValorTotal cuadroTabla infoAgregarVenta inputAgregarventa" > <input type="number" name="IDproducto"/></div>
                                         
                                         <div className = "cuadroTabla cuadroBlanco letraEncabezado">ID del Cliente</div>
@@ -34,7 +34,7 @@ const AgregarVenta = () => {
                                     
                                     <li className = "tablaVenta2">
 
-                                        <div className = "cuadroTabla cuadroBlanco letraEncabezado">Fecha de Venta</div>
+                                        <div className = "cuadroTabla cuadroBlanco letraEncabezado">Fecha </div>
                                         <div className = "cuadroValorTotal cuadroTabla infoAgregarVenta inputAgregarventa"><input type="date" name="fechaingreso"/></div>
                                         <div className = "cuadroTabla cuadroBlanco  letraEncabezado">Nombre del Cliente</div>
                                         <div className = "cuadroValorTotal cuadroTabla infoAgregarVenta inputAgregarventa" ><input type="text" name="Nombre Cliente"/></div>
@@ -100,7 +100,7 @@ const AgregarVenta = () => {
                             <div className = "cuadroTabla letraEncabezado">--</div>
                         </section>
                         <section>
-                            <div className = "botonAgregarVenta botonModulos titulo centrar"><Link to='/comprobanteAgregar' className="link"><span>Agregar Venta</span></Link></div>
+                            <div className = "botonAgregarVenta botonModulos titulo centrar"><span>Agregar Ventas</span></div>
                         </section>
                     </main>
                     <Footer />
