@@ -55,13 +55,14 @@ export default class VentasDAO {
     }
   }
 
-  static async addVentas(id_ventas,id_cliente, vendedor, fecha_venta, estado_venta) {
+  static async addVentas(id_ventas,id_cliente, vendedor, fecha_venta, estado_venta,valor_venta) {
     try {
       const productoDoc = { id_ventas: id_ventas,
         id_cliente: id_cliente,
         vendedor: vendedor,
         fecha_venta: fecha_venta,
-        estado_venta: estado_venta, }
+        estado_venta: estado_venta,
+        valor_venta:valor_venta }
 
       return await ventas.insertOne(ventasDoc)
     } catch (e) {
@@ -70,13 +71,13 @@ export default class VentasDAO {
     }
   }
 
-  static async updateProducto(id_ventas,id_cliente, vendedor, fecha_venta, estado_venta) {
+  static async updateVentas(id_ventas,id_cliente, vendedor, fecha_venta, estado_venta, valor_venta) {
     try {
       const updateProducto = await venta.updateOne(
         /*{ id_producto:"3"},*/
         {id_ventas: id_ventas},
         { $set: { id_cliente: id_cliente, vendedor: vendedor,
-          fecha_venta: fecha_venta, estado_venta: estado_venta  } },
+          fecha_venta: fecha_venta, estado_venta: estado_venta, valor_venta:valor_venta  } },
       )
 
       return updateVenta

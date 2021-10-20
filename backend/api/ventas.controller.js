@@ -4,7 +4,7 @@ import jwt from "jwt-decode";
 
 
 export default class VentasController {
-  static async apiGetUsuario(req, res, next) {
+  static async apiGetVentas(req, res, next) {
     const ventasPerPage = req.query.ventasPerPage ? parseInt(req.query.ventasPerPage, 10) : 20
     const page = req.query.page ? parseInt(req.query.page, 10) : 0
 
@@ -12,7 +12,7 @@ export default class VentasController {
     if (req.query.descripcion) {
       filters.descripcion = req.query.descripcion
     } else if (req.query.id_ventas) {
-      filters.id_usuario = req.query.id_usuario
+      filters.id_ventas = req.query.id_ventas
     } 
 
     const { ventasList, totalNumventas } = await VentasDAO.getVentas({
@@ -22,7 +22,7 @@ export default class VentasController {
     })
 
     let response = {
-      usuarios: ventasList,
+      ventas: ventasList,
       page: page,
       filters: filters,
       entries_per_page: ventasPerPage,
@@ -33,7 +33,7 @@ export default class VentasController {
   static async apiGetDatosVentas(req, res, next) {
     console.log('HOLAAAA')
     consultarOcrearventas(req, genercCallback(res));
-    const usuariosPerPage = req.query.ventasPerPage ? parseInt(req.query.usuariosPerPage, 10) : 20
+    const ventasPerPage = req.query.ventasPerPage ? parseInt(req.query.ventasPerPage, 10) : 20
     const page = req.query.page ? parseInt(req.query.page, 10) : 0
 
     let filters = {}
@@ -69,15 +69,17 @@ export default class VentasController {
       const fecha_venta = req.body.fecha_venta
       const festado_venta = req.body.estado_venta
       const estado_venta = req.body.estado_venta
+      const valor_venta = req.body.valor_venta
 
 
-      const MiUsuario = await UsuarioDAO.addUsuario(
+      const MiVentas = await VentasDAO.addVentas(
       id_ventas,
       id_cliente,
       vendedor,
       fecha_venta,
       estado_venta,
       estado_venta,
+      valor_venta,
       )
       res.json({ status: "success" })
     } catch (e) {
@@ -85,22 +87,23 @@ export default class VentasController {
     }
   }
 
-  static async apiUpdateUsuario(req, res, next) {
+  static async apiUpdateVentas(req, res, next) {
     try {
         const id_ventas = req.body.id_ventas
         const id_cliente = req.body.id_cliente
         const vendedor = req.body.vendedor
         const fecha_venta = req.body.fecha_venta
-        const festado_venta = req.body.estado_venta
         const estado_venta = req.body.estado_venta
+        const valor_venta = req.body.valor_venta
 
-      const MiUsuario = await UsuarioDAO.updateUsuario(
+      const MiVentas = await VentasDAO.updateVentas(
       id_ventas,
       id_cliente,
       vendedor,
       fecha_venta,
       estado_venta,
       estado_venta,
+      valor_venta,
       )
 
       var { error } = MiVentas
