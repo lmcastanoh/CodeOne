@@ -1,60 +1,23 @@
 import {Link} from 'react-router-dom';
 import Footer from 'components/Footer';
-/*Se importa logo */
-import logoPrana from "media/logoNavbar.png";
-import logoCodeOne from "media/logoCodeOne.png";
-/*Se importa iconos necesarios para la página*/
-import iconoUsuarioVerde from "media/iconoUsuario.png";
-import iconoBuscar from "media/iconoBusqueda.ico";
 import PrivateRoute from 'components/PrivateRoute';
-import { useAuth0 } from "@auth0/auth0-react";
+import HeaderP from 'components/HeaderP';
 
 const AgregarVenta = () => {
-    const { logout } = useAuth0();
+
     return(
         <div classname="agregarVentas"> 
             <PrivateRoute>
                 <body>
-                    <header> 
-                        <ul className="barraRedes">
-                            <li><i className="fas fa-palette"></i></li>
-                            <div className= "icoRedes">
-                                <li><i className=" fab fa-facebook"></i></li>
-                                <li><i className=" fab fa-instagram"></i></li>
-                                <li><i className="fab fa-whatsapp"></i></li>
-                            </div>
-                        </ul>
-                        <ul className="navbar">
-                            <Link to='/'>
-                                <li>
-                                    <div> 
-                                        <img className="boton logo" src={logoPrana} alt= "imagen" /> 
-                                    </div>
-                                </li>
-                            </Link>
-                            <li>
-                                <div className="buscar">
-                                    <input placeholder ="Buscar Ventas"/>
-                                    <img className="iconoBusqueda" src={iconoBuscar} alt="search" />
-                                </div>
-                            </li>
-                            <li className ="boton tituloSeccionPagina"><Link to='/listadoVentas' className="link">Administración de Ventas</Link></li>
-                            <li>
-                                <div className = "botonUsuario">
-                                    <span onClick={() => logout({ returnTo: window.location.origin })} className="nombreUsuario">/Cerrar Sesión</span>
-                                    <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
-                                </div>
-                            </li>
-                        </ul>
-                    </header>    
+                    <HeaderP nombreBuscador='Buscar Venta' linkModulo= '/listadoVentas' nombreModulo = "Administración de Ventas"/>    
                     <main>
                         <section>
-                            <h1 className = "tituloVentas">030 Venta</h1>
+                            <h1 className = "tituloVentas"> Venta</h1>
                             
                             <ul>
                                 <div className="tablaVentasProducto">
                                     <li className= "tablaVenta2">
-                                        <div className = "cuadroTabla cuadroBlanco letraEncabezado">ID del Producto</div>
+                                        <div className = "cuadroTabla cuadroBlanco letraEncabezado">ID Venta</div>
                                         <div className = "cuadroValorTotal cuadroTabla infoAgregarVenta inputAgregarventa" > <input type="number" name="IDproducto"/></div>
                                         
                                         <div className = "cuadroTabla cuadroBlanco letraEncabezado">ID del Cliente</div>
@@ -71,7 +34,7 @@ const AgregarVenta = () => {
                                     
                                     <li className = "tablaVenta2">
 
-                                        <div className = "cuadroTabla cuadroBlanco letraEncabezado">Fecha de Venta</div>
+                                        <div className = "cuadroTabla cuadroBlanco letraEncabezado">Fecha </div>
                                         <div className = "cuadroValorTotal cuadroTabla infoAgregarVenta inputAgregarventa"><input type="date" name="fechaingreso"/></div>
                                         <div className = "cuadroTabla cuadroBlanco  letraEncabezado">Nombre del Cliente</div>
                                         <div className = "cuadroValorTotal cuadroTabla infoAgregarVenta inputAgregarventa" ><input type="text" name="Nombre Cliente"/></div>
@@ -137,7 +100,7 @@ const AgregarVenta = () => {
                             <div className = "cuadroTabla letraEncabezado">--</div>
                         </section>
                         <section>
-                            <div className = "botonAgregarVenta botonModulos titulo centrar"><Link to='/comprobanteAgregar' className="link"><span>Agregar Venta</span></Link></div>
+                            <div className = "botonAgregarVenta botonModulos titulo centrar"><span>Agregar Ventas</span></div>
                         </section>
                     </main>
                     <Footer />
