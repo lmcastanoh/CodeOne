@@ -16,7 +16,7 @@ const InfoVentas=() => {
                     <HeaderP nombreBuscador='Buscar Venta' linkModulo= '/listadoVentas' nombreModulo = "Administración de Ventas"/>
                         <main>
                             <section>
-                                <h1 className = "tituloVentas">001 Ventas <img className="boton icoTablaVentas" src={iconoGranaje} /></h1>
+                                <h1 className = "tituloVentas">Ventas <img className="boton icoTablaVentas" src={iconoGranaje} /></h1>
                                 <ul>
                                     <div className="tablaVentas">
                                         <li className= "tablaVenta1"><div className = "cuadroTabla cuadroBlanco letraEncabezado">ID Venta</div>
