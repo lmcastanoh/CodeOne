@@ -5,6 +5,10 @@ const getToken = () =>{
   return `Bearer ${localStorage.getItem('token')}`;
 }
 
+const executeRequest = async (options, successCallback, errorCallback) => {
+  await axios.request(options).then(successCallback).catch(errorCallback);
+};
+
 export default axios.create({
   baseURL: "http://localhost:5000/api/v1/producto",
   headers: {
