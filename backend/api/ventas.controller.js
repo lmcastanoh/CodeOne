@@ -66,8 +66,8 @@ export default class VentasController {
       const id_ventas = req.body.id_ventas
       const id_cliente = req.body.id_cliente
       const vendedor = req.body.vendedor
+      const nombre_cliente = req.body.nombre_cliente
       const fecha_venta = req.body.fecha_venta
-      const festado_venta = req.body.estado_venta
       const estado_venta = req.body.estado_venta
       const valor_venta = req.body.valor_venta
 
@@ -76,6 +76,7 @@ export default class VentasController {
       id_ventas,
       id_cliente,
       vendedor,
+      nombre_cliente,
       fecha_venta,
       estado_venta,
       estado_venta,
@@ -92,6 +93,7 @@ export default class VentasController {
         const id_ventas = req.body.id_ventas
         const id_cliente = req.body.id_cliente
         const vendedor = req.body.vendedor
+        const nombre_cliente= req.body.nombre_cliente
         const fecha_venta = req.body.fecha_venta
         const estado_venta = req.body.estado_venta
         const valor_venta = req.body.valor_venta
@@ -100,6 +102,7 @@ export default class VentasController {
       id_ventas,
       id_cliente,
       vendedor,
+      nombre_cliente,
       fecha_venta,
       estado_venta,
       estado_venta,

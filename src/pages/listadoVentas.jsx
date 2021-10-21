@@ -90,7 +90,7 @@ const ListadoVentas=() =>{
 
                             );
                         })}
-                        <div className = "botonAgregarVenta2 botonModulos titulo centrar"> 
+                        <div className = "botonAgregarUsuario botonModulos titulo centrar"> 
                                         
                                         <span><Link to = "/agregarVenta" className ="link">Agregar Venta</Link></span>
                                     
