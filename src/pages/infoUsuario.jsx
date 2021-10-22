@@ -11,7 +11,7 @@ const InfoUsuario =() =>{
         <div className="infoPersona">
             <PrivateRoute>
                 <body>
-                    <HeaderP linkModulo= '/listadoUsuarios' nombreModulo = "Administración de Usuarios"/>
+                    <HeaderP nombreBuscador='Buscar Usuario' linkModulo= '/listadoUsuarios' nombreModulo = "Administración de Usuarios"/>
                         <main className = "tamañoPaginaIndex">
                             <section>
                                 <h1 className="centrar tituloUsuario">Juanita Gómez   ID: 123456789</h1>

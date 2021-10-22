@@ -1,9 +1,39 @@
 import {Link} from 'react-router-dom';
 import Footer from 'components/Footer';
+import React, {useState} from "react";
+import Ventas from "../services/ventas";
+import http from "../http-common";
 import PrivateRoute from 'components/PrivateRoute';
 import HeaderP from 'components/HeaderP';
 
 const AgregarVenta = () => {
+
+    const [input, setInput] =useState({
+        id_venta: 0,
+        id_cliente: 0,
+        nombre_cliente: "",
+        vendedor: "",
+        fecha_venta: "",
+        estado_venta:"",
+    }) 
+
+    function handleChange(event){
+        const {name, value} = event.target;
+        setInput(prevInput => {
+            return {
+                ...prevInput,
+                [name]: value
+            }
+        })
+        console.log(event.target);
+    }
+
+    function handleClic(event){
+        event.preventDefault();
+        http.post("/ventas", input);
+        console.log(input);
+    }
+
 
     return(
         <div classname="agregarVentas"> 
@@ -12,34 +42,36 @@ const AgregarVenta = () => {
                     <HeaderP nombreBuscador='Buscar Venta' linkModulo= '/listadoVentas' nombreModulo = "Administración de Ventas"/>    
                     <main>
                         <section>
-                            <h1 className = "tituloVentas">030 Venta</h1>
+                            <h1 className = "tituloVentas"> Venta</h1>
                             
                             <ul>
                                 <div className="tablaVentasProducto">
+                                    <form action="ejemplo.php" method="get">
                                     <li className= "tablaVenta2">
-                                        <div className = "cuadroTabla cuadroBlanco letraEncabezado">ID del Producto</div>
-                                        <div className = "cuadroValorTotal cuadroTabla infoAgregarVenta inputAgregarventa" > <input type="number" name="IDproducto"/></div>
+                                        <p className = "cuadroTabla cuadroBlanco letraEncabezado">ID Venta</p>
+                                        <div className = "cuadroValorTotal cuadroTabla infoAgregarVenta inputAgregarventa" > <input type="number" onChange={handleChange} name="id_venta" size="40" value={input.id_venta}/></div>
                                         
                                         <div className = "cuadroTabla cuadroBlanco letraEncabezado">ID del Cliente</div>
-                                        <div className = "cuadroValorTotal cuadroTabla infoAgregarVenta inputAgregarventa" ><input type="number" name="ID del Cliente"/></div>
+                                        <div className = "cuadroValorTotal cuadroTabla infoAgregarVenta inputAgregarventa" ><input type="number" onChange={handleChange} name="id_cliente" size="40" value={input.id_cliente}/></div>
 
                                         <div className = "cuadroTabla cuadroBlanco letraEncabezado ">Vendedor</div>
-                                        <div className = "cuadroValorTotal cuadroTabla infoAgregarVenta inputAgregarventa"><select name="estado">
+                                        <div className = "cuadroValorTotal cuadroTabla infoAgregarVenta inputAgregarventa"><select  onChange={handleChange} name="vendedor" value={input.vendedor} name="vendedor">
                                         <option selected value="0"> Elige una opción </option>
                                         <option value="1">Estefania Cano</option> 
                                         <option value="2">Vanessa Quiroz</option> 
                                         </select></div>
                                     </li>
+                                    </form>
 
-                                    
+                                    <form action="ejemplo.php" method="get">
                                     <li className = "tablaVenta2">
 
-                                        <div className = "cuadroTabla cuadroBlanco letraEncabezado">Fecha de Venta</div>
-                                        <div className = "cuadroValorTotal cuadroTabla infoAgregarVenta inputAgregarventa"><input type="date" name="fechaingreso"/></div>
+                                        <div className = "cuadroTabla cuadroBlanco letraEncabezado">Fecha </div>
+                                        <div className = "cuadroValorTotal cuadroTabla infoAgregarVenta inputAgregarventa"><input type="date" onChange={handleChange} name="fecha_venta" value={input.fecha_venta}/></div>
                                         <div className = "cuadroTabla cuadroBlanco  letraEncabezado">Nombre del Cliente</div>
-                                        <div className = "cuadroValorTotal cuadroTabla infoAgregarVenta inputAgregarventa" ><input type="text" name="Nombre Cliente"/></div>
+                                        <div className = "cuadroValorTotal cuadroTabla infoAgregarVenta inputAgregarventa" ><input type="text" onChange={handleChange} name="nombre_cliente" size="40" value={input.nombre_cliente} /></div>
                                         <div className = "cuadroTabla cuadroBlanco letraEncabezado">Estado de la Venta</div>
-                                        <div className = "cuadroValorTotal cuadroTabla infoAgregarVenta inputAgregarventa"><select name="estado">
+                                        <div className = "cuadroValorTotal cuadroTabla infoAgregarVenta inputAgregarventa"><select  onChange={handleChange} name="estado" value={input.estado_venta} name="estado">
                                             <option selected value="0"> Elige una opción </option>
                                             <option value="1">En proceso</option> 
                                             <option value="2">Cancelada</option> 
@@ -47,6 +79,7 @@ const AgregarVenta = () => {
                                             </select>
                                         </div>
                                     </li>
+                                    </form>
 
                                 </div>
                             </ul>
@@ -100,7 +133,7 @@ const AgregarVenta = () => {
                             <div className = "cuadroTabla letraEncabezado">--</div>
                         </section>
                         <section>
-                            <div className = "botonAgregarVenta botonModulos titulo centrar"><Link to='/comprobanteAgregar' className="link"><span>Agregar Venta</span></Link></div>
+                            <div onClick={handleClic} className = "botonAgregarVenta botonModulos titulo centrar"><Link to='/comprobanteAgregar' className="link"> <span>Agregar Ventas</span></Link></div>
                         </section>
                     </main>
                     <Footer />

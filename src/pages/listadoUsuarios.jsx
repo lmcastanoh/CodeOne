@@ -44,17 +44,16 @@ const ListadoUsuarios=()=>{
         <div className="ListadodeUsuarios">
             <PrivateRoute>
             <body>
-                <HeaderP linkModulo= '/listadoUsuarios' nombreModulo = "Administración de Usuarios"/>
+                <HeaderP nombreBuscador='Buscar Usuario' linkModulo= '/listadoUsuarios' nombreModulo = "Administración de Usuarios"/>
                     <main>
                     <h1 className = "tituloProductos">Usuarios</h1>
                     <ul>                               
                     <div className= "tablaUsuarios">
             
                         <div className = "cuadroTablaUsuarios letraEncabezado">ID</div>
-                        <div className = "cuadroTablaUsuarios letraEncabezado">Nombre</div>
-                        <div className = "cuadroTablaUsuarios letraEncabezado">Correo</div>
+                        <div className = "cuadroUsuarios letraEncabezado">Nombre</div>
+                        <div className = "cuadroUsuarios letraEncabezado">Correo</div>
                         <div className = "cuadroTablaUsuarios letraEncabezado">Celular</div>
-                        <div className = "cuadroTablaUsuarios letraEncabezado">Fecha nacimiento</div>
                         <div className = "cuadroTablaUsuarios letraEncabezado">Fecha ingreso</div>
                         <div className = "cuadroTablaUsuarios letraEncabezado">Estado</div>
                         <div className = "cuadroTablaUsuarios letraEncabezado">Rol</div>
@@ -70,10 +69,9 @@ const ListadoUsuarios=()=>{
 
                             <div className= "tablaUsuarios">
                                 <div className = "cuadroTablaUsuarios">{usuario.id_usuario}</div>
-                                <div className = "cuadroTablaUsuarios">{usuario.nombre}</div>
-                                <div className = "cuadroTablaUsuarios">{usuario.correo}</div>
+                                <div className = "cuadroUsuarios">{usuario.nombre}</div>
+                                <div className = "cuadroUsuarios">{usuario.correo}</div>
                                 <div className = "cuadroTablaUsuarios">{usuario.celular}</div>
-                                <div className = "cuadroTablaUsuarios">{usuario.fecha_nacimiento}</div>
                                 <div className = "cuadroTablaUsuarios">{usuario.fecha_ingreso}</div>
                                 <div className = "cuadroTablaUsuarios">{usuario.estado}</div>
                                 <div className = "cuadroTablaUsuarios">{usuario.rol}</div>
@@ -84,7 +82,6 @@ const ListadoUsuarios=()=>{
                                         nombre:usuario.nombre, 
                                         correo:usuario.correo,
                                         celular:usuario.celular,
-                                        fecha_nacimiento: usuario.fecha_nacimiento,
                                         fecha_ingreso: usuario.fecha_ingreso,
                                         estado: usuario.estado,
                                         rol:usuario.rol},
@@ -98,10 +95,7 @@ const ListadoUsuarios=()=>{
 
                         );
                     })}
-                            
-                    </ul>
-                    <ul>
-                    <div className = "botonAgregarUsuario botonModulos titulo centrar" ><span><Link to='/agregarUsuario' className="link">Agregar usuario</Link></span></div>
+                    <div className = "botonAgregarUsuario botonModulos titulo centrar" ><span><Link to='/agregarUsuario' className="link">Agregar usuario</Link></span></div>      
                     </ul>
                     </main>
                 

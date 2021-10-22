@@ -16,10 +16,10 @@ const InfoVentas=() => {
                     <HeaderP nombreBuscador='Buscar Venta' linkModulo= '/listadoVentas' nombreModulo = "Administración de Ventas"/>
                         <main>
                             <section>
-                                <h1 className = "tituloVentas">001 Ventas <img className="boton icoTablaVentas" src={iconoGranaje} /></h1>
+                                <h1 className = "tituloVentas">Ventas <img className="boton icoTablaVentas" src={iconoGranaje} /></h1>
                                 <ul>
                                     <div className="tablaVentas">
-                                        <li className= "tablaVenta1"><div className = "cuadroTabla cuadroBlanco letraEncabezado">ID del Producto</div>
+                                        <li className= "tablaVenta1"><div className = "cuadroTabla cuadroBlanco letraEncabezado">ID Venta</div>
                                         <div className = "cuadroValorTotal cuadroTabla">001</div>
 
                                         <div className = "cuadroTabla cuadroBlanco letraEncabezado">ID del Cliente</div>
@@ -28,7 +28,7 @@ const InfoVentas=() => {
                                         <div className = "cuadroTabla cuadroBlanco letraEncabezado ">Vendedor</div>
                                         <div className = "cuadroValorTotal cuadroTabla">Vanessa Quiroz</div></li>
                                         
-                                        <li className= "tablaVenta1"><div className = "cuadroTabla cuadroBlanco letraEncabezado">Fecha de Venta</div>
+                                        <li className= "tablaVenta1"><div className = "cuadroTabla cuadroBlanco letraEncabezado">Fecha</div>
                                             <div className = " cuadroValorTotal cuadroTabla">29/09/2021</div>
                                             <div className = "cuadroTabla cuadroBlanco  letraEncabezado">Nombre del Cliente</div>
                                             <div className = "cuadroValorTotal cuadroTabla" >Franca Gómez</div>

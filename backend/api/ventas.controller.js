@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 import VentasDAO from "../dao/ventasDAO.js"
+=======
+import { ObjectId } from "bson"
+import VentasDAO from "../dao/ventasDAO.js"
+import jwt from "jwt-decode";
+
+>>>>>>> 3c9701fb1e6dfbc98fffcc313ef2bd8e5c42122f
 
 export default class VentasController {
   static async apiGetVentas(req, res, next) {
@@ -27,12 +34,46 @@ export default class VentasController {
     }
     res.json(response)
   }
+<<<<<<< HEAD
+=======
+  static async apiGetDatosVentas(req, res, next) {
+    console.log('HOLAAAA')
+    consultarOcrearventas(req, genercCallback(res));
+    const ventasPerPage = req.query.ventasPerPage ? parseInt(req.query.ventasPerPage, 10) : 20
+    const page = req.query.page ? parseInt(req.query.page, 10) : 0
+
+    let filters = {}
+    if (req.query.descripcion) {
+      filters.descripcion = req.query.descripcion
+    } else if (req.query.id_ventas) {
+      filters.id_ventas = req.query.id_ventas
+    } 
+
+    const { ventasList, totalNumventas } = await VentasDAO.getVentas({
+        filters,
+        page,
+        ventasPerPage,
+      })
+
+      let response = {
+        ventas: ventasList,
+        page: page,
+        filters: filters,
+        entries_per_page: ventasPerPage,
+        total_results: totalNumventas,
+      }
+      res.json(response)
+    console.log('HOLA LEEME')
+  }
+  
+>>>>>>> 3c9701fb1e6dfbc98fffcc313ef2bd8e5c42122f
 
   static async apiPostVentas(req, res, next) {
     try {
       const id_ventas = req.body.id_ventas
       const id_cliente = req.body.id_cliente
       const vendedor = req.body.vendedor
+<<<<<<< HEAD
       const fecha_venta = req.body.fecha_venta
       const festado_venta = req.body.estado_venta
       const estado_venta = req.body.estado_venta
@@ -44,6 +85,23 @@ export default class VentasController {
         fecha_venta,
         estado_venta,
         estado_venta,
+=======
+      const nombre_cliente = req.body.nombre_cliente
+      const fecha_venta = req.body.fecha_venta
+      const estado_venta = req.body.estado_venta
+      const valor_venta = req.body.valor_venta
+
+
+      const MiVentas = await VentasDAO.addVentas(
+      id_ventas,
+      id_cliente,
+      vendedor,
+      nombre_cliente,
+      fecha_venta,
+      estado_venta,
+      estado_venta,
+      valor_venta,
+>>>>>>> 3c9701fb1e6dfbc98fffcc313ef2bd8e5c42122f
       )
       res.json({ status: "success" })
     } catch (e) {
@@ -53,6 +111,7 @@ export default class VentasController {
 
   static async apiUpdateVentas(req, res, next) {
     try {
+<<<<<<< HEAD
       const id_ventas = req.body.id_ventas
       const id_cliente = req.body.id_cliente
       const vendedor = req.body.vendedor
@@ -69,6 +128,25 @@ export default class VentasController {
         fecha_ingreso,
         estado,
         rol,
+=======
+        const id_ventas = req.body.id_ventas
+        const id_cliente = req.body.id_cliente
+        const vendedor = req.body.vendedor
+        const nombre_cliente= req.body.nombre_cliente
+        const fecha_venta = req.body.fecha_venta
+        const estado_venta = req.body.estado_venta
+        const valor_venta = req.body.valor_venta
+
+      const MiVentas = await VentasDAO.updateVentas(
+      id_ventas,
+      id_cliente,
+      vendedor,
+      nombre_cliente,
+      fecha_venta,
+      estado_venta,
+      estado_venta,
+      valor_venta,
+>>>>>>> 3c9701fb1e6dfbc98fffcc313ef2bd8e5c42122f
       )
 
       var { error } = MiVentas
@@ -85,11 +163,19 @@ export default class VentasController {
 
   static async apiDeleteVentas(req, res, next) {
     try {
+<<<<<<< HEAD
       const id_usuario = req.body.id_usuario
 
       console.log(id_usuario)
       const MiVentas = await VentasDAO.deleteVentas(
         id_usuario,
+=======
+      const id_ventas = req.body.id_ventas
+
+      console.log(id_ventas)
+      const MiVentas = await VentasDAO.deleteVentas(
+        id_ventas,
+>>>>>>> 3c9701fb1e6dfbc98fffcc313ef2bd8e5c42122f
       )
       res.json({ status: "success" })
     } catch (e) {
@@ -123,4 +209,8 @@ export default class VentasController {
       res.status(500).json({ error: e })
     }
   }
+<<<<<<< HEAD
 }*/
+=======
+}*/
+>>>>>>> 3c9701fb1e6dfbc98fffcc313ef2bd8e5c42122f

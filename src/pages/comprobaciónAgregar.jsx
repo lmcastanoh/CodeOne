@@ -16,7 +16,7 @@ const ComprobaciónAgregar = () =>{
         <div className="comprobaciónAgregar">
             <PrivateRoute>
                 <body>
-                    <HeaderP/>   
+                    <HeaderP nombreBuscador='Buscar' />   
                         <main className = "tamañoPaginaIndex">
                             <section>
                                 <ul className="comprovante">

@@ -1,4 +1,3 @@
-import {Link} from 'react-router-dom';
 import Footer from 'components/Footer';
 import cuadernoPsico from 'media/carruselProductos/cuadernoPsico.png';
 import PrivateRoute from 'components/PrivateRoute';

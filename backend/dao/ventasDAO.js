@@ -1,7 +1,7 @@
 import mongodb from "mongodb"
 const ObjectId = mongodb.ObjectID
 let ventas
- 
+
 export default class VentasDAO {
   static async injectDB(conn) {
     if (ventas) {
@@ -11,7 +11,7 @@ export default class VentasDAO {
       ventas = await conn.db(process.env.RESTREVIEWS_NS).collection("ventas")
     } catch (e) {
       console.error(
-        `Unable to establish a collection handle in ventasDAO: ${e}`,
+        `Unable to establish a collection handle in VentasDAO: ${e}`,
       )
     }
   }
@@ -19,7 +19,7 @@ export default class VentasDAO {
   static async getVentas({
     filters = null,
     page = 0,
-    ventasPerPage = 20,
+    ventassPerPage = 20,
   } = {}) {
     let query
     if (filters) {
@@ -37,31 +37,33 @@ export default class VentasDAO {
         .find(query)
     } catch (e) {
       console.error(`Unable to issue find command, ${e}`)
-      return { vetasList: [], totalNumventas: 0 }
+      return { ventasList: [], totalNumVentas: 0 }
     }
 
-    const displayCursor = cursor.limit(ventasPerPage).skip(ventasPerPage * page)
+    const displayCursor = cursor.limit(ventassPerPage).skip(ventassPerPage * page)
 
     try {
       const ventasList = await displayCursor.toArray()
-      const totalNumventas = await ventas.countDocuments(query)
+      const totalNumVentas = await ventas.countDocuments(query)
 
-      return { ventasList, totalNumventas }
+      return { ventasList, totalNumVentas }
     } catch (e) {
       console.error(
         `Unable to convert cursor to array or problem counting documents, ${e}`,
       )
-      return { ventasList: [], totalNumventas: 0 }
+      return { ventasList: [], totalNumVentas: 0 }
     }
   }
 
-  static async addVentas(id_ventas,id_cliente, vendedor, fecha_venta, estado_venta) {
+  static async addVentas(id_ventas,id_cliente, vendedor,nombre_cliente, fecha_venta, estado_venta,valor_venta) {
     try {
       const ventasDoc = { id_ventas: id_ventas,
         id_cliente: id_cliente,
         vendedor: vendedor,
+        nombre_cliente: nombre_cliente,
         fecha_venta: fecha_venta,
-        estado_venta: estado_venta, }
+        estado_venta: estado_venta,
+        valor_venta:valor_venta }
 
       return await ventas.insertOne(ventasDoc)
     } catch (e) {
@@ -70,16 +72,16 @@ export default class VentasDAO {
     }
   }
 
-  static async updateVenta(id_ventas,id_cliente, vendedor, fecha_venta, estado_venta) {
+  static async updateVentas(id_ventas,id_cliente, vendedor,nombre_cliente, fecha_venta, estado_venta, valor_venta) {
     try {
-      const updateVentas = await ventas.updateOne(
+      const updateVentas = await venta.updateOne(
         /*{ id_ventas:"3"},*/
         {id_ventas: id_ventas},
-        { $set: { id_cliente: id_cliente, vendedor: vendedor,
-          fecha_venta: fecha_venta, estado_venta: estado_venta  } },
+        { $set: { id_cliente: id_cliente, vendedor: vendedor, nombre_cliente:nombre_cliente,
+          fecha_venta: fecha_venta, estado_venta: estado_venta, valor_venta:valor_venta  } },
       )
 
-      return updateVenta
+      return updateVentas
     } catch (e) {
       console.error(`Unable to update review: ${e}`)
       return { error: e }
@@ -102,7 +104,7 @@ export default class VentasDAO {
 
 
 }
-  /*static async getProductoByID(id) {
+  /*static async getVentasByID(id) {
     try {
       const pipeline = [
         {
@@ -145,7 +147,6 @@ export default class VentasDAO {
       throw e
     }
   }
-
   static async getCuisines() {
     let cuisines = []
     try {

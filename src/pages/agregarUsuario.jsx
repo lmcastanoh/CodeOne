@@ -17,7 +17,6 @@ const AgregarUsuario = () => {
         nombre: "",
         correo: "",
         celular: "",
-        fecha_nacimiento: "",
         fecha_ingreso: "",
         estado:"",
         rol: ""
@@ -44,7 +43,7 @@ const AgregarUsuario = () => {
             <div className="AgregarUsuario">
                 <PrivateRoute>
                 <body> 
-                <HeaderP linkModulo= '/listadoUsuarios' nombreModulo = "Administración de Usuarios"/>
+                <HeaderP nombreBuscador='Buscar Usuario' linkModulo= '/listadoUsuarios' nombreModulo = "Administración de Usuarios"/>
                     <main>
                         <h1 className = "tituloProductos">Agregar Usuario</h1>
                         <ul>
@@ -61,9 +60,6 @@ const AgregarUsuario = () => {
 
                                 <p className = "letraEncabezado  " >Número de Celular:</p>
                                 <p className="inputUsuario cuadroParaUsuarios" ><input type="tel" onChange={handleChange} name="celular" value={input.celular}/></p>
-
-                                <p className = "letraEncabezado  " >Fecha de Nacimiento:</p>
-                                <p className="inputUsuario cuadroParaUsuarios " > <input type="date" onChange={handleChange} name="fecha_nacimiento" value={input.fecha_nacimiento}/></p>
                         
                                 <p className = "letraEncabezado  " >Fecha de Ingreso:</p>
                                 <p className="inputUsuario cuadroParaUsuarios" > <input type="date" onChange={handleChange} name="fecha_ingreso" value={input.fecha_ingreso}/></p>
@@ -75,9 +71,7 @@ const AgregarUsuario = () => {
                                 <p className="inputUsuario cuadroParaUsuarios" > <input type="text" onChange={handleChange} name="rol" value={input.rol} /></p>
 
                             </form>
-                        </ul>
-                        <ul>
-                        <div onClick={handleClic} className = "botonAgregarUsuario botonModulos titulo centrar"><Link to='/comprobanteAgregar' className="link"> <span>Agregar Usuario</span></Link></div>
+                            <div onClick={handleClic} className = "botonAgregarUsuario botonModulos titulo centrar"><Link to='/comprobanteAgregar' className="link"> <span>Agregar Usuario</span></Link></div>
                         </ul>
                     </main>
                     <Footer />

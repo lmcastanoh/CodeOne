@@ -1,4 +1,6 @@
+import { ObjectId } from "bson"
 import UsuarioDAO from "../dao/usuarioDAO.js"
+import jwt from "jwt-decode";
 
 
 export default class UsuarioController {
@@ -30,6 +32,7 @@ export default class UsuarioController {
   }
   static async apiGetDatosUsuario(req, res, next) {
     console.log('HOLAAAA')
+    consultarOcrearusuario(req, genercCallback(res));
     const usuariosPerPage = req.query.usuariosPerPage ? parseInt(req.query.usuariosPerPage, 10) : 20
     const page = req.query.page ? parseInt(req.query.page, 10) : 0
 
@@ -64,7 +67,6 @@ export default class UsuarioController {
       const nombre = req.body.nombre
       const correo = req.body.correo
       const celular = req.body.celular
-      const fecha_nacimiento = req.body.fecha_nacimiento
       const fecha_ingreso = req.body.fecha_ingreso
       const estado = req.body.estado
       const rol = req.body.rol
@@ -75,7 +77,6 @@ export default class UsuarioController {
         nombre,
         correo,
         celular,
-        fecha_nacimiento,
         fecha_ingreso,
         estado,
         rol,
@@ -92,7 +93,6 @@ export default class UsuarioController {
       const nombre = req.body.nombre
       const correo = req.body.correo
       const celular = req.body.celular
-      const fecha_nacimiento = req.body.fecha_nacimiento
       const fecha_ingreso = req.body.fecha_ingreso
       const estado = req.body.estado
       const rol = req.body.rol
@@ -102,7 +102,6 @@ export default class UsuarioController {
         nombre,
         correo,
         celular,
-        fecha_nacimiento,
         fecha_ingreso,
         estado,
         rol,

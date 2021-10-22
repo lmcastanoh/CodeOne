@@ -28,9 +28,17 @@ router
   .delete(UsuarioCtrl.apiDeleteUsuario)
  
   router
+  .route("/usuarios")
+  .get(VentasCtrl.apiGetVentas)
+  .post(VentasCtrl.apiPostVentas)
+  .put(VentasCtrl.apiUpdateVentas)
+  .delete(VentasCtrl.apiDeleteVentas)
+
+  router
   .route('/usuarios/self')
   .get(UsuarioCtrl.apiGetDatosUsuario
   );
+<<<<<<< HEAD
 
   router 
   .route("/ventas")
@@ -39,4 +47,7 @@ router
   .put(VentasCtrl.apiUpdateVentas)
   .delete(VentasCtrl.apiDeleteVentas)
 
+=======
+  
+>>>>>>> 3c9701fb1e6dfbc98fffcc313ef2bd8e5c42122f
 export default router

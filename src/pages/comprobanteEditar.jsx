@@ -10,7 +10,7 @@ const ComprobanteEditar =() =>{
         <div className="comprobanteEditar">
             <PrivateRoute>
                 <body>
-                    <HeaderP/>
+                    <HeaderP nombreBuscador='Buscar'/>
                         <main className = "tamañoPaginaIndex">
                             <section>
                                 <ul className="comprovante">
